@@ -1,0 +1,83 @@
+AnnotatedSpace;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AnnotatedSpace;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;BuildingUsage
+Building;totalHeight;DOUBLE;;Total height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;eaveHeight;DOUBLE;;Eave height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;roofForm;TEXT;30;Roof form;NULLABLE;NON_REQUIRED;BuildingRoofForm
+Building;levelsAboveGround;SHORT;;Levels above ground;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;levelsBelowGround;SHORT;;Levels below ground;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;status;TEXT;30;Construction status;NULLABLE;NON_REQUIRED;ConstructionStatus
+Building;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingEntrancePoint;buildingFID;TEXT;50;Key of the building;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingEntrancePoint;address;TEXT;100;Associated address;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingEntrancePoint;isPrimary;SHORT;;Primary entrance;NULLABLE;NON_REQUIRED;Boolean
+BuildingShell;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingShell;generator;TEXT;;Source;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingShell;protectionLevel;SHORT;;Protection level;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingShellPart;buildingFID;TEXT;;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingShellPart;shellFID;TEXT;;Shell FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingShellPart;type;TEXT;;Shell part type;NULLABLE;NON_REQUIRED;ShellPartType
+BuildingInteriorSpace;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;floorFID;TEXT;50;Building Floor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;shortName;TEXT;10;Short name;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;type;TEXT;50;Space type;NULLABLE;NON_REQUIRED;BuildingInteriorSpaceType
+BuildingInteriorSpace;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
+BuildingInteriorSpace;height;DOUBLE;;Ceiling height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;floorArea;DOUBLE;;Floor area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;capacity;LONG;;Capacity;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;spaceForm;TEXT;50;Space form;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;spaceFunction;TEXT;50;Space function;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;spaceUse;TEXT;50;Space use;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingFloor;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingFloor;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingFloor;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingFloor;verticalOrder;LONG;;Vertical order;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingFloor;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
+BuildingInteriorStructure;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorStructure;floorFID;TEXT;50;Building Floor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorStructure;type;TEXT;50;Interior structure type;NULLABLE;NON_REQUIRED;BuildingInteriorStructureType
+BuildingInteriorStructure;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorStructure;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorStructure;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
+InteriorInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;InteriorInstallationType
+InteriorInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+InteriorInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+StreetFurniture;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;StreetFurnitureType
+StreetFurniture;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+StreetFurniture;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+StreetFurniture;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;type;TEXT;30;Sensor type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;feedFrequency;TEXT;10;Feed update frequency;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;feedMimeType;TEXT;50;Feed encoding (MIME);NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;observation;TEXT;30;Observed property;NULLABLE;NON_REQUIRED;SensorType
+Sensor;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SensorCoverage;sensorFID;TEXT;50;Sensor FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;type;TEXT;30;Sign type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;transportElementFID;TEXT;50;Sensor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;type;TEXT;50;Tree Genus;NON_NULLABLE;NON_REQUIRED;TreeGenusType
+Tree;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;datePlanted;DATE;;Date planted;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;height;DOUBLE;;Crown height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;diameter;DOUBLE;;Crown diameter;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;canopyShape;TEXT;30;Canopy shape;NULLABLE;NON_REQUIRED;TreeCanopyShape
+ZoningDistrict;type;TEXT;30;Zoning district type;NULLABLE;NON_REQUIRED;ZoningType
+ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
+ZoningDistrict;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
+Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
+Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Parcel;address;TEXT;100;Parcel address;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Parcel;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Parcel;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+LandCover;primaryLandcoverType;TEXT;30;Primary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
+LandCover;secondaryLandcoverType;TEXT;30;Secondary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
+LandCover;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
+LandCover;verticalExtent;DOUBLE;;Vertical extent;NULLABLE;NON_REQUIRED;NO_DOMAIN

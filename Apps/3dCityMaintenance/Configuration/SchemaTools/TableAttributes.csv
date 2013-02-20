@@ -1,0 +1,28 @@
+CityFabricRelation;sourceType;TEXT;50;Source Feature Class;NULLABLE;NON_REQUIRED;NO_DOMAIN
+CityFabricRelation;targetType;TEXT;50;Target Feature Class;NULLABLE;NON_REQUIRED;NO_DOMAIN
+CityFabricRelation;sourceFID;TEXT;50;Source Feature FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+CityFabricRelation;targetFID;TEXT;50;Target Feature FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+CityFabricRelation;relationType;TEXT;50;Relation Type;NULLABLE;NON_REQUIRED;CityFabricRelationType
+CityFabricRelation;relationDirection;TEXT;20;Relation Direction;NULLABLE;NON_REQUIRED;FlowDirection
+CityFabricRelation;description;TEXT;250;Description;NULLABLE;NON_REQUIRED;NO_DOMAIN
+CityFabricRelation;name;TEXT;100;Name;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AttributeContainer;path;TEXT;250;Path;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AttributeContainer;type;TEXT;30;Type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AttributeContainer;value;TEXT;250;Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AttributeContainer;referenceFID;TEXT;50;Reference FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+AttributeContainer;referenceType;TEXT;50;Reference Feature Class;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;description;TEXT;250;Textual version of the regulation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;foundationReference;TEXT;100;Reference to Policy (Paragraph);NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;aspect;TEXT;50;Regulation Aspect;NULLABLE;NON_REQUIRED;RegulationAspect
+Regulation;operator;TEXT;30;Regulation Operator;NULLABLE;NON_REQUIRED;RegulationOperator
+Regulation;value;DOUBLE;;Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;borderCondition;TEXT;50;Neighborhood Condition;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;unit;TEXT;10;Unit;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;referenceFID;TEXT;50;Zone or Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;isParcelBased;SHORT;;Parcel-based;NULLABLE;NON_REQUIRED;Boolean
+Regulation;expression;TEXT;250;Parcel-based value Expression;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Regulation;filter;TEXT;250;Parcel-based filter;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Neighborhood;index;LONG;;Segment Index;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+Neighborhood;connectedTo;TEXT;50;Connected to Type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Neighborhood;distance;DOUBLE;;Distance;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Neighborhood;parcelFID;TEXT;50;Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
