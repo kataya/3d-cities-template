@@ -2,7 +2,7 @@
 
 This is an Esri ArcGIS solution template for the creation, maintenance, visualization and analysis of 3D cities. It contains the 3D Urban Information Model file geodatabase schema, geoprocessing tools, map and globe documents, example data and detailed workflow documentation helping you to build a 3D City.
 
-![App](https://raw.github.com/Esri/3d-cities-template/3d-cities-template.png)
+![App](https://raw.github.com/Esri/3d-cities-template/master/3d-cities-template.png)
 
 ## Features
 * Apps for City Data Management, City Asset Editing, Zoning Validation and other processes
