@@ -5,16 +5,16 @@
 		<CreaTime>10071900</CreaTime>
 		<ArcGISFormat>1.0</ArcGISFormat>
 		<SyncOnce>FALSE</SyncOnce>
-		<ModDate>20121219</ModDate>
-		<ModTime>151905</ModTime>
+		<ModDate>20130318</ModDate>
+		<ModTime>150926</ModTime>
 	</Esri>
-	<toolbox name="3DUIM Schema Tools" alias="3DUIM Schema Tools">
+	<toolbox name="3dCitySchemaTools" alias="3DCIM Schema Tools">
 		<arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.1\Help\gp</arcToolboxHelpPath>
 		<toolsets/>
 	</toolbox>
 	<dataIdInfo>
 		<idCitation>
-			<resTitle>3DUIM Schema Tools</resTitle>
+			<resTitle>3dCitySchemaTools</resTitle>
 		</idCitation>
 	</dataIdInfo>
 	<distInfo>

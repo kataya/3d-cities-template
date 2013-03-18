@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# 3D Urban Information Model Python Toolbox
+# 3D City Information Model Python Toolbox
 # 1.0.0_2012-09-28
 #
 #
@@ -11,8 +11,8 @@ import arcpy
 
 class Toolbox(object):
     def __init__(self):
-        self.label = "3DUIM Schema Tools"
-        self.alias = "3DUIM Schema Tools"
+        self.label = "3DCIM Schema Tools"
+        self.alias = "3DCIM Schema Tools"
 
         # List of tool classes associated with this toolbox
         self.tools = [SchemaGenerator, FeatureIdGenerator]
@@ -20,9 +20,9 @@ class Toolbox(object):
 
 class SchemaGenerator(object):
     def __init__(self):
-        self.label = "3DUIM Database Schema Generator"
+        self.label = "3DCIM Database Schema Generator"
         self.description = "This tool creates the full or partial database schema " +\
-                            "for the 3D Urban Information Model. Requires an (empty) File GDB to be created before."
+                            "for the 3D City Information Model. Requires an (empty) File GDB to be created before."
         self.canRunInBackground = False
 
     def getParameterInfo(self):
@@ -36,7 +36,7 @@ class SchemaGenerator(object):
             parameterType="Required",
             direction="Input")
             
-        in_gdb.value = "D:\\Esri\\3dCityDataModel\\scratch\\schemagen_01.gdb"
+        in_gdb.value = ""
 
         # Spatial reference system to use for the Feature classes
         spatial_reference = arcpy.Parameter(
@@ -98,7 +98,7 @@ class SchemaGenerator(object):
             parameterType="Required",
             direction="Input")
 
-        configuration_files_location.value = "D:\\Esri\\3dCityDataModel\\3duim_configuration"
+        configuration_files_location.value = "D:\\3D Cities\\3d-cities-template\\Apps\\3dCityMaintenance\\Configuration\\SchemaTools"
 
         # Derived Output Features parameter
         out_gdb = arcpy.Parameter(
@@ -109,7 +109,7 @@ class SchemaGenerator(object):
             direction="Output")
 
         out_gdb.parameterDependencies = [in_gdb.name]
-        parameters = [in_gdb, spatial_reference, generate_classes, generate_tables, generate_relationships, configuration_files_location, out_gdb]
+        parameters = [configuration_files_location, in_gdb, out_gdb, spatial_reference, generate_classes, generate_tables, generate_relationships]
 
         return parameters
 
@@ -118,12 +118,13 @@ class SchemaGenerator(object):
 
     def execute(self, parameters, messages):
 
-        arcpy.env.workspace = parameters[0].value
-        spatial_reference_param = parameters[1].value
-        create_classes = parameters[2].values
-        create_tables = parameters[3].values
-        create_relationships = parameters[4].values
-        configuration_files_location = parameters[5].value
+        configuration_files_location = parameters[0].value
+        arcpy.env.workspace = parameters[1].value
+        spatial_reference_param = parameters[3].value
+        create_classes = parameters[4].values
+        create_tables = parameters[5].values
+        create_relationships = parameters[6].values
+        
         
         create_multipatches = True
         if arcpy.CheckExtension("3D") == "Available":
@@ -273,18 +274,20 @@ class SchemaGenerator(object):
 
         if create_relationships is not None:
             for new_class in create_relationships:
-                arcpy.AddMessage("Adding Relationship class " + new_class)
-                arcpy.CreateRelationshipClass_management (origin_table = createClassParams[new_class][0],
-                                                            destination_table = createClassParams[new_class][1],
-                                                            out_relationship_class = new_class,
-                                                            relationship_type = createClassParams[new_class][2],
-                                                            forward_label = createClassParams[new_class][3],
-                                                            backward_label = createClassParams[new_class][4],
-                                                            message_direction = createClassParams[new_class][5],
-                                                            cardinality = createClassParams[new_class][6],
-                                                            attributed = createClassParams[new_class][7],
-                                                            origin_primary_key = createClassParams[new_class][8],
-                                                            origin_foreign_key = createClassParams[new_class][9])
+                # check if origin and destination relationship classes have been created beforehand.
+                if (arcpy.ListTables(createClassParams[new_class][0]) and arcpy.ListTables(createClassParams[new_class][1])) or (arcpy.ListFeatureClasses(createClassParams[new_class][0]) and arcpy.ListFeatureClasses(createClassParams[new_class][1])):
+                    arcpy.AddMessage("Adding Relationship class " + new_class)
+                    arcpy.CreateRelationshipClass_management (origin_table = createClassParams[new_class][0],
+                                                                destination_table = createClassParams[new_class][1],
+                                                                out_relationship_class = new_class,
+                                                                relationship_type = createClassParams[new_class][2],
+                                                                forward_label = createClassParams[new_class][3],
+                                                                backward_label = createClassParams[new_class][4],
+                                                                message_direction = createClassParams[new_class][5],
+                                                                cardinality = createClassParams[new_class][6],
+                                                                attributed = createClassParams[new_class][7],
+                                                                origin_primary_key = createClassParams[new_class][8],
+                                                                origin_foreign_key = createClassParams[new_class][9])
 
         if create_multipatches:
             arcpy.CheckInExtension("3D")
@@ -293,11 +296,10 @@ class SchemaGenerator(object):
 
 class FeatureIdGenerator(object):
     def __init__(self):
-        self.label = "3DUIM Feature ID Generator"
+        self.label = "3DCIM Feature ID Generator"
         self.description = "This tool adds Feature ID fields and values to any " +\
                             "Feature Classes in an input workspace (File GDB), which are used as persistent " +\
-                            "identifiers for referencing of 3DUIM features." +\
-                            "Please note that only the hi/lo global counter is implemented right now."
+                            "identifiers for referencing of 3DCIM features."
         self.canRunInBackground = False
 
     def getParameterInfo(self):
@@ -322,8 +324,8 @@ class FeatureIdGenerator(object):
 
         # Set a value list for the Generation method
         generation_field.filter.type = "ValueList"
-        generation_field.filter.list = ["Global Counter", "UUID", "Geometric Hash"]
-        generation_field.value = "Global Counter"
+        generation_field.filter.list = ["Global Hi-Lo Counter"]
+        generation_field.value = "Global Hi-Lo Counter"
 
         # Hi Batchsize Method Field parameter
         hi_batchsize_field = arcpy.Parameter(
