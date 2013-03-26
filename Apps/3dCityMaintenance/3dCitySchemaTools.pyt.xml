@@ -5,8 +5,8 @@
 		<CreaTime>10071900</CreaTime>
 		<ArcGISFormat>1.0</ArcGISFormat>
 		<SyncOnce>FALSE</SyncOnce>
-		<ModDate>20130318</ModDate>
-		<ModTime>150926</ModTime>
+		<ModDate>20130326</ModDate>
+		<ModTime>190727</ModTime>
 	</Esri>
 	<toolbox name="3dCitySchemaTools" alias="3DCIM Schema Tools">
 		<arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.1\Help\gp</arcToolboxHelpPath>
