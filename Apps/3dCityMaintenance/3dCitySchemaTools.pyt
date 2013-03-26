@@ -275,7 +275,7 @@ class SchemaGenerator(object):
         if create_relationships is not None:
             for new_class in create_relationships:
                 # check if origin and destination relationship classes have been created beforehand.
-                if (arcpy.ListTables(createClassParams[new_class][0]) and arcpy.ListTables(createClassParams[new_class][1])) or (arcpy.ListFeatureClasses(createClassParams[new_class][0]) and arcpy.ListFeatureClasses(createClassParams[new_class][1])):
+                if (arcpy.ListTables(createClassParams[new_class][0]) or arcpy.ListFeatureClasses(createClassParams[new_class][0])) and (arcpy.ListTables(createClassParams[new_class][1]) or arcpy.ListFeatureClasses(createClassParams[new_class][1])):
                     arcpy.AddMessage("Adding Relationship class " + new_class)
                     arcpy.CreateRelationshipClass_management (origin_table = createClassParams[new_class][0],
                                                                 destination_table = createClassParams[new_class][1],
