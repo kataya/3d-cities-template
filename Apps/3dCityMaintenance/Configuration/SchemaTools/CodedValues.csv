@@ -1,375 +1,465 @@
-AccessType;Public;Public
-AccessType;Private;Private
-AccessType;Employee;Employee
-AccessType;Visitor;Visitor
-AccessType;Student;Student
-AccessType;Faculty;Faculty
-AccessType;Secure;Secure
-AccessType;Reserved;Reserved
-AccessType;Maintenance;Maintenance
-AccessType;Handicap;Handicap
-AccessType;Other;Other
-AccessType;Unknown;Unknown
-AnnotationType;Comment;Comment
-AnnotationType;Process Result;Process Result
-AnnotationType;Link;Link
-AnnotationType;Measurement;Measurement
-Boolean;1;True
-Boolean;0;False
-BuildingInteriorSpaceType;Acting Stage;Acting Stage
-BuildingInteriorSpaceType;Aircraft Hangar;Aircraft Hangar
-BuildingInteriorSpaceType;Artist Studio;Artist Studio
-BuildingInteriorSpaceType;Atrium;Atrium
-BuildingInteriorSpaceType;Audio-Visual Room;Audio-Visual Room
-BuildingInteriorSpaceType;Auditorium;Auditorium
-BuildingInteriorSpaceType;Baggage Claim;Baggage Claim
-BuildingInteriorSpaceType;Bank Teller Space;Bank Teller Space
-BuildingInteriorSpaceType;Barracks Space;Barracks Space
-BuildingInteriorSpaceType;Bedroom;Bedroom
-BuildingInteriorSpaceType;Bowling Lane;Bowling Lane
-BuildingInteriorSpaceType;Break Room;Break Room
-BuildingInteriorSpaceType;Buying and Selling Spaces;Buying and Selling Spaces
-BuildingInteriorSpaceType;Chapel;Chapel
-BuildingInteriorSpaceType;Checkout Space;Checkout Space
-BuildingInteriorSpaceType;Child Day Care Space;Child Day Care Space
-BuildingInteriorSpaceType;Choir Loft;Choir Loft
-BuildingInteriorSpaceType;Classroom;Classroom
-BuildingInteriorSpaceType;Closet;Closet
-BuildingInteriorSpaceType;Computer Lab;Computer Lab
-BuildingInteriorSpaceType;Computer Server Room;Computer Server Room
-BuildingInteriorSpaceType;Conference Room;Conference Room
-BuildingInteriorSpaceType;Control Room;Control Room
-BuildingInteriorSpaceType;Copy Room;Copy Room
-BuildingInteriorSpaceType;Corridor;Corridor
-BuildingInteriorSpaceType;Court Room;Court Room
-BuildingInteriorSpaceType;Covered Walkway;Covered Walkway
-BuildingInteriorSpaceType;Dining Room;Dining Room
-BuildingInteriorSpaceType;Dishwashing;Dishwashing
-BuildingInteriorSpaceType;Dormitory Room;Dormitory Room
-BuildingInteriorSpaceType;Dressing Room;Dressing Room
-BuildingInteriorSpaceType;Electrical Room;Electrical Room
-BuildingInteriorSpaceType;Elevator Cab;Elevator Cab
-BuildingInteriorSpaceType;Entry Lobby;Entry Lobby
-BuildingInteriorSpaceType;Entry Vestibule;Entry Vestibule
-BuildingInteriorSpaceType;Equipment Room;Equipment Room
-BuildingInteriorSpaceType;Exercise Space;Exercise Space
-BuildingInteriorSpaceType;Exhibit Hall;Exhibit Hall
-BuildingInteriorSpaceType;Facility Equipment Service Spaces;Facility Equipment Service Spaces
-BuildingInteriorSpaceType;Fire Closet;Fire Closet
-BuildingInteriorSpaceType;Fixed Location Storage Spaces;Fixed Location Storage Spaces
-BuildingInteriorSpaceType;Freezing Compartment;Freezing Compartment
-BuildingInteriorSpaceType;General Retail Space;General Retail Space
-BuildingInteriorSpaceType;Hallway;Hallway
-BuildingInteriorSpaceType;Holding Cell;Holding Cell
-BuildingInteriorSpaceType;Interview Room;Interview Room
-BuildingInteriorSpaceType;Janitor Closet;Janitor Closet
-BuildingInteriorSpaceType;Kennel;Kennel
-BuildingInteriorSpaceType;Kitchen;Kitchen
-BuildingInteriorSpaceType;Laboratory;Laboratory
-BuildingInteriorSpaceType;Laundry Room;Laundry Room
-BuildingInteriorSpaceType;Library;Library
-BuildingInteriorSpaceType;Liquor Bar;Liquor Bar
-BuildingInteriorSpaceType;Locker Room;Locker Room
-BuildingInteriorSpaceType;Mail Room;Mail Room
-BuildingInteriorSpaceType;Maintenance Closet;Maintenance Closet
-BuildingInteriorSpaceType;Maintenance Spaces;Maintenance Spaces
-BuildingInteriorSpaceType;Manufacturing Space;Manufacturing Space
-BuildingInteriorSpaceType;Mechanical Room;Mechanical Room
-BuildingInteriorSpaceType;Money and Valuables Vault;Money and Valuables Vault
-BuildingInteriorSpaceType;Museum Gallery;Museum Gallery
-BuildingInteriorSpaceType;Nursery;Nursery
-BuildingInteriorSpaceType;Office;Office
-BuildingInteriorSpaceType;Office Cubicle;Office Cubicle
-BuildingInteriorSpaceType;Parts Assembly Space;Parts Assembly Space
-BuildingInteriorSpaceType;Patient Care Room;Patient Care Room
-BuildingInteriorSpaceType;Patio;Patio
-BuildingInteriorSpaceType;Pharmacy;Pharmacy
-BuildingInteriorSpaceType;Printing Room;Printing Room
-BuildingInteriorSpaceType;Reading Room;Reading Room
-BuildingInteriorSpaceType;Reception Space;Reception Space
-BuildingInteriorSpaceType;Recreation Spaces;Recreation Spaces
-BuildingInteriorSpaceType;Refrigeration Compartment;Refrigeration Compartment
-BuildingInteriorSpaceType;Rest Lounge;Rest Lounge
-BuildingInteriorSpaceType;Restroom;Restroom
-BuildingInteriorSpaceType;Sauna;Sauna
-BuildingInteriorSpaceType;Scanning/Imaging Room;Scanning/Imaging Room
-BuildingInteriorSpaceType;Shower;Shower
-BuildingInteriorSpaceType;Stairway;Stairway
-BuildingInteriorSpaceType;Storage Room;Storage Room
-BuildingInteriorSpaceType;Supply Room;Supply Room
-BuildingInteriorSpaceType;Surgery Room;Surgery Room
-BuildingInteriorSpaceType;Telecommunications Room;Telecommunications Room
-BuildingInteriorSpaceType;Testing / Exam;Testing / Exam
-BuildingInteriorSpaceType;Toilet Space;Toilet Space
-BuildingInteriorSpaceType;Treatment Room;Treatment Room
-BuildingInteriorSpaceType;Vending Machine Area;Vending Machine Area
-BuildingInteriorSpaceType;Waiting Room;Waiting Room
-BuildingInteriorSpaceType;Wall Cavity;Wall Cavity
-BuildingInteriorSpaceType;Warehouse Space;Warehouse Space
-BuildingInteriorSpaceType;Work Spaces;Work Spaces
-BuildingInteriorSpaceType;Other;Other
-BuildingInteriorSpaceType;Unknown;Unknown
-BuildingInteriorStructureType;Cased Opening;Cased Opening
-BuildingInteriorStructureType;Chainlink Cage;Chainlink Cage
-BuildingInteriorStructureType;Column;Column
-BuildingInteriorStructureType;Door;Door
-BuildingInteriorStructureType;Exterior Wall;Exterior Wall
-BuildingInteriorStructureType;Glass Wall;Glass Wall
-BuildingInteriorStructureType;Inferred Line;Inferred Line
-BuildingInteriorStructureType;Interior Wall;Interior Wall
-BuildingInteriorStructureType;Movable Wall;Movable Wall
-BuildingInteriorStructureType;Partial Height Wall;Partial Height Wall
-BuildingInteriorStructureType;Phantom Line;Phantom Line
-BuildingInteriorStructureType;Sloping Wall;Sloping Wall
-BuildingInteriorStructureType;Stair;Stair
-BuildingInteriorStructureType;Stair Other Floor;Stair Other Floor
-BuildingInteriorStructureType;Window Frame;Window Frame
-BuildingInteriorStructureType;Window Pane;Window Pane
-BuildingInteriorStructureType;Other;Other
-BuildingInteriorStructureType;Unknown;Unknown
-BuildingRoofForm;Flat;Flat
-BuildingRoofForm;Skillion;Skillion
-BuildingRoofForm;Saw-tooth;Saw-tooth
-BuildingRoofForm;Gabled;Gabled
-BuildingRoofForm;Hip;Hip
-BuildingRoofForm;Mansard;Mansard
-BuildingRoofForm;Pyramid;Pyramid
-BuildingRoofForm;Arched Roof;Arched Roof
-BuildingRoofForm;Domical;Domical
-BuildingRoofForm;Conical;Conical
-BuildingUsage;Assembly (Group A);Places used for people gathering
-BuildingUsage;Business (Group B);Places where services are provided
-BuildingUsage;Educational (Group E);Schools and day care centers
-BuildingUsage;Factory (Group F);Places where goods are manufactured or repaired
-BuildingUsage;High-Hazard (Group H);Places involving production or storage of very flammable or toxic materials
-BuildingUsage;Institutional (Group I);Places where people are physically unable to leave without assistance
-BuildingUsage;Mercantile (Group M);Places where goods are displayed and sold
-BuildingUsage;Residential (Group R);Places providing accommodations for overnight stay
-BuildingUsage;Storage (Group S);Places where items are stored
-BuildingUsage;Utility and Miscellaneous (Group U);Other places
-ConstructionStatus;Planned;Planned
-ConstructionStatus;Under Construction;Under Construction
-ConstructionStatus;Completed;Completed
-ConstructionStatus;Under Removal;Under Removal
-ConstructionStatus;Removed;Removed
-InteriorInstallationType;Copier;Copier
-InteriorInstallationType;Printer;Printer
-InteriorInstallationType;Air Conditioning Unit;Air Conditioning Unit
-InteriorInstallationType;Heating Unit;Heating Unit
-LandCoverType;Barren;Barren
-LandCoverType;Cultivated;Cultivated
-LandCoverType;Forest;Forest
-LandCoverType;Shrub;Shrub
-LandCoverType;Water;Water
-LandCoverType;Wetland;Wetland
-LandCoverType;Developed;Developed
-ParcelType;Land Parcel;Land Parcel
-ParcelType;Building Parcel;Building Parcel
-ParcelType;Unit Parcel;Unit Parcel with representative geometry
-ParcelType;Symbolic Parcel;Unit Parcel with symbolic geometry
-PlanType;Land-use Inventory;Land-use Inventory
-PlanType;Land-use Plan;Land-use Plan
-PlanType;Master Plan;Master Plan
-PlanType;Zoning Plan;Zoning Plan or Construction regulations
-PlanType;Regional Plan;Regional or Landscape Plan
-SensorType;Barometric Pressure;Barometric Pressure
-SensorType;Atmospheric Temperature;Atmospheric Temperature (usually in 0.05m or 2.0m)
-SensorType;Precipitation;Precipitation Amount
-SensorType;Precipitation Type;Precipitation Type
-SensorType;Wind Speed;Wind Speed
-SensorType;Wind Direction;Wind Direction
-SensorType;Surface Temperature;Surface Temperature
-SensorType;Global Radiation;Global Radiation
-SensorType;Visibility Range;Visibility Range
-SensorType;Noise Level;Noise Level
-SensorType;Atmospheric Chemistry;Atmospheric Chemistry
-SensorType;Camera;Camera
-SensorType;Event Counter;Event Counter
-SensorType;Other;Other
-ShellPartType;Roof;Roof
-ShellPartType;Wall;Wall
-ShellPartType;Ground Plate;Ground Plate
-ShellPartType;Attachment;Attachment
-ShellPartType;Other;Other
-StreetFurnitureType;Bench;Bench
-StreetFurnitureType;Bus Shelter;Bus Shelter
-StreetFurnitureType;Planter;Planter
-StreetFurnitureType;Trash Can;Trash Can
-StreetFurnitureType;Bike Rack;Bike Rack
-StreetFurnitureType;Bollard;Bollard
-StreetFurnitureType;Tree Grate;Tree Grate
-StreetFurnitureType;Tree Guard;Tree Guard
-StreetFurnitureType;Post Box;Post Box
-StreetFurnitureType;Kiosk;Kiosk
-StreetFurnitureType;Barricade;Barricade
-StreetFurnitureType;Information Sign;Information Sign
-StreetFurnitureType;Table;Table
-StreetFurnitureType;Monument;Monument
-StreetFurnitureType;Sculpture;Sculpture
-StreetFurnitureType;Banner;Banner
-StreetFurnitureType;Newspaper Dispenser;Newspaper Dispenser
-StreetFurnitureType;Fire Hydrant;Fire Hydrant
-StreetFurnitureType;Other;Other
-StreetFurnitureType;Unknown;Unknown
-TreeCanopyShape;Cone;Cone
-TreeCanopyShape;Cylindrical;Cylindrical
-TreeCanopyShape;Sphere;Sphere
-TreeCanopyShape;Other;Other
-TreeCanopyShape;Unknown;Unknown
-TreeGenusType;Abies;Abies
-TreeGenusType;Acacia;Acacia
-TreeGenusType;Acer;Acer
-TreeGenusType;Aesculus;Aesculus
-TreeGenusType;Ailanthus;Ailanthus
-TreeGenusType;Albizia;Albizia
-TreeGenusType;Alnus;Alnus
-TreeGenusType;Amelanchier;Amelanchier
-TreeGenusType;Aralia;Aralia
-TreeGenusType;Arbutus;Arbutus
-TreeGenusType;Asimina;Asimina
-TreeGenusType;Betula;Betula
-TreeGenusType;Calocedrus;Calocedrus
-TreeGenusType;Carpinus;Carpinus
-TreeGenusType;Carya;Carya
-TreeGenusType;Castanea;Castanea
-TreeGenusType;Casuarina;Casuarina
-TreeGenusType;Celtis;Celtis
-TreeGenusType;Cephalanthus;Cephalanthus
-TreeGenusType;Cercis;Cercis
-TreeGenusType;Cercocarpus;Cercocarpus
-TreeGenusType;Chamaecyparis;Chamaecyparis
-TreeGenusType;Chilopsis;Chilopsis
-TreeGenusType;Chrysolepis;Chrysolepis
-TreeGenusType;Cornus;Cornus
-TreeGenusType;Corylus;Corylus
-TreeGenusType;Crataegus;Crataegus
-TreeGenusType;Cupressus;Cupressus
-TreeGenusType;Cyrilla;Cyrilla
-TreeGenusType;Diospyros;Diospyros
-TreeGenusType;Elaeagnus;Elaeagnus
-TreeGenusType;Eucalyptus;Eucalyptus
-TreeGenusType;Fagus;Fagus
-TreeGenusType;Frangula;Frangula
-TreeGenusType;Fraxinus;Fraxinus
-TreeGenusType;Fremontodendron;Fremontodendron
-TreeGenusType;Gleditsia;Gleditsia
-TreeGenusType;Gordonia;Gordonia
-TreeGenusType;Hamamelis;Hamamelis
-TreeGenusType;Ilex;Ilex
-TreeGenusType;Juglans;Juglans
-TreeGenusType;Juniperus;Juniperus
-TreeGenusType;Larix;Larix
-TreeGenusType;Ligustrum;Ligustrum
-TreeGenusType;Liquidambar;Liquidambar
-TreeGenusType;Liriodendron;Liriodendron
-TreeGenusType;Lithocarpus;Lithocarpus
-TreeGenusType;Maclura;Maclura
-TreeGenusType;Magnolia;Magnolia
-TreeGenusType;Melaleuca;Melaleuca
-TreeGenusType;Melia;Melia
-TreeGenusType;Morus;Morus
-TreeGenusType;Myrica;Myrica
-TreeGenusType;Nyssa;Nyssa
-TreeGenusType;Ostrya;Ostrya
-TreeGenusType;Oxydendrum;Oxydendrum
-TreeGenusType;Parkinsonia;Parkinsonia
-TreeGenusType;Paulownia;Paulownia
-TreeGenusType;Persea;Persea
-TreeGenusType;Picea;Picea
-TreeGenusType;Pinus;Pinus
-TreeGenusType;Platanus;Platanus
-TreeGenusType;Populus;Populus
-TreeGenusType;Prosopis;Prosopis
-TreeGenusType;Prunus;Prunus
-TreeGenusType;Pseudotsuga;Pseudotsuga
-TreeGenusType;Purshia;Purshia
-TreeGenusType;Quercus;Quercus
-TreeGenusType;Rhamnus;Rhamnus
-TreeGenusType;Rhododendron;Rhododendron
-TreeGenusType;Rhus;Rhus
-TreeGenusType;Robinia;Robinia
-TreeGenusType;Sabal;Sabal
-TreeGenusType;Salix;Salix
-TreeGenusType;Sambucus;Sambucus
-TreeGenusType;Sapindus;Sapindus
-TreeGenusType;Sassafras;Sassafras
-TreeGenusType;Schefflera;Schefflera
-TreeGenusType;Schinus;Schinus
-TreeGenusType;Sequoiadendron;Sequoiadendron
-TreeGenusType;Sequoia;Sequoia
-TreeGenusType;Serenoa;Serenoa
-TreeGenusType;Shepherdia;Shepherdia
-TreeGenusType;Sophora;Sophora
-TreeGenusType;Sorbus;Sorbus
-TreeGenusType;Spartium;Spartium
-TreeGenusType;Tamarix;Tamarix
-TreeGenusType;Taxus;Taxus
-TreeGenusType;Taxodium;Taxodium
-TreeGenusType;Thuja;Thuja
-TreeGenusType;Tilia;Tilia
-TreeGenusType;Torreya;Torreya
-TreeGenusType;Triadica;Triadica
-TreeGenusType;Tsuga;Tsuga
-TreeGenusType;Ulmus;Ulmus
-TreeGenusType;Umbellularia;Umbellularia
-TreeGenusType;Ungnadia;Ungnadia
-TreeGenusType;Vaccinium;Vaccinium
-TreeGenusType;Washingtonia;Washingtonia
-TreeGenusType;Yucca;Yucca
-TreeGenusType;Other;Other
-TreeGenusType;Unknown;Unknown
-TreeSpeciesType;Other;Other
-TreeSpeciesType;Unknown;Unknown
-ZoningType;Open Space;Open Space
-ZoningType;Residential Farm;Agricultural Dwellings
-ZoningType;Residential Single;Single-Family Residential Dwellings
-ZoningType;Residential Multi;Multi-Family Residential Dwellings
-ZoningType;Commercial;Commercial
-ZoningType;Industry;Industry
-ZoningType;Employment;Offices and Services
-ZoningType;Protected Sites;Protected Sites
-CityFabricRelationType;Aggregation;Aggregation
-CityFabricRelationType;Composite;Composite
-CityFabricRelationType;Alternative Representation;Alternative Representation
-CityFabricRelationType;Spatial Contains;Spatial Contains
-CityFabricRelationType;Spatial Crosses;Spatial Crosses
-CityFabricRelationType;Spatial Disjoint;Spatial Disjoint
-CityFabricRelationType;Spatial Equals;Spatial Equals
-CityFabricRelationType;Spatial Intersects;Spatial Intersects
-CityFabricRelationType;Spatial Overlaps;Spatial Overlaps
-CityFabricRelationType;Spatial Touches;Spatial Touches
-CityFabricRelationType;Spatial Within;Spatial Within
-CityFabricRelationType;Other;Other
-FlowDirection;Forward;Forward
-FlowDirection;Backward;Backward
-FlowDirection;Bidirectional;Bidirectional
-RegulationOperator;min;Minimum Value
-RegulationOperator;max;Maximum Value
-RegulationOperator;equal;Exact Value
-RegulationAspect;LotArea;Lot Area
-RegulationAspect;LotDepth;Lot Depth
-RegulationAspect;LotWidth;Lot Width
-RegulationAspect;Setback;Setback (on all sides)
-RegulationAspect;FrontSetback;Front Setback
-RegulationAspect;RearSetback;Rear Setback
-RegulationAspect;LeftSetback;Left Setback
-RegulationAspect;RightSetback;Right Setback
-RegulationAspect;FrontBaseHeight;Front Base Height
-RegulationAspect;FrontSlope;Front Slope
-RegulationAspect;FrontOrigin;Front Origin
-RegulationAspect;RearBaseHeight;Rear Base Height
-RegulationAspect;RearSlope;Rear Slope
-RegulationAspect;RearOrigin;Rear Origin
-RegulationAspect;LeftBaseHeight;Left Base Height
-RegulationAspect;LeftSlope;Left Slope
-RegulationAspect;LeftOrigin;Left Origin
-RegulationAspect;RightBaseHeight;Right Base Height
-RegulationAspect;RightSlope;Right Slope
-RegulationAspect;RightOrigin;Right Origin
-RegulationAspect;TotalHeight;Total Height
-RegulationAspect;EaveHeight;Eave Height
-RegulationAspect;SiteCoverage;Site Coverage
-RegulationAspect;FloorAreaRatio;Floor Area Ratio
-RegulationAspect;FloorHeight;Floor Height
-RegulationAspect;LevelsAboveGround;Levels Above Ground
-RegulationAspect;LevelsBelowGround;Levels Below Ground
+AccessType;Public;Public;
+AccessType;Private;Private;
+AccessType;Employee;Employee;
+AccessType;Visitor;Visitor;
+AccessType;Student;Student;
+AccessType;Faculty;Faculty;
+AccessType;Secure;Secure;
+AccessType;Reserved;Reserved;
+AccessType;Maintenance;Maintenance;
+AccessType;Handicap;Handicap;
+AccessType;Other;Other;
+AccessType;Unknown;Unknown;
+AnnotationType;Comment;Comment;
+AnnotationType;Process Result;Process Result;
+AnnotationType;Link;Link;
+AnnotationType;Measurement;Measurement;
+Boolean;1;True;
+Boolean;0;False;
+BuildingInteriorSpaceType;Acting Stage;Acting Stage;
+BuildingInteriorSpaceType;Aircraft Hangar;Aircraft Hangar;
+BuildingInteriorSpaceType;Artist Studio;Artist Studio;
+BuildingInteriorSpaceType;Atrium;Atrium;
+BuildingInteriorSpaceType;Audio-Visual Room;Audio-Visual Room;
+BuildingInteriorSpaceType;Auditorium;Auditorium;
+BuildingInteriorSpaceType;Baggage Claim;Baggage Claim;
+BuildingInteriorSpaceType;Bank Teller Space;Bank Teller Space;
+BuildingInteriorSpaceType;Barracks Space;Barracks Space;
+BuildingInteriorSpaceType;Bedroom;Bedroom;
+BuildingInteriorSpaceType;Bowling Lane;Bowling Lane;
+BuildingInteriorSpaceType;Break Room;Break Room;
+BuildingInteriorSpaceType;Buying and Selling Spaces;Buying and Selling Spaces;
+BuildingInteriorSpaceType;Chapel;Chapel;
+BuildingInteriorSpaceType;Checkout Space;Checkout Space;
+BuildingInteriorSpaceType;Child Day Care Space;Child Day Care Space;
+BuildingInteriorSpaceType;Choir Loft;Choir Loft;
+BuildingInteriorSpaceType;Classroom;Classroom;
+BuildingInteriorSpaceType;Closet;Closet;
+BuildingInteriorSpaceType;Computer Lab;Computer Lab;
+BuildingInteriorSpaceType;Computer Server Room;Computer Server Room;
+BuildingInteriorSpaceType;Conference Room;Conference Room;
+BuildingInteriorSpaceType;Control Room;Control Room;
+BuildingInteriorSpaceType;Copy Room;Copy Room;
+BuildingInteriorSpaceType;Corridor;Corridor;
+BuildingInteriorSpaceType;Court Room;Court Room;
+BuildingInteriorSpaceType;Covered Walkway;Covered Walkway;
+BuildingInteriorSpaceType;Dining Room;Dining Room;
+BuildingInteriorSpaceType;Dishwashing;Dishwashing;
+BuildingInteriorSpaceType;Dormitory Room;Dormitory Room;
+BuildingInteriorSpaceType;Dressing Room;Dressing Room;
+BuildingInteriorSpaceType;Electrical Room;Electrical Room;
+BuildingInteriorSpaceType;Elevator Cab;Elevator Cab;
+BuildingInteriorSpaceType;Entry Lobby;Entry Lobby;
+BuildingInteriorSpaceType;Entry Vestibule;Entry Vestibule;
+BuildingInteriorSpaceType;Equipment Room;Equipment Room;
+BuildingInteriorSpaceType;Exercise Space;Exercise Space;
+BuildingInteriorSpaceType;Exhibit Hall;Exhibit Hall;
+BuildingInteriorSpaceType;Facility Equipment Service Spaces;Facility Equipment Service Spaces;
+BuildingInteriorSpaceType;Fire Closet;Fire Closet;
+BuildingInteriorSpaceType;Fixed Location Storage Spaces;Fixed Location Storage Spaces;
+BuildingInteriorSpaceType;Freezing Compartment;Freezing Compartment;
+BuildingInteriorSpaceType;General Retail Space;General Retail Space;
+BuildingInteriorSpaceType;Hallway;Hallway;
+BuildingInteriorSpaceType;Holding Cell;Holding Cell;
+BuildingInteriorSpaceType;Interview Room;Interview Room;
+BuildingInteriorSpaceType;Janitor Closet;Janitor Closet;
+BuildingInteriorSpaceType;Kennel;Kennel;
+BuildingInteriorSpaceType;Kitchen;Kitchen;
+BuildingInteriorSpaceType;Laboratory;Laboratory;
+BuildingInteriorSpaceType;Laundry Room;Laundry Room;
+BuildingInteriorSpaceType;Library;Library;
+BuildingInteriorSpaceType;Liquor Bar;Liquor Bar;
+BuildingInteriorSpaceType;Locker Room;Locker Room;
+BuildingInteriorSpaceType;Mail Room;Mail Room;
+BuildingInteriorSpaceType;Maintenance Closet;Maintenance Closet;
+BuildingInteriorSpaceType;Maintenance Spaces;Maintenance Spaces;
+BuildingInteriorSpaceType;Manufacturing Space;Manufacturing Space;
+BuildingInteriorSpaceType;Mechanical Room;Mechanical Room;
+BuildingInteriorSpaceType;Money and Valuables Vault;Money and Valuables Vault;
+BuildingInteriorSpaceType;Museum Gallery;Museum Gallery;
+BuildingInteriorSpaceType;Nursery;Nursery;
+BuildingInteriorSpaceType;Office;Office;
+BuildingInteriorSpaceType;Office Cubicle;Office Cubicle;
+BuildingInteriorSpaceType;Parts Assembly Space;Parts Assembly Space;
+BuildingInteriorSpaceType;Patient Care Room;Patient Care Room;
+BuildingInteriorSpaceType;Patio;Patio;
+BuildingInteriorSpaceType;Pharmacy;Pharmacy;
+BuildingInteriorSpaceType;Printing Room;Printing Room;
+BuildingInteriorSpaceType;Reading Room;Reading Room;
+BuildingInteriorSpaceType;Reception Space;Reception Space;
+BuildingInteriorSpaceType;Recreation Spaces;Recreation Spaces;
+BuildingInteriorSpaceType;Refrigeration Compartment;Refrigeration Compartment;
+BuildingInteriorSpaceType;Rest Lounge;Rest Lounge;
+BuildingInteriorSpaceType;Restroom;Restroom;
+BuildingInteriorSpaceType;Sauna;Sauna;
+BuildingInteriorSpaceType;Scanning/Imaging Room;Scanning/Imaging Room;
+BuildingInteriorSpaceType;Shower;Shower;
+BuildingInteriorSpaceType;Stairway;Stairway;
+BuildingInteriorSpaceType;Storage Room;Storage Room;
+BuildingInteriorSpaceType;Supply Room;Supply Room;
+BuildingInteriorSpaceType;Surgery Room;Surgery Room;
+BuildingInteriorSpaceType;Telecommunications Room;Telecommunications Room;
+BuildingInteriorSpaceType;Testing / Exam;Testing / Exam;
+BuildingInteriorSpaceType;Toilet Space;Toilet Space;
+BuildingInteriorSpaceType;Treatment Room;Treatment Room;
+BuildingInteriorSpaceType;Vending Machine Area;Vending Machine Area;
+BuildingInteriorSpaceType;Waiting Room;Waiting Room;
+BuildingInteriorSpaceType;Wall Cavity;Wall Cavity;
+BuildingInteriorSpaceType;Warehouse Space;Warehouse Space;
+BuildingInteriorSpaceType;Work Spaces;Work Spaces;
+BuildingInteriorSpaceType;Other;Other;
+BuildingInteriorSpaceType;Unknown;Unknown;
+BuildingInteriorStructureType;Cased Opening;Cased Opening;
+BuildingInteriorStructureType;Chainlink Cage;Chainlink Cage;
+BuildingInteriorStructureType;Column;Column;
+BuildingInteriorStructureType;Door;Door;
+BuildingInteriorStructureType;Exterior Wall;Exterior Wall;
+BuildingInteriorStructureType;Glass Wall;Glass Wall;
+BuildingInteriorStructureType;Inferred Line;Inferred Line;
+BuildingInteriorStructureType;Interior Wall;Interior Wall;
+BuildingInteriorStructureType;Movable Wall;Movable Wall;
+BuildingInteriorStructureType;Partial Height Wall;Partial Height Wall;
+BuildingInteriorStructureType;Phantom Line;Phantom Line;
+BuildingInteriorStructureType;Sloping Wall;Sloping Wall;
+BuildingInteriorStructureType;Stair;Stair;
+BuildingInteriorStructureType;Stair Other Floor;Stair Other Floor;
+BuildingInteriorStructureType;Window Frame;Window Frame;
+BuildingInteriorStructureType;Window Pane;Window Pane;
+BuildingInteriorStructureType;Other;Other;
+BuildingInteriorStructureType;Unknown;Unknown;
+BuildingRoofForm;Flat;Flat;
+BuildingRoofForm;Skillion;Skillion;
+BuildingRoofForm;Saw-tooth;Saw-tooth;
+BuildingRoofForm;Gabled;Gabled;
+BuildingRoofForm;Hip;Hip;
+BuildingRoofForm;Mansard;Mansard;
+BuildingRoofForm;Pyramid;Pyramid;
+BuildingRoofForm;Arched Roof;Arched Roof;
+BuildingRoofForm;Domical;Domical;
+BuildingRoofForm;Conical;Conical;
+BuildingUsage;Assembly;Places used for people gathering;
+BuildingUsage;Agricultural;Places used for agricultural purposes;
+BuildingUsage;Educational;Schools and day care centers;
+BuildingUsage;Industry;Places where goods are manufactured or repaired;
+BuildingUsage;Mercantile;Places where goods are displayed and sold;
+BuildingUsage;Office;Office buildings;
+BuildingUsage;Public;Public services, administrative and institutional places;
+BuildingUsage;Residential;Places providing accommodations for overnight stay;
+BuildingUsage;Service;Places where (commercial) services are provided;
+BuildingUsage;Storage;Places where items are stored;
+BuildingUsage;Transport;Places and buildings used for transportation purposes;
+BuildingUsage;Utility;Utilities and infrastructure;
+BuildingUsage;Other;Other places;
+BuildingUsage;Unknown;Unknown;
+BuildingType;Barn;Barn;Agricultural
+BuildingType;Stall;Stall;Agricultural
+BuildingType;Alpine Cabin;Alpine Cabin;Agricultural
+BuildingType;Equestrian Hall;Equestrian Hall;Agricultural
+BuildingType;Glass House;Glass House;Agricultural
+BuildingType;Farm House;Farm House;Agricultural
+BuildingType;Church;Church;Assembly
+BuildingType;Concert Hall;Concert Hall;Assembly
+BuildingType;Theatre;Theatre;Assembly
+BuildingType;Stadium;Stadium;Assembly
+BuildingType;Community Center;Community Center;Assembly
+BuildingType;Convent;Convent;Assembly
+BuildingType;Temple;Temple;Assembly
+BuildingType;Mosque;Mosque;Assembly
+BuildingType;Synagogue;Synagogue;Assembly
+BuildingType;Child Care;Child Care;Educational
+BuildingType;Primary School;Primary School;Educational
+BuildingType;Comprehensive School;Comprehensive School;Educational
+BuildingType;Vocational School;Vocational School;Educational
+BuildingType;College;College;Educational
+BuildingType;University;University;Educational
+BuildingType;Factory;Factory;Industry
+BuildingType;Heavy Industry Plant;Heavy Industry Plant;Industry
+BuildingType;Workshop;Workshop;Industry
+BuildingType;Quarry;Quarry;Industry
+BuildingType;Shipyard;Shipyard;Industry
+BuildingType;Department Store;Department Store;Mercantile
+BuildingType;Retail Store;Retail Store;Mercantile
+BuildingType;Kiosk;Kiosk;Mercantile
+BuildingType;Office;Office;Office
+BuildingType;Research Institute;Research Institute;Office
+BuildingType;Zoo;Zoo;Public
+BuildingType;Museum;Museum;Public
+BuildingType;Public Administration Building;Public Administration Building;Public
+BuildingType;Police Station;Police Station;Public
+BuildingType;Fire Station;Fire Station;Public
+BuildingType;Barracks;Barracks;Public
+BuildingType;Prison;Prison;Public
+BuildingType;Court;Court;Public
+BuildingType;Embassy;Embassy;Public
+BuildingType;Consulate;Consulate;Public
+BuildingType;Parliament;Parliament;Public
+BuildingType;Castle;Castle;Public
+BuildingType;Hospital;Building for stationary and ambulant health care;Public
+BuildingType;Medical Service;Medical Centre;Public
+BuildingType;Outpatients Clinic;Outpatients Clinic;Public
+BuildingType;Youth Centre;Youth Centre;Public
+BuildingType;Seniors Centre;Seniors Centre;Public
+BuildingType;Homeless Shelter;Homeless Shelter;Public
+BuildingType;Asylum Seeker Home;Asylum Seeker Home;Public
+BuildingType;Exhibition Centre;Exhibition Centre;Public
+BuildingType;Library;Library;Public
+BuildingType;Single-family;Single-family residential houses;Residential
+BuildingType;Multi-family;Multi-family residential houses;Residential
+BuildingType;Holiday house;Holiday house;Residential
+BuildingType;Gas Station;Gas Station;Service
+BuildingType;Credit Institution;Credit Institution;Service
+BuildingType;Restaurant;Restaurant;Service
+BuildingType;Cinema;Cinema;Service
+BuildingType;Casino;Casino;Service
+BuildingType;Sports Activities Indoors;Sports Activities Building;Service
+BuildingType;Indoor Swimming Pool;Indoor Swimming Pool;Service
+BuildingType;Pharmacy;Pharmacy;Service
+BuildingType;Post Office;Post Office;Service
+BuildingType;Depot;Depot;Storage
+BuildingType;Train Station;Train Station;Transport
+BuildingType;Bus Station;Bus Station;Transport
+BuildingType;Underground Station;Underground Station;Transport
+BuildingType;Airport Building;Airport Building;Transport
+BuildingType;Hangar;Hangar;Transport
+BuildingType;Boathouse;Boathouse;Transport
+BuildingType;Open Parking;Open Parking;Transport
+BuildingType;Underground Garage;Underground Garage;Transport
+BuildingType;Garage;Garage;Transport
+BuildingType;Car Park;Multi-level car park;Transport
+BuildingType;Harbour Building;Harbour Building;Transport
+BuildingType;Waterworks;Waterworks;Utility
+BuildingType;Pump Station;Pump Station;Utility
+BuildingType;Transformer Station;Transformer Station;Utility
+BuildingType;Gasworks;Gasworks;Utility
+BuildingType;Heat Plant;Heat Plant;Utility
+BuildingType;Windmill;Windmill;Utility
+BuildingType;Watermill;Watermill;Utility
+BuildingType;Toilet;Toilet;Utility
+BuildingType;Other;Other types;Other
+BuildingType;Unknown;Unknown;Unknown
+ConstructionStatus;Planned;Planned;
+ConstructionStatus;Under Construction;Under Construction;
+ConstructionStatus;Completed;Completed;
+ConstructionStatus;Under Removal;Under Removal;
+ConstructionStatus;Removed;Removed;
+InteriorInstallationType;Copier;Copier;
+InteriorInstallationType;Printer;Printer;
+InteriorInstallationType;Air Conditioning Unit;Air Conditioning Unit;
+InteriorInstallationType;Heating Unit;Heating Unit;
+LandCoverType;Barren;Barren;
+LandCoverType;Cultivated;Cultivated;
+LandCoverType;Forest;Forest;
+LandCoverType;Shrub;Shrub;
+LandCoverType;Water;Water;
+LandCoverType;Wetland;Wetland;
+LandCoverType;Developed;Developed;
+ParcelType;Land Parcel;Land Parcel;
+ParcelType;Building Parcel;Building Parcel;
+ParcelType;Unit Parcel;Unit Parcel with representative geometry;
+ParcelType;Symbolic Parcel;Unit Parcel with symbolic geometry;
+PlanType;Land-use Inventory;Land-use Inventory;
+PlanType;Land-use Plan;Land-use Plan;
+PlanType;Master Plan;Master Plan;
+PlanType;Zoning Plan;Zoning Plan or Construction regulations;
+PlanType;Regional Plan;Regional or Landscape Plan;
+SensorType;Barometric Pressure;Barometric Pressure;
+SensorType;Atmospheric Temperature;Atmospheric Temperature (usually in 0.05m or 2.0m);
+SensorType;Precipitation;Precipitation Amount;
+SensorType;Precipitation Type;Precipitation Type;
+SensorType;Wind Speed;Wind Speed;
+SensorType;Wind Direction;Wind Direction;
+SensorType;Surface Temperature;Surface Temperature;
+SensorType;Global Radiation;Global Radiation;
+SensorType;Visibility Range;Visibility Range;
+SensorType;Noise Level;Noise Level;
+SensorType;Atmospheric Chemistry;Atmospheric Chemistry;
+SensorType;Camera;Camera;
+SensorType;Event Counter;Event Counter;
+SensorType;Other;Other;
+ShellPartType;Roof;Roof;
+ShellPartType;Wall;Wall;
+ShellPartType;Ground Plate;Ground Plate;
+ShellPartType;Attachment;Attachment;
+ShellPartType;Other;Other;
+StreetFurnitureType;Bench;Bench;
+StreetFurnitureType;Bus Shelter;Bus Shelter;
+StreetFurnitureType;Planter;Planter;
+StreetFurnitureType;Trash Can;Trash Can;
+StreetFurnitureType;Bike Rack;Bike Rack;
+StreetFurnitureType;Bollard;Bollard;
+StreetFurnitureType;Tree Grate;Tree Grate;
+StreetFurnitureType;Tree Guard;Tree Guard;
+StreetFurnitureType;Post Box;Post Box;
+StreetFurnitureType;Kiosk;Kiosk;
+StreetFurnitureType;Barricade;Barricade;
+StreetFurnitureType;Information Sign;Information Sign;
+StreetFurnitureType;Table;Table;
+StreetFurnitureType;Monument;Monument;
+StreetFurnitureType;Sculpture;Sculpture;
+StreetFurnitureType;Banner;Banner;
+StreetFurnitureType;Newspaper Dispenser;Newspaper Dispenser;
+StreetFurnitureType;Fire Hydrant;Fire Hydrant;
+StreetFurnitureType;Other;Other;
+StreetFurnitureType;Unknown;Unknown;
+TreeCanopyShape;Cone;Cone;
+TreeCanopyShape;Cylindrical;Cylindrical;
+TreeCanopyShape;Sphere;Sphere;
+TreeCanopyShape;Other;Other;
+TreeCanopyShape;Unknown;Unknown;
+TreeGenusType;Abies;Abies;
+TreeGenusType;Acacia;Acacia;
+TreeGenusType;Acer;Acer;
+TreeGenusType;Aesculus;Aesculus;
+TreeGenusType;Ailanthus;Ailanthus;
+TreeGenusType;Albizia;Albizia;
+TreeGenusType;Alnus;Alnus;
+TreeGenusType;Amelanchier;Amelanchier;
+TreeGenusType;Aralia;Aralia;
+TreeGenusType;Arbutus;Arbutus;
+TreeGenusType;Asimina;Asimina;
+TreeGenusType;Betula;Betula;
+TreeGenusType;Calocedrus;Calocedrus;
+TreeGenusType;Carpinus;Carpinus;
+TreeGenusType;Carya;Carya;
+TreeGenusType;Castanea;Castanea;
+TreeGenusType;Casuarina;Casuarina;
+TreeGenusType;Celtis;Celtis;
+TreeGenusType;Cephalanthus;Cephalanthus;
+TreeGenusType;Cercis;Cercis;
+TreeGenusType;Cercocarpus;Cercocarpus;
+TreeGenusType;Chamaecyparis;Chamaecyparis;
+TreeGenusType;Chilopsis;Chilopsis;
+TreeGenusType;Chrysolepis;Chrysolepis;
+TreeGenusType;Cornus;Cornus;
+TreeGenusType;Corylus;Corylus;
+TreeGenusType;Crataegus;Crataegus;
+TreeGenusType;Cupressus;Cupressus;
+TreeGenusType;Cyrilla;Cyrilla;
+TreeGenusType;Diospyros;Diospyros;
+TreeGenusType;Elaeagnus;Elaeagnus;
+TreeGenusType;Eucalyptus;Eucalyptus;
+TreeGenusType;Fagus;Fagus;
+TreeGenusType;Frangula;Frangula;
+TreeGenusType;Fraxinus;Fraxinus;
+TreeGenusType;Fremontodendron;Fremontodendron;
+TreeGenusType;Gleditsia;Gleditsia;
+TreeGenusType;Gordonia;Gordonia;
+TreeGenusType;Hamamelis;Hamamelis;
+TreeGenusType;Ilex;Ilex;
+TreeGenusType;Juglans;Juglans;
+TreeGenusType;Juniperus;Juniperus;
+TreeGenusType;Larix;Larix;
+TreeGenusType;Ligustrum;Ligustrum;
+TreeGenusType;Liquidambar;Liquidambar;
+TreeGenusType;Liriodendron;Liriodendron;
+TreeGenusType;Lithocarpus;Lithocarpus;
+TreeGenusType;Maclura;Maclura;
+TreeGenusType;Magnolia;Magnolia;
+TreeGenusType;Melaleuca;Melaleuca;
+TreeGenusType;Melia;Melia;
+TreeGenusType;Morus;Morus;
+TreeGenusType;Myrica;Myrica;
+TreeGenusType;Nyssa;Nyssa;
+TreeGenusType;Ostrya;Ostrya;
+TreeGenusType;Oxydendrum;Oxydendrum;
+TreeGenusType;Parkinsonia;Parkinsonia;
+TreeGenusType;Paulownia;Paulownia;
+TreeGenusType;Persea;Persea;
+TreeGenusType;Picea;Picea;
+TreeGenusType;Pinus;Pinus;
+TreeGenusType;Platanus;Platanus;
+TreeGenusType;Populus;Populus;
+TreeGenusType;Prosopis;Prosopis;
+TreeGenusType;Prunus;Prunus;
+TreeGenusType;Pseudotsuga;Pseudotsuga;
+TreeGenusType;Purshia;Purshia;
+TreeGenusType;Quercus;Quercus;
+TreeGenusType;Rhamnus;Rhamnus;
+TreeGenusType;Rhododendron;Rhododendron;
+TreeGenusType;Rhus;Rhus;
+TreeGenusType;Robinia;Robinia;
+TreeGenusType;Sabal;Sabal;
+TreeGenusType;Salix;Salix;
+TreeGenusType;Sambucus;Sambucus;
+TreeGenusType;Sapindus;Sapindus;
+TreeGenusType;Sassafras;Sassafras;
+TreeGenusType;Schefflera;Schefflera;
+TreeGenusType;Schinus;Schinus;
+TreeGenusType;Sequoiadendron;Sequoiadendron;
+TreeGenusType;Sequoia;Sequoia;
+TreeGenusType;Serenoa;Serenoa;
+TreeGenusType;Shepherdia;Shepherdia;
+TreeGenusType;Sophora;Sophora;
+TreeGenusType;Sorbus;Sorbus;
+TreeGenusType;Spartium;Spartium;
+TreeGenusType;Tamarix;Tamarix;
+TreeGenusType;Taxus;Taxus;
+TreeGenusType;Taxodium;Taxodium;
+TreeGenusType;Thuja;Thuja;
+TreeGenusType;Tilia;Tilia;
+TreeGenusType;Torreya;Torreya;
+TreeGenusType;Triadica;Triadica;
+TreeGenusType;Tsuga;Tsuga;
+TreeGenusType;Ulmus;Ulmus;
+TreeGenusType;Umbellularia;Umbellularia;
+TreeGenusType;Ungnadia;Ungnadia;
+TreeGenusType;Vaccinium;Vaccinium;
+TreeGenusType;Washingtonia;Washingtonia;
+TreeGenusType;Yucca;Yucca;
+TreeGenusType;Other;Other;
+TreeGenusType;Unknown;Unknown;
+TreeSpeciesType;Other;Other;
+TreeSpeciesType;Unknown;Unknown;
+ZoningType;Open Space;Open Space;
+ZoningType;Residential Farm;Agricultural Dwellings;
+ZoningType;Residential Single;Single-Family Residential Dwellings;
+ZoningType;Residential Multi;Multi-Family Residential Dwellings;
+ZoningType;Commercial;Commercial;
+ZoningType;Industry;Industry;
+ZoningType;Employment;Offices and Services;
+ZoningType;Protected Sites;Protected Sites;
+CityFabricRelationType;Aggregation;Aggregation;
+CityFabricRelationType;Composite;Composite;
+CityFabricRelationType;Alternative Representation;Alternative Representation;
+CityFabricRelationType;Spatial Contains;Spatial Contains;
+CityFabricRelationType;Spatial Crosses;Spatial Crosses;
+CityFabricRelationType;Spatial Disjoint;Spatial Disjoint;
+CityFabricRelationType;Spatial Equals;Spatial Equals;
+CityFabricRelationType;Spatial Intersects;Spatial Intersects;
+CityFabricRelationType;Spatial Overlaps;Spatial Overlaps;
+CityFabricRelationType;Spatial Touches;Spatial Touches;
+CityFabricRelationType;Spatial Within;Spatial Within;
+CityFabricRelationType;Other;Other;
+FlowDirection;Forward;Forward;
+FlowDirection;Backward;Backward;
+FlowDirection;Bidirectional;Bidirectional;
+RegulationOperator;min;Minimum Value;
+RegulationOperator;max;Maximum Value;
+RegulationOperator;equal;Exact Value;
+RegulationAspect;LotArea;Lot Area;
+RegulationAspect;LotDepth;Lot Depth;
+RegulationAspect;LotWidth;Lot Width;
+RegulationAspect;Setback;Setback (on all sides);
+RegulationAspect;FrontSetback;Front Setback;
+RegulationAspect;RearSetback;Rear Setback;
+RegulationAspect;LeftSetback;Left Setback;
+RegulationAspect;RightSetback;Right Setback;
+RegulationAspect;FrontBaseHeight;Front Base Height;
+RegulationAspect;FrontSlope;Front Slope;
+RegulationAspect;FrontOrigin;Front Origin;
+RegulationAspect;RearBaseHeight;Rear Base Height;
+RegulationAspect;RearSlope;Rear Slope;
+RegulationAspect;RearOrigin;Rear Origin;
+RegulationAspect;LeftBaseHeight;Left Base Height;
+RegulationAspect;LeftSlope;Left Slope;
+RegulationAspect;LeftOrigin;Left Origin;
+RegulationAspect;RightBaseHeight;Right Base Height;
+RegulationAspect;RightSlope;Right Slope;
+RegulationAspect;RightOrigin;Right Origin;
+RegulationAspect;TotalHeight;Total Height;
+RegulationAspect;EaveHeight;Eave Height;
+RegulationAspect;SiteCoverage;Site Coverage;
+RegulationAspect;FloorAreaRatio;Floor Area Ratio;
+RegulationAspect;FloorHeight;Floor Height;
+RegulationAspect;LevelsAboveGround;Levels Above Ground;
+RegulationAspect;LevelsBelowGround;Levels Below Ground;
