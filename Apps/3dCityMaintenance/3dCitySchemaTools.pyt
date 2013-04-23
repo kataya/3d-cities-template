@@ -251,19 +251,21 @@ class SchemaGenerator(object):
             for line in open(configuration_files_location + '\\TableAttributes.csv'):
                 line = line.rstrip()
                 attributeParams = line.split(";")
-                arcpy.AddField_management(in_table = attributeParams[0],
-                                            field_name = attributeParams[1],
-                                            field_type = attributeParams[2],
-                                            field_length = attributeParams[3],
-                                            field_alias = attributeParams[4],
-                                            field_is_nullable = attributeParams[5],
-                                            field_is_required = attributeParams[6])
+                
+                if attributeParams[0] in create_tables:
+                    arcpy.AddField_management(in_table = attributeParams[0],
+                                                field_name = attributeParams[1],
+                                                field_type = attributeParams[2],
+                                                field_length = attributeParams[3],
+                                                field_alias = attributeParams[4],
+                                                field_is_nullable = attributeParams[5],
+                                                field_is_required = attributeParams[6])
 
-                # add domains to field if defined
-                if str(attributeParams[7]) != "NO_DOMAIN":
-                    arcpy.AssignDomainToField_management(in_table = attributeParams[0],
-                                                        field_name = attributeParams[1],
-                                                        domain_name = attributeParams[7])
+                    # add domains to field if defined
+                    if str(attributeParams[7]) != "NO_DOMAIN":
+                        arcpy.AssignDomainToField_management(in_table = attributeParams[0],
+                                                            field_name = attributeParams[1],
+                                                            domain_name = attributeParams[7])
 
         # create Relationship classes
         createClassParams = {}
