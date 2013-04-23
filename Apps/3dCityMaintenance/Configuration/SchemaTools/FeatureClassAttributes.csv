@@ -52,6 +52,7 @@ Sensor;type;TEXT;30;Sensor type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;feedFrequency;TEXT;10;Feed update frequency;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;feedMimeType;TEXT;50;Feed encoding (MIME);NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;feedURL;TEXT;250;Feed URL;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;observation;TEXT;30;Observed property;NULLABLE;NON_REQUIRED;SensorType
 Sensor;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
