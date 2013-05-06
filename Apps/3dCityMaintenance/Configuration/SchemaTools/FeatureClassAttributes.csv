@@ -59,7 +59,7 @@ Sensor;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SensorCoverage;sensorFID;TEXT;50;Sensor FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;type;TEXT;30;Sign type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-Sign;transportElementFID;TEXT;50;Sensor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;transportElementFID;TEXT;50;Linked Transport Element FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;type;TEXT;50;Tree Genus;NON_NULLABLE;NON_REQUIRED;TreeGenusType
 Tree;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -69,15 +69,16 @@ Tree;diameter;DOUBLE;;Crown diameter;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;canopyShape;TEXT;30;Canopy shape;NULLABLE;NON_REQUIRED;TreeCanopyShape
 ZoningDistrict;type;TEXT;30;Zoning district type;NULLABLE;NON_REQUIRED;ZoningType
 ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
-ZoningDistrict;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;density;DOUBLE;;Unit Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-ZoningDistrict;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
+ZoningDistrict;transect;TEXT;30;Transect;NULLABLE;NON_REQUIRED;TransectType
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
 Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;address;TEXT;100;Parcel address;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-Parcel;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Parcel;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 LandCover;primaryLandcoverType;TEXT;30;Primary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
 LandCover;secondaryLandcoverType;TEXT;30;Secondary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
 LandCover;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
