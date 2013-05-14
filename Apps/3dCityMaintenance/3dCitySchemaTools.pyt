@@ -58,8 +58,8 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate Classes field
         generate_classes.filter.type = "ValueList"
-        generate_classes.filter.list = ["AnnotatedSpace",
-                                        "Building", "BuildingEntrancePoint", "BuildingShell", "BuildingShellPart",
+        generate_classes.filter.list = ["SpatialVolumeAnnotation", "SpatialPointAnnotation", "SpatialAreaAnnotation", "SpatialLineAnnotation",
+                                        "Building", "BuildingEntrancePoint", "BuildingShell", "BuildingShellPart", "SupportingStructure", "Fence",
                                         "BuildingInteriorSpace", "BuildingFloor", "BuildingInteriorStructure",
                                         "InteriorInstallation", "StreetFurniture", "Sensor", "SensorCoverage", "Sign",
                                         "Tree", "ZoningDistrict", "Parcel", "LandCover"]
@@ -75,7 +75,7 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate tables field
         generate_tables.filter.type = "ValueList"
-        generate_tables.filter.list = ["CityFabricRelation", "AttributeContainer", "Regulation", "Neighborhood"]
+        generate_tables.filter.list = ["CityFabricRelation", "AttributeContainer", "Regulation", "Neighborhood", "Usage"]
 
         # Generate Relationship classes parameter
         generate_relationships = arcpy.Parameter(
@@ -88,7 +88,7 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate Relationships field
         generate_relationships.filter.type = "ValueList"
-        generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", "ZoneHasRegulation", "ParcelHasRegulation", "ParcelHasNeigborhood"]
+        generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood"]
 
 
         configuration_files_location = arcpy.Parameter(
