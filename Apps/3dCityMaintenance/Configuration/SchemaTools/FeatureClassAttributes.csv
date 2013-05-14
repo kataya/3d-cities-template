@@ -1,5 +1,11 @@
-AnnotatedSpace;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
-AnnotatedSpace;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialVolumeAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialVolumeAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialPointAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialPointAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialAreaAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialAreaAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialLineAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialLineAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
 Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;BuildingUsage
 Building;totalHeight;DOUBLE;;Total height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;eaveHeight;DOUBLE;;Eave height;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -67,13 +73,12 @@ Tree;datePlanted;DATE;;Date planted;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;height;DOUBLE;;Crown height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;diameter;DOUBLE;;Crown diameter;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;canopyShape;TEXT;30;Canopy shape;NULLABLE;NON_REQUIRED;TreeCanopyShape
-ZoningDistrict;type;TEXT;30;Zoning district type;NULLABLE;NON_REQUIRED;ZoningType
+ZoningDistrict;transect;TEXT;10;Transect type;NULLABLE;NON_REQUIRED;TransectType
 ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
-ZoningDistrict;density;DOUBLE;;Unit Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
-ZoningDistrict;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-ZoningDistrict;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;extentUnit;TEXT;30;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
 ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
-ZoningDistrict;transect;TEXT;30;Transect;NULLABLE;NON_REQUIRED;TransectType
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
 Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;address;TEXT;100;Parcel address;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -83,3 +88,9 @@ LandCover;primaryLandcoverType;TEXT;30;Primary land cover type;NULLABLE;NON_REQU
 LandCover;secondaryLandcoverType;TEXT;30;Secondary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
 LandCover;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
 LandCover;verticalExtent;DOUBLE;;Vertical extent;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;type;TEXT;50;Supporting Structure Type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;thickness;DOUBLE;;Thickness;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;type;TEXT;50;Fence type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;material;TEXT;50;Material;NULLABLE;NON_REQUIRED;NO_DOMAIN
