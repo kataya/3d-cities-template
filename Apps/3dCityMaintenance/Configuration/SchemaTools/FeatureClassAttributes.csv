@@ -77,7 +77,7 @@ ZoningDistrict;transect;TEXT;10;Transect type;NULLABLE;NON_REQUIRED;TransectType
 ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
 ZoningDistrict;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
-ZoningDistrict;extentUnit;TEXT;30;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
+ZoningDistrict;verticalExtentUnit;TEXT;30;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
 ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
 Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN

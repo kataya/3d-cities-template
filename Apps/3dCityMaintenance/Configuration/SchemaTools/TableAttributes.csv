@@ -31,7 +31,7 @@ Neighborhood;distance;DOUBLE;;Distance;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Neighborhood;parcelFID;TEXT;50;Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;referenceFID;TEXT;50;Zone or Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;usageType;TEXT;50;Usage Type;NON_NULLABLE;NON_REQUIRED;ZoningUsageType
-Usage;portion;DOUBLE;;Usage Portion;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Usage;usagePortion;DOUBLE;;Usage Portion;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
-Usage;extentUnit;TEXT;50;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
+Usage;verticalExtentUnit;TEXT;50;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
