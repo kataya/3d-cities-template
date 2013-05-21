@@ -29,3 +29,10 @@ RegulationFootprintType;Zoning Regulation Footprint Type;SHORT;CODED
 RegulationFootprintAlignmentType;Regulation Footprint Alignment Type;SHORT;CODED
 Unit;Unit of Measurement;TEXT;CODED
 VerticalExtentType;Vertical Extent Type;TEXT;CODED
+DirectionType;Direction Type;SHORT;CODED
+PavementType;Pavement Type;TEXT;CODED
+TransportSegmentType;Transport Segment Type;TEXT;CODED
+SegmentNameDirection;Segment Name Direction;TEXT;CODED
+SegmentNameGeneric;Segment Name Generic;TEXT;CODED
+AdministrativeDistrictType;Administrative District Type;TEXT;CODED
+NutsCode;NUTS/LAU Code;TEXT;CODED

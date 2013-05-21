@@ -9,5 +9,6 @@ SensorHasCoverage;Sensor;SensorCoverage;SIMPLE;hasCoverage;isCovered;NONE;ONE_TO
 SpaceHasInstallation;BuildingInteriorSpace;InteriorInstallation;SIMPLE;hasInstallation;isIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;spaceFID
 ZoneHasRegulation;ZoningDistrict;Regulation;SIMPLE;hasRegulation;regulates;NONE;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
 ZoneHasUsage;ZoningDistrict;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
+SpaceHasUsage;BuildingInteriorSpace;Usage;SIMPLE;hasUsage;isDoneIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;referenceFID
 ParcelHasRegulation;Parcel;Regulation;SIMPLE;hasRegulation;regulates;NONE;ONE_TO_MANY;NONE;ParcelFID;referenceFID
 ParcelHasNeigborhood;Parcel;Neighborhood;SIMPLE;hasNeigborhood;partOf;NONE;ONE_TO_MANY;NONE;ParcelFID;parcelFID

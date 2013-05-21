@@ -79,6 +79,8 @@ ZoningDistrict;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_RE
 ZoningDistrict;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;verticalExtentUnit;TEXT;30;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
 ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
+AdministrativeDistrict;type;TEXT;30;District type;NULLABLE;NON_REQUIRED;AdministrativeDistrictType
+AdministrativeDistrict;nuts;TEXT;;NUTS/LAU code;NULLABLE;NON_REQUIRED;NutsCode
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
 Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;address;TEXT;100;Parcel address;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -94,3 +96,19 @@ SupportingStructure;thickness;DOUBLE;;Thickness;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;type;TEXT;50;Fence type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;material;TEXT;50;Material;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;type;TEXT;50;Type;NON_NULLABLE;NON_REQUIRED;TransportSegmentType
+TransportNetworkSegment;length;DOUBLE;;Segment length;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;width;DOUBLE;;Segment width;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;lanesLeft;SHORT;;No. of Lanes on left side;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;lanesRight;SHORT;;No. of Lanes on right side;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;fullName;TEXT;100;Full segment name;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;nameDirection;TEXT;20;Segment name direction;NULLABLE;NON_REQUIRED;SegmentNameDirection
+TransportNetworkSegment;nameGeneric;TEXT;20;Segment name generic;NULLABLE;NON_REQUIRED;SegmentNameGeneric
+TransportNetworkSegment;nameSpecific;TEXT;50;Segment specific name;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;addressLeftStart;LONG;;Address left-hand side start;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;addressLeftEnd;LONG;;Address left-hand side end;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;addressRightStart;LONG;;Address right-hand side start;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;addressRightEnd;LONG;;Address right-hand side end;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;direction;SHORT;;Traffic direction;NULLABLE;NON_REQUIRED;DirectionType
+TransportNetworkSegment;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
+TransportNetworkSegment;pavementType;TEXT;30;Pavement type;NULLABLE;NON_REQUIRED;PavementType
