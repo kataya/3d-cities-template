@@ -62,7 +62,8 @@ class SchemaGenerator(object):
                                         "Building", "BuildingEntrancePoint", "BuildingShell", "BuildingShellPart", "SupportingStructure", "Fence",
                                         "BuildingInteriorSpace", "BuildingFloor", "BuildingInteriorStructure",
                                         "InteriorInstallation", "StreetFurniture", "Sensor", "SensorCoverage", "Sign",
-                                        "Tree", "ZoningDistrict", "Parcel", "LandCover"]
+                                        "Tree", "ZoningDistrict", "Parcel", "LandCover", "AdministrativeDistrict",
+                                        "TransportNetworkSegment"]
 
         # Generate Tables parameter
         generate_tables = arcpy.Parameter(
@@ -88,7 +89,9 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate Relationships field
         generate_relationships.filter.type = "ValueList"
-        generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood"]
+        generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", 
+                                        "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", 
+                                        "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood", "SpaceHasUsage"]
 
 
         configuration_files_location = arcpy.Parameter(
