@@ -30,7 +30,7 @@ class SchemaGenerator(object):
 
         # Input Geodatabase parameter
         in_gdb = arcpy.Parameter(
-            displayName="Input Workspace:",
+            displayName="Workspace:",
             name="in_gdb",
             datatype="Workspace",
             parameterType="Required",
@@ -95,13 +95,13 @@ class SchemaGenerator(object):
 
 
         configuration_files_location = arcpy.Parameter(
-            displayName="Path to Configuration files Folder:",
+            displayName="Configuration files folder:",
             name="configuration_files_location",
-            datatype="String",
+            datatype="DEFolder",
             parameterType="Required",
             direction="Input")
 
-        configuration_files_location.value = "D:\\3D Cities\\3d-cities-template\\Apps\\3dCityMaintenance\\Configuration\\SchemaTools"
+        configuration_files_location.value = r"D:\3D Cities\3d-cities-template\Apps\3dCityMaintenance\Configuration\SchemaTools"
 
         # Derived Output Features parameter
         out_gdb = arcpy.Parameter(
