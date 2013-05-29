@@ -121,7 +121,7 @@ class SchemaGenerator(object):
 
     def execute(self, parameters, messages):
 
-        configuration_files_location = parameters[0].value
+        configuration_files_location = str(parameters[0].value)
         arcpy.env.workspace = parameters[1].value
         spatial_reference_param = parameters[3].value
         create_classes = parameters[4].values
@@ -439,7 +439,7 @@ class FeatureIdGenerator(object):
                     if row[0] == None:
                         if low_counter >= hi_batchsize:
                             # update hi_counter, reset low_counter
-                            arcpy.AddMessage("Hi Sequence " + hi_counter + " exhausted, using next Sequence.")
+                            arcpy.AddMessage("Hi Sequence " + str(hi_counter) + " exhausted, using next Sequence.")
                             escaped_name = arcpy.AddFieldDelimiters(generate_ID_table_name, "name")
                             where_clause = escaped_name + " = " + "'" + fc + "'"
                             new_hi_row = [row[0] for rows in arcpy.da.SearchCursor(generate_ID_table_name, ["hi"], where_clause)]
