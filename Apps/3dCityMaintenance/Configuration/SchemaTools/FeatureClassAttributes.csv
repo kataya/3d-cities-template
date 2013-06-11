@@ -1,11 +1,19 @@
 SpatialVolumeAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialVolumeAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialVolumeAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialPointAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialPointAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialAreaAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialAreaAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialLineAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialLineAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;BuildingUsage
 Building;totalHeight;DOUBLE;;Total height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;eaveHeight;DOUBLE;;Eave height;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -79,6 +87,8 @@ ZoningDistrict;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_RE
 ZoningDistrict;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;verticalExtentUnit;TEXT;30;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
 ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
+ZoningDistrict;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+ZoningDistrict;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 AdministrativeDistrict;type;TEXT;30;District type;NULLABLE;NON_REQUIRED;AdministrativeDistrictType
 AdministrativeDistrict;nuts;TEXT;;NUTS/LAU code;NULLABLE;NON_REQUIRED;NutsCode
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
