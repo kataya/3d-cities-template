@@ -81,8 +81,8 @@ class SchemaGenerator(object):
         # Set a value list for the Generate Relationships field
         generate_relationships.filter.type = "ValueList"
         generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", 
-                                        "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", 
-                                        "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood", "SpaceHasUsage"]
+                                        "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", "SpaceHasUsage",
+                                        "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood", "ParcelHasUsage"]
 
 
         configuration_files_location = arcpy.Parameter(
