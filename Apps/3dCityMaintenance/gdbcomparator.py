@@ -53,18 +53,18 @@ class GdbComparator(object):
         return True
 
     def execute(self, parameters, messages):
-	
-		# read parameters
-		workspace_ours = parameters[0].value
-		workspace_theirs = parameters[1].value
-		workspace_diff = parameters[2].value
-		arcpy.env.workspace = workspace_ours
-		
-		# check differenences in feature classes
-		fc_list = arcpy.ListFeatureClasses()
+    
+        # read parameters
+        workspace_ours = parameters[0].value
+        workspace_theirs = parameters[1].value
+        workspace_diff = parameters[2].value
+        arcpy.env.workspace = workspace_ours
         
-		# first, check whether the schema is identical
-		
-		# now, compare records
-		
+        # check differenences in feature classes
+        fc_list = arcpy.ListFeatureClasses()
+        
+        # first, check whether the schema is identical
+        
+        # now, compare records
+        
         return
