@@ -139,6 +139,7 @@ class SchemaGenerator(object):
             lineParams = line.split(";")
             createDomainParams[lineParams[0]] = lineParams[1:]
 
+        arcpy.AddMessage("Creating Domains...")
         precreated_domains = []
         for domain in createDomainParams:
             # test existence of domain.
@@ -158,6 +159,7 @@ class SchemaGenerator(object):
                                                 domain_type = createDomainParams[domain][2])
 
         # add coded values to domains
+        arcpy.AddMessage("Add Coded Values to Domains...")
         for line in open(configuration_files_location + '\\CodedValues.csv'):
             line = line.rstrip()
             codedValueParams = line.split(";")
@@ -166,6 +168,7 @@ class SchemaGenerator(object):
                                                     domain_name = codedValueParams[0],
                                                     code = codedValueParams[1],
                                                     code_description = codedValueParams[2])
+                arcpy.AddMessage("Adding coded value " + codedValueParams[1] + " to domain " + codedValueParams[0])
 
         arcpy.AddMessage("Completed adding of Domains and Coded Values")
                                                     
@@ -177,6 +180,7 @@ class SchemaGenerator(object):
             createClassParams[lineClassParams[0]] = lineClassParams[1:]
 
         # create Feature classes that have been selected.
+        arcpy.AddMessage("Create Feature classes...")
         if create_classes is not None:
             for new_class in create_classes:
                 # Test existence of class to create first.
@@ -236,6 +240,7 @@ class SchemaGenerator(object):
             createClassParams[lineClassParams[0]] = lineClassParams[1:]
 
         # create Tables that have been selected.
+        arcpy.AddMessage("Create Tables...")
         if create_tables is not None:
             for new_class in create_tables:
                 # Test existence of class to create first.
@@ -267,6 +272,7 @@ class SchemaGenerator(object):
                                                             domain_name = attributeParams[7])
 
         # create Relationship classes
+        arcpy.AddMessage("Create Relationship classes...")
         createClassParams = {}
         for line in open(configuration_files_location + '\\RelationshipClasses.csv'):
             line = line.rstrip()
