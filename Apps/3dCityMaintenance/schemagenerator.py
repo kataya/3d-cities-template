@@ -13,6 +13,7 @@
 # ------------------------------------------------------------------------------
 
 import arcpy
+import sys, os
 
 class SchemaGenerator(object):
     def __init__(self):
@@ -33,6 +34,7 @@ class SchemaGenerator(object):
             direction="Input")
             
         in_gdb.value = ""
+        in_gdb.filter.list = ["Local Database", "Remote Database"]
 
         # Spatial reference system to use for the Feature classes
         spatial_reference = arcpy.Parameter(
@@ -41,7 +43,19 @@ class SchemaGenerator(object):
             datatype="Spatial Reference",
             parameterType="Optional",
             direction="Input")
-            
+        
+        # Generate Domains parameter
+        generate_domains = arcpy.Parameter(
+            displayName="Generate Domains:",
+            name="generate_domains",
+            datatype="String",
+            parameterType="Optional",
+            direction="Input",
+            multiValue=True)
+    
+        # Set a value list for the Generate Domains parameter
+        generate_domains.filter.type = "ValueList"
+        generate_domains.filter.list = ["AccessType", "AnnotationType", "Boolean", "BuildingInteriorSpaceType", "BuildingInteriorStructureType", "BuildingRoofForm", "BuildingUsage", "BuildingType", "ConstructionStatus", "InteriorInstallationType", "LandCoverType", "ParcelType", "PlanType", "SensorType", "ShellPartType", "StreetFurnitureType", "TreeCanopyShape", "TreeGenusType", "TreeSpeciesType", "ZoningUsageType", "CityFabricRelationType", "FlowDirection", "RegulationOperator", "RegulationAspect", "RegulationType", "TransectType", "RegulationBlockType", "RegulationFootprintType", "RegulationFootprintAlignmentType", "Unit", "VerticalExtentType", "DirectionType", "PavementType", "TransportSegmentType", "SegmentNameDirection", "SegmentNameGeneric", "AdministrativeDistrictType", "NutsCode"]
 
         # Generate Classes paramater
         generate_classes = arcpy.Parameter(
@@ -97,7 +111,7 @@ class SchemaGenerator(object):
             parameterType="Required",
             direction="Input")
 
-        configuration_files_location.value = r"D:\3D Cities\3d-cities-template\Apps\3dCityMaintenance\Configuration\SchemaTools"
+        configuration_files_location.value = sys.path[0] + os.path.sep + r"Configuration\SchemaTools"
 
         # Derived Output Features parameter
         out_gdb = arcpy.Parameter(
@@ -108,7 +122,7 @@ class SchemaGenerator(object):
             direction="Output")
 
         out_gdb.parameterDependencies = [in_gdb.name]
-        parameters = [configuration_files_location, in_gdb, out_gdb, spatial_reference, generate_classes, generate_tables, generate_relationships]
+        parameters = [configuration_files_location, in_gdb, out_gdb, spatial_reference, generate_classes, generate_tables, generate_relationships, generate_domains]
 
         return parameters
 
@@ -123,7 +137,7 @@ class SchemaGenerator(object):
         create_classes = parameters[4].values
         create_tables = parameters[5].values
         create_relationships = parameters[6].values
-        
+        create_domains = parameters[7].values
         
         create_multipatches = True
         if arcpy.CheckExtension("3D") == "Available":
@@ -132,43 +146,33 @@ class SchemaGenerator(object):
             arcpy.AddWarning("3D Analyst extension is not licensed. The script will not create Multipatch feature classes.")
             create_multipatches = False
 
-        # read configuration file for domains
-        createDomainParams = {}
-        for line in open(configuration_files_location + '\\Domains.csv'):
-            line = line.rstrip()
-            lineParams = line.split(";")
-            createDomainParams[lineParams[0]] = lineParams[1:]
-
         arcpy.AddMessage("Creating Domains...")
-        precreated_domains = []
-        for domain in createDomainParams:
-            # test existence of domain.
-            precreated = False
-            for existing_domain in arcpy.da.ListDomains():
-                if domain == existing_domain.name:
-                    precreated = True
-                    precreated_domains.append(domain)
-                    break
-
-            # create the domain
-            if not precreated:
-                arcpy.AddMessage(domain + " = " + str(createDomainParams[domain]))
-                arcpy.CreateDomain_management(arcpy.env.workspace, domain,
-                                                domain_description = createDomainParams[domain][0],
-                                                field_type = createDomainParams[domain][1],
-                                                domain_type = createDomainParams[domain][2])
-
-        # add coded values to domains
-        arcpy.AddMessage("Add Coded Values to Domains...")
-        for line in open(configuration_files_location + '\\CodedValues.csv'):
-            line = line.rstrip()
-            codedValueParams = line.split(";")
-            if codedValueParams[0] not in precreated_domains:
-                arcpy.AddCodedValueToDomain_management(arcpy.env.workspace,
-                                                    domain_name = codedValueParams[0],
-                                                    code = codedValueParams[1],
-                                                    code_description = codedValueParams[2])
-                arcpy.AddMessage("Adding coded value " + codedValueParams[1] + " to domain " + codedValueParams[0])
+        if create_domains is not None:
+            # read configuration file for domains
+            createDomainParams = {}
+            for line in open(configuration_files_location + '\\Domains.csv'):
+                line = line.rstrip()
+                lineParams = line.split(";")
+                createDomainParams[lineParams[0]] = lineParams[1:]
+            
+            # create domains as indicated by user
+            for new_domain in create_domains:
+                if new_domain not in arcpy.da.ListDomains():
+                    arcpy.AddMessage("Adding domain " + new_domain + " with params " + str(createDomainParams[new_domain]))
+                    arcpy.CreateDomain_management(arcpy.env.workspace, new_domain,
+                                                    domain_description = createDomainParams[new_domain][0],
+                                                    field_type = createDomainParams[new_domain][1],
+                                                    domain_type = createDomainParams[new_domain][2])
+                    
+                    for line in open(configuration_files_location + '\\CodedValues.csv'):
+                        line = line.rstrip()
+                        codedValueParams = line.split(";")
+                        if codedValueParams[0] == new_domain:
+                            arcpy.AddCodedValueToDomain_management(arcpy.env.workspace,
+                                                        domain_name = codedValueParams[0],
+                                                        code = codedValueParams[1],
+                                                        code_description = codedValueParams[2])
+                            arcpy.AddMessage("...Added coded value " + codedValueParams[1] + " to domain " + codedValueParams[0])
 
         arcpy.AddMessage("Completed adding of Domains and Coded Values")
                                                     
