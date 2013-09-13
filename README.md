@@ -14,14 +14,12 @@ This is an Esri ArcGIS solution template for the creation, maintenance, visualiz
 
 1.	To contribute: Fork and then clone the repository.  
 2.	To download: Clone or Download the .zip file.
-3. Web-enable the directory.
-4. Access the .html page.
 
 ## Requirements
 
-* Esri ArcGIS 10.1 SP1
-* Esri CityEngine 2012.1
-* Esri ArcGIS Interoperability Extension of Safe FME 2012+
+* Esri ArcGIS 10.1 SP1 or ArcGIS 10.2 to use the CityEngine GP Tools
+* Esri CityEngine 2012.1 or Esri CityEngine 2013.1 to create Rule Packages
+* Esri ArcGIS Interoperability Extension for 10.1/10.2 or Safe FME 2012/2013
 * Microsoft Excel or OpenOffice/LibreOffice Calc
 
 ## Resources
