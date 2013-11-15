@@ -16,11 +16,47 @@ import arcpy
 import sys, os
 
 class SchemaGenerator(object):
+
+    classesToDomains = {}
+
     def __init__(self):
         self.label = "3DCIM Database Schema Generator"
         self.description = "This tool creates the full or partial database schema " +\
                             "for the 3D City Information Model. Requires an (empty) File GDB to be created before."
         self.canRunInBackground = False
+
+        # Create Map of Class to Domain dependencies from FC and Table Attributes.
+        configpath = sys.path[0] + os.path.sep + r"Configuration\SchemaTools"
+        classesToDomainsLookup = {}
+
+        for line in open(configpath + '\\FeatureClassAttributes.csv'):
+            line = line.rstrip()
+            attributeParams = line.split(";")
+            if attributeParams[7] != 'NO_DOMAIN':
+                if attributeParams[0] in classesToDomainsLookup:
+                    if classesToDomainsLookup[attributeParams[0]] is None:
+                        classesToDomainsLookup[attributeParams[0]] = [attributeParams[7]]
+                    else:
+                        classesToDomainsLookup[attributeParams[0]].append(attributeParams[7])
+                else:
+                    classesToDomainsLookup[attributeParams[0]] = [attributeParams[7]]
+
+        for line in open(configpath + '\\TableAttributes.csv'):
+            line = line.rstrip()
+            attributeParams = line.split(";")
+            if attributeParams[7] != 'NO_DOMAIN':
+                if attributeParams[0] in classesToDomainsLookup:
+                    if classesToDomainsLookup[attributeParams[0]] is None:
+                        classesToDomainsLookup[attributeParams[0]] = [attributeParams[7]]
+                    else:
+                        classesToDomainsLookup[attributeParams[0]].append(attributeParams[7])
+                else:
+                    classesToDomainsLookup[attributeParams[0]] = [attributeParams[7]]
+
+        #f = open (sys.path[0] + os.path.sep + r"Configuration\SchemaTools\logInit.txt", 'w')
+        #f.write(str(classesToDomainsLookup) + "\n")
+
+        self.classesToDomains = classesToDomainsLookup
 
     def getParameterInfo(self):
         # Define parameter definitions
@@ -144,6 +180,29 @@ class SchemaGenerator(object):
     def isLicensed(self):
         return True
 
+    def updateParameters(self, parameters):
+        # check if Feature Classes, Tables or Relationship Classes have been selected.
+        candidateDomains = []
+        if parameters[4].value:
+            create_classes = parameters[4].values
+            for new_class in create_classes:
+                if new_class in self.classesToDomains:
+                    candidateDomains.extend(self.classesToDomains[new_class])
+
+        if parameters[5].value:
+            create_classes = parameters[5].values
+            for new_class in create_classes:
+                if new_class in self.classesToDomains:
+                    candidateDomains.extend(self.classesToDomains[new_class])
+
+        # select the correct domains that are required.
+        activateDomains = list(set(candidateDomains))
+
+        #f = open (sys.path[0] + os.path.sep + r"Configuration\SchemaTools\log.txt", 'w')
+        #f.write("The current selection requires the following domains to be present:" + str(activateDomains) + "\n")
+
+        parameters[7].values = activateDomains
+
     def execute(self, parameters, messages):
 
         configuration_files_location = str(parameters[0].value)
@@ -162,6 +221,12 @@ class SchemaGenerator(object):
             create_multipatches = False
 
         arcpy.AddMessage("Creating Domains...")
+        existing_domains = []
+        for domain in arcpy.da.ListDomains():
+            existing_domains.append(domain.name)
+
+        arcpy.AddMessage("Domains already defined in the GDB:" + str(existing_domains))
+
         if create_domains is not None:
             # read configuration file for domains
             createDomainParams = {}
@@ -172,7 +237,7 @@ class SchemaGenerator(object):
 
             # create domains as indicated by user
             for new_domain in create_domains:
-                if new_domain not in arcpy.da.ListDomains():
+                if new_domain not in existing_domains:
                     arcpy.AddMessage("Adding domain " + new_domain + " with params " + str(createDomainParams[new_domain]))
                     arcpy.CreateDomain_management(arcpy.env.workspace, new_domain,
                                                     domain_description = createDomainParams[new_domain][0],
@@ -208,14 +273,24 @@ class SchemaGenerator(object):
                     # Create class
                     if str(createClassParams[new_class][0]) == "MULTIPATCH" and create_multipatches:
                         # in case it's a Multipatch, a three-step process is required to circumvent the bug in the Import3DFiles tool that the spatial domain is created with very small bounds
-                        new_class_temp = new_class + "_temp"
-                        arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
-                                                out_featureClass = new_class_temp,
-                                                root_per_feature = "ONE_FILE_ONE_FEATURE",
-                                                spatial_reference = arcpy.SpatialReference("WGS 1984"))
-                        arcpy.Project_management(new_class_temp, new_class, spatial_reference_param)
-                        arcpy.Delete_management(new_class_temp)
-                        arcpy.DeleteFeatures_management(new_class)
+                        wgs84 = arcpy.SpatialReference("WGS 1984")
+                        #spatial_reference_param_as_text = parameters[3].valueAsText
+                        #if spatial_reference_param_as_text.startswith("GEOGCS[\'GCS_WGS_1984\'"):
+                        if spatial_reference_param.name == "GCS_WGS_1984":
+                            arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
+                                                    out_featureClass = new_class,
+                                                    root_per_feature = "ONE_FILE_ONE_FEATURE",
+                                                    spatial_reference = spatial_reference_param)
+                            arcpy.DeleteFeatures_management(new_class)
+                        else:
+                            new_class_temp = new_class + "_temp"
+                            arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
+                                                    out_featureClass = new_class_temp,
+                                                    root_per_feature = "ONE_FILE_ONE_FEATURE",
+                                                    spatial_reference = wgs84)
+                            arcpy.Project_management(new_class_temp, new_class, spatial_reference_param)
+                            arcpy.Delete_management(new_class_temp)
+                            arcpy.DeleteFeatures_management(new_class)
                     else:
                         arcpy.CreateFeatureclass_management(arcpy.env.workspace, new_class,
                                                     geometry_type = createClassParams[new_class][0],
