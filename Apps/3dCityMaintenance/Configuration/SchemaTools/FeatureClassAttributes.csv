@@ -1,15 +1,19 @@
+SpatialVolumeAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
 SpatialVolumeAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialPointAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
 SpatialPointAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialAreaAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
 SpatialAreaAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SpatialLineAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
 SpatialLineAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -44,6 +48,8 @@ BuildingInteriorSpace;capacity;LONG;;Capacity;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;spaceForm;TEXT;50;Space form;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;spaceFunction;TEXT;50;Space function;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;spaceUse;TEXT;50;Space use;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingFloor;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingFloor;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingFloor;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -55,9 +61,13 @@ BuildingInteriorStructure;type;TEXT;50;Interior structure type;NULLABLE;NON_REQU
 BuildingInteriorStructure;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
+BuildingInteriorStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;InteriorInstallationType
 InteriorInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+InteriorInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+InteriorInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;StreetFurnitureType
 StreetFurniture;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -74,6 +84,8 @@ SensorCoverage;sensorFID;TEXT;50;Sensor FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;type;TEXT;30;Sign type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;transportElementFID;TEXT;50;Linked Transport Element FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;type;TEXT;50;Tree Genus;NON_NULLABLE;NON_REQUIRED;TreeGenusType
 Tree;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -103,9 +115,13 @@ LandCover;verticalExtent;DOUBLE;;Vertical extent;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;type;TEXT;50;Supporting Structure Type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;thickness;DOUBLE;;Thickness;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;type;TEXT;50;Fence type;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;material;TEXT;50;Material;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;type;TEXT;50;Type;NON_NULLABLE;NON_REQUIRED;TransportSegmentType
 TransportNetworkSegment;length;DOUBLE;;Segment length;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;width;DOUBLE;;Segment width;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -122,3 +138,5 @@ TransportNetworkSegment;addressRightEnd;LONG;;Address right-hand side end;NULLAB
 TransportNetworkSegment;direction;SHORT;;Traffic direction;NULLABLE;NON_REQUIRED;DirectionType
 TransportNetworkSegment;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 TransportNetworkSegment;pavementType;TEXT;30;Pavement type;NULLABLE;NON_REQUIRED;PavementType
+TransportNetworkSegment;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+TransportNetworkSegment;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN

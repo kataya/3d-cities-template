@@ -10,11 +10,11 @@ Shape {
 	geometry IndexedFaceSet {
 		coord Coordinate {
                     point [
-						-1.0 -1.0 1.0,	#vertex 0
-						1.0 -1.0 1.0,	#vertex 1
-						1.0 -1.0 -1.0,	#vertex 2
-						-1.0 -1.0 -1.0,	#vertex 3
-						0.0 1.0 0.0		#vertex 4
+						-180.0 -90.0 50000.0,	#vertex 0
+						180.0 -90.0 50000.0,	#vertex 1
+						180.0 -90.0 -50000.0,	#vertex 2
+						-180.0 -90.0 -50000.0,	#vertex 3
+						180.0 90.0 0.0		#vertex 4
                     ]
                 }
 		coordIndex [

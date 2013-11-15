@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # 3D City Information Model Python Toolbox/SchemaGenerator
-# 1.2.0_2013-06-14
+# 1.3.0_2013-11-15
 #
 #
 # Author: Thorsten Reitz, ESRI R&D Lab Zurich
@@ -8,7 +8,7 @@
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
 # ------------------------------------------------------------------------------
 
@@ -24,6 +24,14 @@ class SchemaGenerator(object):
 
     def getParameterInfo(self):
         # Define parameter definitions
+        configuration_files_location = arcpy.Parameter(
+            displayName="Configuration files folder:",
+            name="configuration_files_location",
+            datatype="DEFolder",
+            parameterType="Required",
+            direction="Input")
+
+        configuration_files_location.value = sys.path[0] + os.path.sep + r"Configuration\SchemaTools"
 
         # Input Geodatabase parameter
         in_gdb = arcpy.Parameter(
@@ -32,7 +40,7 @@ class SchemaGenerator(object):
             datatype="Workspace",
             parameterType="Required",
             direction="Input")
-            
+
         in_gdb.value = ""
         in_gdb.filter.list = ["Local Database", "Remote Database"]
 
@@ -43,7 +51,7 @@ class SchemaGenerator(object):
             datatype="Spatial Reference",
             parameterType="Optional",
             direction="Input")
-        
+
         # Generate Domains parameter
         generate_domains = arcpy.Parameter(
             displayName="Generate Domains:",
@@ -52,10 +60,16 @@ class SchemaGenerator(object):
             parameterType="Optional",
             direction="Input",
             multiValue=True)
-    
+
         # Set a value list for the Generate Domains parameter
         generate_domains.filter.type = "ValueList"
-        generate_domains.filter.list = ["AccessType", "AnnotationType", "Boolean", "BuildingInteriorSpaceType", "BuildingInteriorStructureType", "BuildingRoofForm", "BuildingUsage", "BuildingType", "ConstructionStatus", "InteriorInstallationType", "LandCoverType", "ParcelType", "PlanType", "SensorType", "ShellPartType", "StreetFurnitureType", "TreeCanopyShape", "TreeGenusType", "TreeSpeciesType", "ZoningUsageType", "CityFabricRelationType", "FlowDirection", "RegulationOperator", "RegulationAspect", "RegulationType", "TransectType", "RegulationBlockType", "RegulationFootprintType", "RegulationFootprintAlignmentType", "Unit", "VerticalExtentType", "DirectionType", "PavementType", "TransportSegmentType", "SegmentNameDirection", "SegmentNameGeneric", "AdministrativeDistrictType", "NutsCode"]
+        createDomainNameList = []
+        for line in open(str(configuration_files_location.value) + '\\Domains.csv'):
+            line = line.rstrip()
+            lineParams = line.split(";")
+            createDomainNameList.append(lineParams[0])
+
+        generate_domains.filter.list = createDomainNameList
 
         # Generate Classes paramater
         generate_classes = arcpy.Parameter(
@@ -68,12 +82,13 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate Classes field
         generate_classes.filter.type = "ValueList"
-        generate_classes.filter.list = ["SpatialVolumeAnnotation", "SpatialPointAnnotation", "SpatialAreaAnnotation", "SpatialLineAnnotation",
-                                        "Building", "BuildingEntrancePoint", "BuildingShell", "BuildingShellPart", "SupportingStructure", "Fence",
-                                        "BuildingInteriorSpace", "BuildingFloor", "BuildingInteriorStructure",
-                                        "InteriorInstallation", "StreetFurniture", "Sensor", "SensorCoverage", "Sign",
-                                        "Tree", "ZoningDistrict", "Parcel", "LandCover", "AdministrativeDistrict",
-                                        "TransportNetworkSegment"]
+        createClassNameList = []
+        for line in open(str(configuration_files_location.value) + '\\FeatureClasses.csv'):
+            line = line.rstrip()
+            lineParams = line.split(";")
+            createClassNameList.append(lineParams[0])
+
+        generate_classes.filter.list = createClassNameList
 
         # Generate Tables parameter
         generate_tables = arcpy.Parameter(
@@ -86,7 +101,13 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate tables field
         generate_tables.filter.type = "ValueList"
-        generate_tables.filter.list = ["CityFabricRelation", "AttributeContainer", "Regulation", "Neighborhood", "Usage"]
+        createTableNameList = []
+        for line in open(str(configuration_files_location.value) + '\\Tables.csv'):
+            line = line.rstrip()
+            lineParams = line.split(";")
+            createTableNameList.append(lineParams[0])
+
+        generate_tables.filter.list = createTableNameList
 
         # Generate Relationship classes parameter
         generate_relationships = arcpy.Parameter(
@@ -99,19 +120,13 @@ class SchemaGenerator(object):
 
         # Set a value list for the Generate Relationships field
         generate_relationships.filter.type = "ValueList"
-        generate_relationships.filter.list = ["BuildingHasEntrance", "BuildingHasShell", "BuildingHasShellPart", "BuildingHasSpace", "BuildingHasFloor", 
-                                        "FloorHasSpace", "FloorHasStructure", "SensorHasCoverage", "SpaceHasInstallation", "SpaceHasUsage",
-                                        "ZoneHasRegulation", "ZoneHasUsage", "ParcelHasRegulation", "ParcelHasNeigborhood", "ParcelHasUsage"]
+        createRelationShipsNameList = []
+        for line in open(str(configuration_files_location.value) + '\\RelationshipClasses.csv'):
+            line = line.rstrip()
+            lineParams = line.split(";")
+            createRelationShipsNameList.append(lineParams[0])
 
-
-        configuration_files_location = arcpy.Parameter(
-            displayName="Configuration files folder:",
-            name="configuration_files_location",
-            datatype="DEFolder",
-            parameterType="Required",
-            direction="Input")
-
-        configuration_files_location.value = sys.path[0] + os.path.sep + r"Configuration\SchemaTools"
+        generate_relationships.filter.list = createRelationShipsNameList
 
         # Derived Output Features parameter
         out_gdb = arcpy.Parameter(
@@ -123,7 +138,7 @@ class SchemaGenerator(object):
 
         out_gdb.parameterDependencies = [in_gdb.name]
         parameters = [configuration_files_location, in_gdb, out_gdb, spatial_reference, generate_classes, generate_tables, generate_relationships, generate_domains]
-
+        self.parameters = parameters
         return parameters
 
     def isLicensed(self):
@@ -138,7 +153,7 @@ class SchemaGenerator(object):
         create_tables = parameters[5].values
         create_relationships = parameters[6].values
         create_domains = parameters[7].values
-        
+
         create_multipatches = True
         if arcpy.CheckExtension("3D") == "Available":
             arcpy.CheckOutExtension("3D")
@@ -154,7 +169,7 @@ class SchemaGenerator(object):
                 line = line.rstrip()
                 lineParams = line.split(";")
                 createDomainParams[lineParams[0]] = lineParams[1:]
-            
+
             # create domains as indicated by user
             for new_domain in create_domains:
                 if new_domain not in arcpy.da.ListDomains():
@@ -163,7 +178,7 @@ class SchemaGenerator(object):
                                                     domain_description = createDomainParams[new_domain][0],
                                                     field_type = createDomainParams[new_domain][1],
                                                     domain_type = createDomainParams[new_domain][2])
-                    
+
                     for line in open(configuration_files_location + '\\CodedValues.csv'):
                         line = line.rstrip()
                         codedValueParams = line.split(";")
@@ -175,7 +190,7 @@ class SchemaGenerator(object):
                             arcpy.AddMessage("...Added coded value " + codedValueParams[1] + " to domain " + codedValueParams[0])
 
         arcpy.AddMessage("Completed adding of Domains and Coded Values")
-                                                    
+
         # read configuration file for feature classes
         createClassParams = {}
         for line in open(configuration_files_location + '\\FeatureClasses.csv'):
@@ -192,12 +207,16 @@ class SchemaGenerator(object):
                     arcpy.AddMessage("Adding Feature class " + new_class + ", type " + createClassParams[new_class][0])
                     # Create class
                     if str(createClassParams[new_class][0]) == "MULTIPATCH" and create_multipatches:
-                        arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl', 
-                                                out_featureClass = new_class, 
-                                                root_per_feature = "ONE_FILE_ONE_FEATURE", 
-                                                spatial_reference = spatial_reference_param)
+                        # in case it's a Multipatch, a three-step process is required to circumvent the bug in the Import3DFiles tool that the spatial domain is created with very small bounds
+                        new_class_temp = new_class + "_temp"
+                        arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
+                                                out_featureClass = new_class_temp,
+                                                root_per_feature = "ONE_FILE_ONE_FEATURE",
+                                                spatial_reference = arcpy.SpatialReference("WGS 1984"))
+                        arcpy.Project_management(new_class_temp, new_class, spatial_reference_param)
+                        arcpy.Delete_management(new_class_temp)
                         arcpy.DeleteFeatures_management(new_class)
-                    else:    
+                    else:
                         arcpy.CreateFeatureclass_management(arcpy.env.workspace, new_class,
                                                     geometry_type = createClassParams[new_class][0],
                                                     template = None,
@@ -217,7 +236,7 @@ class SchemaGenerator(object):
             for line in open(configuration_files_location + '\\FeatureClassAttributes.csv'):
                 line = line.rstrip()
                 attributeParams = line.split(";")
-                
+
                 if attributeParams[0] in create_classes:
                     arcpy.AddMessage("Adding Attribute " + attributeParams[1] + " to table " + attributeParams[0] + ", parameters " + str(attributeParams[2:]))
                     arcpy.AddField_management(in_table = attributeParams[0],
@@ -235,7 +254,7 @@ class SchemaGenerator(object):
                                                         domain_name = attributeParams[7])
 
             arcpy.AddMessage("Added fields to Feature Classes")
-        
+
         # read configuration file for tables
         createClassParams = {}
         for line in open(configuration_files_location + '\\Tables.csv'):
@@ -259,7 +278,7 @@ class SchemaGenerator(object):
             for line in open(configuration_files_location + '\\TableAttributes.csv'):
                 line = line.rstrip()
                 attributeParams = line.split(";")
-                
+
                 if attributeParams[0] in create_tables:
                     arcpy.AddField_management(in_table = attributeParams[0],
                                                 field_name = attributeParams[1],
