@@ -85,7 +85,7 @@ class SchemaGenerator(object):
             displayName="Spatial Reference System:",
             name="spatial_reference",
             datatype="Spatial Reference",
-            parameterType="Optional",
+            parameterType="Required",
             direction="Input")
 
         # Generate Domains parameter
@@ -272,25 +272,7 @@ class SchemaGenerator(object):
                     arcpy.AddMessage("Adding Feature class " + new_class + ", type " + createClassParams[new_class][0])
                     # Create class
                     if str(createClassParams[new_class][0]) == "MULTIPATCH" and create_multipatches:
-                        # in case it's a Multipatch, a three-step process is required to circumvent the bug in the Import3DFiles tool that the spatial domain is created with very small bounds
-                        wgs84 = arcpy.SpatialReference("WGS 1984")
-                        #spatial_reference_param_as_text = parameters[3].valueAsText
-                        #if spatial_reference_param_as_text.startswith("GEOGCS[\'GCS_WGS_1984\'"):
-                        if spatial_reference_param.name == "GCS_WGS_1984":
-                            arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
-                                                    out_featureClass = new_class,
-                                                    root_per_feature = "ONE_FILE_ONE_FEATURE",
-                                                    spatial_reference = spatial_reference_param)
-                            arcpy.DeleteFeatures_management(new_class)
-                        else:
-                            new_class_temp = new_class + "_temp"
-                            arcpy.Import3DFiles_3d(in_files = configuration_files_location + '\\multipatch_template.wrl',
-                                                    out_featureClass = new_class_temp,
-                                                    root_per_feature = "ONE_FILE_ONE_FEATURE",
-                                                    spatial_reference = wgs84)
-                            arcpy.Project_management(new_class_temp, new_class, spatial_reference_param)
-                            arcpy.Delete_management(new_class_temp)
-                            arcpy.DeleteFeatures_management(new_class)
+                        self.createMultipatchFC(new_class, spatial_reference_param, configuration_files_location)
                     else:
                         arcpy.CreateFeatureclass_management(arcpy.env.workspace, new_class,
                                                     geometry_type = createClassParams[new_class][0],
@@ -396,5 +378,37 @@ class SchemaGenerator(object):
 
         if create_multipatches:
             arcpy.CheckInExtension("3D")
+
+    def createMultipatchFC(self, new_class, spatial_reference_param, configuration_files_location):
+        # read out domain for the target spatial reference
+        crs_domain = [-180, -90, 180, 90]
+        if spatial_reference_param is not None:
+            crs_domain = spatial_reference_param.domain.split(" ")
+
+        arcpy.AddMessage("Target CRS XY domain:" + str(crs_domain))
+
+        # create a multipatch template file based on the valid xy domain
+        multipatch_tpl = "#VRML V2.0 utf8" + os.linesep + r"Shape { appearance Appearance { material Material { diffuseColor 1 0 0 } }" + 	r" geometry IndexedFaceSet { coord Coordinate { point ["
+        multipatch_tpl += crs_domain[0] + " " + crs_domain[1] + " -50000, " # vertex 0
+        multipatch_tpl += crs_domain[2] + " " + crs_domain[1] + " 0, " # vertex 1
+        multipatch_tpl += crs_domain[2] + " " + crs_domain[3] + " 50000" # vertex 2
+        multipatch_tpl += r"] }	coordIndex [0, 1, 2, -1] } }"
+
+        # write multipatch template to temporary file
+        template_filename = configuration_files_location + '\\multipatch_template.wrl'
+        f = open (template_filename, 'w')
+        f.write(multipatch_tpl)
+        f.close()
+
+        arcpy.AddMessage("Wrote template to " + template_filename)
+
+        arcpy.Import3DFiles_3d(in_files = template_filename,
+                                out_featureClass = new_class,
+                                root_per_feature = "ONE_FILE_ONE_FEATURE",
+                                spatial_reference = spatial_reference_param)
+        arcpy.DeleteFeatures_management(new_class)
+
+        # delete temporary template file
+        os.remove(template_filename)
 
 # ------------------------------------------------------------------------------
