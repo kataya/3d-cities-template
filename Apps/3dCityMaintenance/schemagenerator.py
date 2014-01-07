@@ -1,9 +1,9 @@
 # ------------------------------------------------------------------------------
 # 3D City Information Model Python Toolbox/SchemaGenerator
-# 1.3.0_2013-11-15
+# 1.3.1_2013-12-10
 #
 #
-# Author: Thorsten Reitz, ESRI R&D Lab Zurich
+# Author: Thorsten Reitz, ESRI R&D Center Zurich
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -266,51 +266,35 @@ class SchemaGenerator(object):
         # create Feature classes that have been selected.
         arcpy.AddMessage("Create Feature classes...")
         if create_classes is not None:
+            # Load attribute map
+            classAttributeMap = self.loadAttributeMap(configuration_files_location + '\\FeatureClassAttributes.csv')
+
+            # Now, create all feature classes.
             for new_class in create_classes:
                 # Test existence of class to create first.
                 if not arcpy.ListFeatureClasses(new_class):
                     arcpy.AddMessage("Adding Feature class " + new_class + ", type " + createClassParams[new_class][0])
-                    # Create class
+
+                    # Create temporary classes
+                    out_path = 'in_memory'
+                    out_name = 'schemagenerator_fc_template'
+                    tmp_featureclass = ""
                     if str(createClassParams[new_class][0]) == "MULTIPATCH" and create_multipatches:
-                        self.createMultipatchFC(new_class, spatial_reference_param, configuration_files_location)
+                        tmp_featureclass = self.createMultipatchTemplate(out_path, out_name, spatial_reference_param, configuration_files_location)
                     else:
-                        arcpy.CreateFeatureclass_management(arcpy.env.workspace, new_class,
-                                                    geometry_type = createClassParams[new_class][0],
-                                                    template = None,
-                                                    has_m = createClassParams[new_class][1],
-                                                    has_z = createClassParams[new_class][2],
+                        tmp_featureclass = self.createStandardTemplate(out_path, out_name, createClassParams[new_class])
+
+                    self.addAttributes(classAttributeMap, tmp_featureclass, new_class)
+
+                    # Create final FC in database
+                    arcpy.CreateFeatureclass_management(
+                                                    out_path = arcpy.env.workspace,
+                                                    Out_name = new_class,
+                                                    template = tmp_featureclass,
                                                     spatial_reference = spatial_reference_param)
-                        arcpy.AddField_management(new_class, "name", "TEXT", None, None, 100, "Name", None, None)
+                    arcpy.Delete_management(tmp_featureclass)
+                    arcpy.AddMessage("Created Fature Class " + new_class)
 
-
-                # add common attributes
-                arcpy.AddField_management(new_class, new_class + "FID", "TEXT", None, None, 50, new_class + " Feature ID", None, None)
-                arcpy.AddField_management(new_class, "description", "TEXT", None, None, 250, "Description", None, None)
-                arcpy.AddField_management(new_class, "attribution", "TEXT", None, None, 250, "Attribution/Source", None, None)
-                arcpy.AddField_management(new_class, "subtype", "TEXT", None, None, 50, "Subtype", None, None)
-
-            # add specific attributes to feature classes that have been selected
-            for line in open(configuration_files_location + '\\FeatureClassAttributes.csv'):
-                line = line.rstrip()
-                attributeParams = line.split(";")
-
-                if attributeParams[0] in create_classes:
-                    arcpy.AddMessage("Adding Attribute " + attributeParams[1] + " to table " + attributeParams[0] + ", parameters " + str(attributeParams[2:]))
-                    arcpy.AddField_management(in_table = attributeParams[0],
-                                            field_name = attributeParams[1],
-                                            field_type = attributeParams[2],
-                                            field_length = attributeParams[3],
-                                            field_alias = attributeParams[4],
-                                            field_is_nullable = attributeParams[5],
-                                            field_is_required = attributeParams[6])
-
-                    # add domains to field if defined
-                    if str(attributeParams[7]) != "NO_DOMAIN":
-                        arcpy.AssignDomainToField_management(in_table = attributeParams[0],
-                                                        field_name = attributeParams[1],
-                                                        domain_name = attributeParams[7])
-
-            arcpy.AddMessage("Added fields to Feature Classes")
 
         # read configuration file for tables
         createClassParams = {}
@@ -363,7 +347,7 @@ class SchemaGenerator(object):
             for new_class in create_relationships:
                 # check if origin and destination relationship classes have been created beforehand.
                 if (arcpy.ListTables(createClassParams[new_class][0]) or arcpy.ListFeatureClasses(createClassParams[new_class][0])) and (arcpy.ListTables(createClassParams[new_class][1]) or arcpy.ListFeatureClasses(createClassParams[new_class][1])):
-                    arcpy.AddMessage("Adding Relationship class " + new_class)
+                    arcpy.AddMessage("Adding Relationship class " + new_class + " between " + createClassParams[new_class][0] + " and " + createClassParams[new_class][1])
                     arcpy.CreateRelationshipClass_management (origin_table = createClassParams[new_class][0],
                                                                 destination_table = createClassParams[new_class][1],
                                                                 out_relationship_class = new_class,
@@ -379,13 +363,16 @@ class SchemaGenerator(object):
         if create_multipatches:
             arcpy.CheckInExtension("3D")
 
-    def createMultipatchFC(self, new_class, spatial_reference_param, configuration_files_location):
+    def createMultipatchTemplate(self, path, name, spatial_reference_param, configuration_files_location):
+
         # read out domain for the target spatial reference
         crs_domain = [-180, -90, 180, 90]
         if spatial_reference_param is not None:
             crs_domain = spatial_reference_param.domain.split(" ")
 
-        arcpy.AddMessage("Target CRS XY domain:" + str(crs_domain))
+        # set environment X,Y domain
+        arcpy.env.XYDomain = " ".join(crs_domain)
+        crs_domain = ["-1.0", "-1.0", "1.0", "1.0"]
 
         # create a multipatch template file based on the valid xy domain
         multipatch_tpl = "#VRML V2.0 utf8" + os.linesep + r"Shape { appearance Appearance { material Material { diffuseColor 1 0 0 } }" + 	r" geometry IndexedFaceSet { coord Coordinate { point ["
@@ -400,15 +387,67 @@ class SchemaGenerator(object):
         f.write(multipatch_tpl)
         f.close()
 
-        arcpy.AddMessage("Wrote template to " + template_filename)
-
-        arcpy.Import3DFiles_3d(in_files = template_filename,
-                                out_featureClass = new_class,
+        templateFC = path + '/' + name
+        arcpy.AddMessage("templateFC: " + templateFC)
+        arcpy.ddd.Import3DFiles(in_files = template_filename,
+                                out_featureClass = templateFC,
                                 root_per_feature = "ONE_FILE_ONE_FEATURE",
-                                spatial_reference = spatial_reference_param)
-        arcpy.DeleteFeatures_management(new_class)
+                                spatial_reference = None)
+        arcpy.DeleteFeatures_management(templateFC)
+        arcpy.DeleteField_management(templateFC, "name")
 
         # delete temporary template file
         os.remove(template_filename)
+        return templateFC
+
+    def createStandardTemplate(self, path, name, createClassParams):
+        templateFC = arcpy.CreateUniqueName(path, name)
+        table = arcpy.CreateFeatureclass_management(
+                            out_path = path,
+                            out_name = name,
+                            geometry_type = createClassParams[0],
+                            template = None,
+                            has_m = createClassParams[1],
+                            has_z = createClassParams[2],
+                            spatial_reference = None)
+        return table
+
+    def loadAttributeMap(self, paramPath):
+        classAttributeMap = {}
+        # Load attribute map
+        for line in open(paramPath):
+            line = line.rstrip()
+            attributeParams = line.split(";")
+            if attributeParams[0] in classAttributeMap:
+                classAttributeMap[attributeParams[0]].append(attributeParams[1:])
+            else:
+                classAttributeMap[attributeParams[0]] = [attributeParams[1:]]
+
+        return classAttributeMap
+
+    def addAttributes(self, classAttributeMap, table, new_class_name):
+        # add common attributes that all FCs and Tables share
+        arcpy.AddField_management(table, new_class_name + "FID", "TEXT", None, None, 50, new_class_name + " Feature ID", None, None)
+        arcpy.AddField_management(table, "name", "TEXT", None, None, 100, "Name", None, None)
+        arcpy.AddField_management(table, "description", "TEXT", None, None, 250, "Description", None, None)
+        arcpy.AddField_management(table, "attribution", "TEXT", None, None, 250, "Attribution/Source", None, None)
+        arcpy.AddField_management(table, "subtype", "TEXT", None, None, 50, "Subtype", None, None)
+
+        # add specific attributes
+        for attributeParams in classAttributeMap[new_class_name]:
+            arcpy.AddField_management(in_table = table,
+                field_name = attributeParams[0],
+                field_type = attributeParams[1],
+                field_length = int(attributeParams[2]),
+                field_alias = attributeParams[3],
+                field_is_nullable = attributeParams[4],
+                field_is_required = attributeParams[5])
+
+            # add domains to field if defined
+            if str(attributeParams[6]) != "NO_DOMAIN":
+                arcpy.AssignDomainToField_management(in_table = table,
+                                                    field_name = attributeParams[0],
+                                                    domain_name = attributeParams[6])
+            arcpy.AddMessage("Added Field " + attributeParams[0])
 
 # ------------------------------------------------------------------------------

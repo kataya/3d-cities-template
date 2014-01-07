@@ -1,0 +1,15 @@
+/**
+ * File:    rule.cga
+ * Created: 6 Jan 2014 15:36:59 GMT
+ * Author:  thor7033
+ */
+
+version "2013.1"
+
+
+Lot -->
+	A(listIndex("FloorAreaRatio;SiteCoverage;Setback;TotalHeight", "TotalHeight"))
+
+A(printValue) -->	
+	print(printValue)
+

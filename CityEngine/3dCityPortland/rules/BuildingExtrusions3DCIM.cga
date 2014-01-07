@@ -1,0 +1,108 @@
+/**
+ * File:    BuildingExtrusions3DCIM.cga
+ * Created: 1 Feb 2013 16:38:28 GMT
+ * Author:  Craig
+ */
+
+version "2012.1"
+
+
+##########################################################################################################################
+# Attributes
+##########################################################################################################################
+
+attr heightFactor = 0.3048
+attr totalHeight = 0
+attr usage = "Residential buildings"
+attr opacityValue = 1
+
+@Order(1) @Range("No Color","Land Use")
+attr facadeColors = "Land Use"
+@Order(2) @Group("Color values")
+attr noColor = "#FFFFFF"				// 
+attr assemblyColor = "#2F4F4F"			// 6000 - Education, public admin., health care, and other inst.
+attr agricultureColor = "#228B22"		// 9000 - Agriculture, forestry, fishing and hunting
+attr educationColor = "#0000FF"			// 6000 - Education, public admin., health care, and other inst.
+attr industryColor = "#A020F0"			// 3000 - Manufacturing and wholesale trade
+attr mercantileColor = "#FF0000"		// 2000 - General sales or services
+attr officeColor = "#FF0000"			// 2000 - General sales or services
+attr publicColor = "#0000FF"			// 6000 - Education, public admin., health care, and other inst.
+attr residentialColor = "#FFFF00"			// 1000 - Residence or accommodation functions
+attr commercialColor = "#FF0000"		// 2000 - General sales or services
+attr storageColor = "#BEBEBE"			// 4000 - Transportation, communication, information, and utilities
+attr transportColor = "#BEBEBE"			// 4000 - Transportation, communication, information, and utiltiies
+attr utilityColor = "#BEBEBE"			// 4000 - Transportation, communication, information, and utilities
+
+
+//"Assembly buildings"
+//"Agricultural buildings"
+//"Educational places"
+//"Places where goods are manufactured or repaired"
+//"Places where goods are displayed and sold"
+//"Office buildings"
+//"Public services, administrative and institutional places"
+//"Residential buildings"
+//"Places where (commercial) services are provided"
+//"Places where items are stored"
+//"Buildings used for transportation purposes"
+//"Utilities and infrastructure"
+
+
+##########################################################################################################################
+# Buildings
+##########################################################################################################################
+
+@StartRule
+Buildings -->
+		case facadeColors == "Land Use" && usage == "Assembly buildings" :
+			extrude(totalHeight*heightFactor) 
+			color(assemblyColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Agricultural buildings" :
+			extrude(totalHeight*heightFactor) 
+			color(agricultureColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Educational places" :
+			extrude(totalHeight*heightFactor) 
+			color(educationColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Places where goods are manufactured or repaired" :
+			extrude(totalHeight*heightFactor) 
+			color(industryColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Places where goods are displayed and sold" :
+			extrude(totalHeight*heightFactor) 
+			color(mercantileColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Office buildings" :
+			extrude(totalHeight*heightFactor) 
+			color(officeColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Public services, administrative and institutional places" :
+			extrude(totalHeight*heightFactor) 
+			color(publicColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Residential buildings" :
+			extrude(totalHeight*heightFactor) 
+			color(residentialColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Places where (commercial) services are provided" :
+			extrude(totalHeight*heightFactor) 
+			color(commercialColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Places where items are stored" :
+			extrude(totalHeight*heightFactor) 
+			color(storageColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Buildings used for transportation purposes" :
+			extrude(totalHeight*heightFactor) 
+			color(transportColor)
+			set(material.opacity,opacityValue)
+		case facadeColors == "Land Use" && usage == "Utilities and infrastructure" :
+			extrude(totalHeight*heightFactor) 
+			color(utilityColor)
+			set(material.opacity,opacityValue)
+		else :
+			extrude(totalHeight*heightFactor) 
+			color(noColor)
+			set(material.opacity,opacityValue)

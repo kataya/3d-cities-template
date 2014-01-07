@@ -1,0 +1,119 @@
+/**
+ * File:    Zoning Regulations.cga
+ * Created: 6 Jun 2012 21:51:40 GMT
+ * Author:  Thorsten Reitz
+ */
+
+version "2013.1"
+
+
+@Group("Ground Level Setbacks",1)
+attr FrontYardDepthMin = 0
+@Group("Ground Level Setbacks")
+attr RearYardDepthMin = 0
+@Group("Ground Level Setbacks")
+attr SideYardWidth = 0
+
+attr zoningType = "Industry"
+
+@Group("Buildable Volume",2) @Order(1)
+attr HeightMax = 5
+@Group("Buildable Volume") @Order(2)
+attr Setback_Angle = 0
+@Group("Buildable Volume") @Order(3)
+attr Front_Baseheight = 500
+@Group("Buildable Volume") @Order(4)
+attr Rear_Baseheight = HeightMax+0.1
+@Group("Buildable Volume") @Order(5)
+attr Side_Baseheight = HeightMax+0.1
+@Group("Buildable Volume") @Order(6)
+attr ColorCommercial = "#ffff00"
+@Group("Buildable Volume") @Order(7)
+attr ColorResidential = "#89AE4A"
+@Group("Buildable Volume") @Order(8)
+attr ColorResidentialSingle = "#5A654E"
+@Group("Buildable Volume") @Order(9)
+attr ColorIndustry = "#B884D5"
+@Group("Buildable Volume") @Order(10)
+attr ColorOpenSpace = "#BCD15A"
+@Group("Buildable Volume") @Order(11)
+attr ColorEmployment = "#78C7E9"
+@Group("Buildable Volume") @Order(12)
+attr ColorOther = "#ccccff"
+
+@Group("Options") @Hidden
+attr Opacity = 0.5
+@Group("Options") @Hidden
+attr Show_Shell = true
+@Group("Options") @Hidden
+attr Floor_Height = 3.7
+
+@Hidden
+attr lotArea = 0
+@Hidden
+attr bldgArea = 0
+
+Lot -->
+	case !Show_Shell: NIL else:
+		set(lotArea,geometry.area())
+		setback( FrontYardDepthMin ) { street.front: NIL | remainder: 
+			setback( RearYardDepthMin ) { street.back: NIL | remainder: 
+	 			setback(SideYardWidth) { street.side: NIL | remainder: 
+					BuildableArea 
+				}
+			}
+		}
+		
+getModifiedHeight(type) =
+    case type == "Industry": 20
+    else: HeightMax
+  
+BuildableArea -->
+    case (!(geometry.isPlanar(2.0))): 
+        set(bldgArea,geometry.area())
+        convexify()
+        extrude(world.y, getModifiedHeight(zoningType) * 1.5) 
+        BuildableVolume
+    else: 
+        set(bldgArea,geometry.area())
+        envelope(getModifiedHeight(zoningType)+ 0.01, getModifiedHeight(zoningType), 1, getModifiedHeight(zoningType), 1, getModifiedHeight(zoningType), 10) 
+        BuildableVolume	
+ 	
+getColor(type) =
+    case type == "Commercial": ColorCommercial
+    case type == "Residential": ColorResidential
+    case type == "Residential Multi": ColorResidential
+    case type == "Residential Single": ColorResidentialSingle
+    case type == "Industry": ColorIndustry
+    case type == "Employment": ColorEmployment
+    case type == "Open Space": ColorOpenSpace
+    else: ColorOther
+ 	
+BuildableVolume -->
+ 	color(getColor(zoningType))
+ 	set(material.opacity,Opacity)
+ 	report("Lot Area (m2)",lotArea)
+ 	report("Max Building Area (m2)",bldgArea)
+ 	report("GFA Potential (m2)",geometry.volume/Floor_Height)
+ 	report("FAR Potential",geometry.volume/Floor_Height/lotArea)
+ 	
+ 	
+ 	
+
+
+style Residential
+attr Front_Yard_Depth = 7.0
+attr Rear_Yard_Depth = 7.0
+attr Side_Yard_Width = 0.0
+attr Max_Height = 10.0
+attr Front_Baseheight = 5.0
+attr Rear_Baseheight = 5.0
+
+style HighRise
+attr Front_Yard_Depth = 0.0
+attr Rear_Yard_Depth = 0.0
+attr Side_Yard_Width = 0.0
+attr Max_Height = 140.0
+attr Front_Baseheight = 30.0
+attr Rear_Baseheight = 30.0
+attr Setback_Angle = 89
