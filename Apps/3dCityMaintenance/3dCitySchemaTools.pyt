@@ -20,7 +20,7 @@ from gdbcomparator import GdbComparator
 class Toolbox(object):
     def __init__(self):
         self.label = "3DCIM Schema Tools"
-        self.alias = "ArcGIS for 3D Cities Database Schema Tools"
+        self.alias = "ArcGIS_for_3D_Cities_Database_Schema_Tools"
 
         # List of tool classes associated with this toolbox
         self.tools = [SchemaGenerator, FeatureIdGenerator, GdbComparator]

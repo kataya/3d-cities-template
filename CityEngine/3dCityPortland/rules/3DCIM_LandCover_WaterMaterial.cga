@@ -1,0 +1,19 @@
+/**
+ * File:    riverWater.cga
+ * Created: 30 May 2013 19:24:39 GMT
+ * Author:  Craig
+ */
+
+version "2012.1"
+
+
+attr r = .44
+attr g = .55
+attr b = .44
+
+
+riverwater -->
+// __waterparams_scale_speed
+set(material.name, "river__water__waterparams_2_5")
+color(r,g,b) 
+X.

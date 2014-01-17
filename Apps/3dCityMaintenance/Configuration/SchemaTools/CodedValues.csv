@@ -23,6 +23,7 @@ BuildingInteriorSpaceType;Atrium;Atrium;
 BuildingInteriorSpaceType;Audio-Visual Room;Audio-Visual Room;
 BuildingInteriorSpaceType;Auditorium;Auditorium;
 BuildingInteriorSpaceType;Baggage Claim;Baggage Claim;
+BuildingInteriorSpaceType;Balcony;Balcony;
 BuildingInteriorSpaceType;Bank Teller Space;Bank Teller Space;
 BuildingInteriorSpaceType;Barracks Space;Barracks Space;
 BuildingInteriorSpaceType;Bedroom;Bedroom;
