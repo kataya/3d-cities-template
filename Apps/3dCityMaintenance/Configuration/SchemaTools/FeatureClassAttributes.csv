@@ -1,24 +1,30 @@
 SpatialVolumeAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialVolumeAnnotation;subtype;TEXT;50;Annotation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialVolumeAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialPointAnnotation;subtype;TEXT;50;Annotation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialPointAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialAreaAnnotation;subtype;TEXT;50;Annotation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialAreaAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;referenceFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;value;TEXT;250;Annotation Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;AnnotationType
+SpatialLineAnnotation;subtype;TEXT;50;Annotation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;BuildingUsage
+Building;type;TEXT;50;Building Type;NULLABLE;NON_REQUIRED;BuildingType
+Building;subtype;TEXT;50;Building Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;totalHeight;DOUBLE;;Total height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;eaveHeight;DOUBLE;;Eave height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;roofForm;TEXT;30;Roof form;NULLABLE;NON_REQUIRED;BuildingRoofForm
@@ -30,6 +36,7 @@ Building;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingEntrancePoint;buildingFID;TEXT;50;Key of the building;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingEntrancePoint;address;TEXT;100;Associated address;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingEntrancePoint;isPrimary;SHORT;;Primary entrance;NULLABLE;NON_REQUIRED;Boolean
+BuildingEntrancePoint;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingShell;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingShell;generator;TEXT;;Source;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingShell;protectionLevel;SHORT;;Protection level;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -40,6 +47,7 @@ BuildingInteriorSpace;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED
 BuildingInteriorSpace;floorFID;TEXT;50;Building Floor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;shortName;TEXT;10;Short name;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;type;TEXT;50;Space type;NULLABLE;NON_REQUIRED;BuildingInteriorSpaceType
+BuildingInteriorSpace;subtype;TEXT;50;Space Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingInteriorSpace;height;DOUBLE;;Ceiling height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -58,21 +66,25 @@ BuildingFloor;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingInteriorStructure;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;floorFID;TEXT;50;Building Floor FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;type;TEXT;50;Interior structure type;NULLABLE;NON_REQUIRED;BuildingInteriorStructureType
+BuildingInteriorStructure;subtype;TEXT;50;Structure Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingInteriorStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;InteriorInstallationType
+InteriorInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 InteriorInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-StreetFurniture;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;StreetFurnitureType
+StreetFurniture;type;TEXT;30;Street Furniture type;NULLABLE;NON_REQUIRED;StreetFurnitureType
+StreetFurniture;subtype;TEXT;50;Street Furniture Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;type;TEXT;30;Sensor type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sensor;subtype;TEXT;50;Sensor Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;feedFrequency;TEXT;10;Feed update frequency;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;feedMimeType;TEXT;50;Feed encoding (MIME);NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -82,16 +94,19 @@ Sensor;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sensor;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SensorCoverage;sensorFID;TEXT;50;Sensor FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;type;TEXT;30;Sign type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Sign;subtype;TEXT;50;Sign Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;transportElementFID;TEXT;50;Linked Transport Element FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Sign;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;type;TEXT;50;Tree Genus;NON_NULLABLE;NON_REQUIRED;TreeGenusType
+Tree;subtype;TEXT;50;Tree Species;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;datePlanted;DATE;;Date planted;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;height;DOUBLE;;Crown height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;diameter;DOUBLE;;Crown diameter;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;diameterBreastHeight;DOUBLE;;Dtrunk Diameter at Breast Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;canopyShape;TEXT;30;Canopy shape;NULLABLE;NON_REQUIRED;TreeCanopyShape
 ZoningDistrict;transect;TEXT;10;Transect type;NULLABLE;NON_REQUIRED;TransectType
 ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
@@ -102,27 +117,33 @@ ZoningDistrict;overlay;SHORT;;Overlay;NULLABLE;NON_REQUIRED;Boolean
 ZoningDistrict;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 ZoningDistrict;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 AdministrativeDistrict;type;TEXT;30;District type;NULLABLE;NON_REQUIRED;AdministrativeDistrictType
+AdministrativeDistrict;subtype;TEXT;50;District Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 AdministrativeDistrict;nuts;TEXT;;NUTS/LAU code;NULLABLE;NON_REQUIRED;NutsCode
 Parcel;type;TEXT;30;Parcel type;NULLABLE;NON_REQUIRED;ParcelType
 Parcel;owner;TEXT;100;Parcel owner;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;address;TEXT;100;Parcel address;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;baseElevation;DOUBLE;;Base elevation;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Parcel;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
-LandCover;primaryLandcoverType;TEXT;30;Primary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
-LandCover;secondaryLandcoverType;TEXT;30;Secondary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
+LandCover;primaryLandcoverType;TEXT;50;Primary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
+LandCover;primaryLandcoverSubType;TEXT;50;Primary land cover subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
+LandCover;secondaryLandcoverType;TEXT;50;Secondary land cover type;NULLABLE;NON_REQUIRED;LandCoverType
+LandCover;secondaryLandcoverSubType;TEXT;50;Secondary land cover subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 LandCover;density;DOUBLE;;Density;NULLABLE;NON_REQUIRED;NO_DOMAIN
 LandCover;verticalExtent;DOUBLE;;Vertical extent;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;type;TEXT;50;Supporting Structure Type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+SupportingStructure;subtype;TEXT;50;Supporting Structure Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;thickness;DOUBLE;;Thickness;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SupportingStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;type;TEXT;50;Fence type;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Fence;subtype;TEXT;50;Fence Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;material;TEXT;50;Material;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Fence;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;type;TEXT;50;Type;NON_NULLABLE;NON_REQUIRED;TransportSegmentType
+TransportNetworkSegment;subtype;TEXT;50;Segment Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;length;DOUBLE;;Segment length;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;width;DOUBLE;;Segment width;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;lanesLeft;SHORT;;No. of Lanes on left side;NULLABLE;NON_REQUIRED;NO_DOMAIN

@@ -151,15 +151,15 @@ BuildingRoofForm;Unknown;Unknown;
 BuildingUsage;Assembly;Assembly buildings;
 BuildingUsage;Agricultural;Agricultural buildings;
 BuildingUsage;Educational;Educational places;
-BuildingUsage;Industrial;Places where goods are manufactured or repaired;
-BuildingUsage;Mercantile;Places where goods are displayed and sold;
-BuildingUsage;Office;Office buildings;
-BuildingUsage;Public;Public services, administrative and institutional places;
-BuildingUsage;Residential;Residential buildings;
-BuildingUsage;Service;Places where (commercial) services are provided;
-BuildingUsage;Storage;Places where items are stored;
-BuildingUsage;Transport;Buildings used for transportation purposes;
-BuildingUsage;Utility;Utilities and infrastructure;
+BuildingUsage;Industrial;Industrial;
+BuildingUsage;Mercantile;Mercantile;
+BuildingUsage;Office;Office;
+BuildingUsage;Public;Public;
+BuildingUsage;Residential;Residential;
+BuildingUsage;Service;Service;
+BuildingUsage;Storage;Storage;
+BuildingUsage;Transport;Transport;
+BuildingUsage;Utility;Utility;
 BuildingUsage;Other;Other places;
 BuildingUsage;Unknown;Unknown;
 BuildingType;Barn;Barn;Agricultural
@@ -183,11 +183,11 @@ BuildingType;Comprehensive School;Comprehensive School;Educational
 BuildingType;Vocational School;Vocational School;Educational
 BuildingType;College;College;Educational
 BuildingType;University;University;Educational
-BuildingType;Factory;Factory;Industry
-BuildingType;Heavy Industry Plant;Heavy Industry Plant;Industry
-BuildingType;Workshop;Workshop;Industry
-BuildingType;Quarry;Quarry;Industry
-BuildingType;Shipyard;Shipyard;Industry
+BuildingType;Factory;Factory;Industrial
+BuildingType;Heavy Industry Plant;Heavy Industry Plant;Industrial
+BuildingType;Workshop;Workshop;Industrial
+BuildingType;Quarry;Quarry;Industrial
+BuildingType;Shipyard;Shipyard;Industrial
 BuildingType;Department Store;Department Store;Mercantile
 BuildingType;Retail Store;Retail Store;Mercantile
 BuildingType;Kiosk;Kiosk;Mercantile
@@ -262,6 +262,9 @@ LandCoverType;Cultivated;Cultivated;
 LandCoverType;Forest;Forest;
 LandCoverType;Shrub;Shrub;
 LandCoverType;Water;Water;
+LandCoverType;Ocean;Ocean;
+LandCoverType;Lake;Lake;
+LandCoverType;Stream;Stream;
 LandCoverType;Wetland;Wetland;
 LandCoverType;Developed;Developed;
 ParcelType;Land Parcel;Land Parcel;
@@ -434,7 +437,7 @@ ZoningUsageType;Protected Site;Protected Site;
 ZoningUsageType;Assembly;Assembly;
 ZoningUsageType;Agricultural;Agricultural;
 ZoningUsageType;Educational;Educational;
-ZoningUsageType;Industry;Industry;
+ZoningUsageType;Industrial;Industrial;
 ZoningUsageType;Mercantile;Mercantile;
 ZoningUsageType;Office;Office;
 ZoningUsageType;Public;Public;
