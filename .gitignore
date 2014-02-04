@@ -1,4 +1,3 @@
 *.pyc
-*.pyc
-*.pyc
+*.freelist
 /Apps/3dCityZoningDesigner/Configuration/ZoningRegulations/zoning-regulations-portland-beautified.xls
