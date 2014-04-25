@@ -7,7 +7,8 @@ BuildingRoofForm;Roof Form;TEXT;CODED
 BuildingUsage;Building Usage;TEXT;CODED
 BuildingType;Building Type;TEXT;CODED
 ConstructionStatus;Construction Status;TEXT;CODED
-InteriorInstallationType;Interior Installation Type;TEXT;CODED
+BuildingInstallationPositionType;Interior Installation Position Type;TEXT;CODED
+BuildingInstallationType;Interior Installation Type;TEXT;CODED
 LandCoverType;Land Cover Type;TEXT;CODED
 ParcelType;Parcel Type;TEXT;CODED
 PlanType;Zoning or Land Use Plan Type;TEXT;CODED

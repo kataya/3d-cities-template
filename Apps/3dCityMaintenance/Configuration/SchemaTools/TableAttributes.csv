@@ -35,3 +35,7 @@ Usage;usagePortion;DOUBLE;;Usage Portion;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentUnit;TEXT;50;Vertical extent unit;NULLABLE;NON_REQUIRED;VerticalExtentType
+GenerateId;SEQNAME;TEXT;100;Sequence Name;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+GenerateId;SEQCOUNTER;LONG;;Sequence Counter;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+GenerateId;SEQINTERV;SHORT;;Interval Value;NULLABLE;NON_REQUIRED;NO_DOMAIN
+GenerateId;COMMENTS;TEXT;255;Comments;NULLABLE;NON_REQUIRED;NO_DOMAIN

@@ -72,12 +72,13 @@ BuildingInteriorStructure;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_D
 BuildingInteriorStructure;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingInteriorStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;InteriorInstallationType
-InteriorInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;position;TEXT;30;Relative Position type;NULLABLE;NON_REQUIRED;BuildingInstallationPositionType
+BuildingInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;BuildingInstallationType
+BuildingInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;type;TEXT;30;Street Furniture type;NULLABLE;NON_REQUIRED;StreetFurnitureType
 StreetFurniture;subtype;TEXT;50;Street Furniture Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
