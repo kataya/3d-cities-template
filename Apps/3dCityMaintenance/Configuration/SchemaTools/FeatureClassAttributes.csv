@@ -107,7 +107,7 @@ Tree;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;datePlanted;DATE;;Date planted;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;height;DOUBLE;;Crown height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;diameter;DOUBLE;;Crown diameter;NULLABLE;NON_REQUIRED;NO_DOMAIN
-Tree;diameterBreastHeight;DOUBLE;;Dtrunk Diameter at Breast Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Tree;diameterBreastHeight;DOUBLE;;Trunk Diameter at Breast Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Tree;canopyShape;TEXT;30;Canopy shape;NULLABLE;NON_REQUIRED;TreeCanopyShape
 ZoningDistrict;transect;TEXT;10;Transect type;NULLABLE;NON_REQUIRED;TransectType
 ZoningDistrict;zoningPlanType;TEXT;30;Plan type;NULLABLE;NON_REQUIRED;PlanType
