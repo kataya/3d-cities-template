@@ -278,6 +278,8 @@ class SchemaGenerator(object):
                     # Create classes
                     out_path = arcpy.env.workspace
                     out_name = new_class
+                    arcpy.AddMessage("out_path (env):" + out_path)
+                    arcpy.AddMessage("out_name (env):" + out_name)
                     if str(createClassParams[new_class][0]) == "MULTIPATCH" and create_multipatches:
                         self.createMultipatchTemplate(out_path, out_name, spatial_reference_param, configuration_files_location)
                     else:
@@ -364,7 +366,7 @@ class SchemaGenerator(object):
             crs_domain[1] = str(float(crs_domain_str[1]) / 1.1)
             crs_domain[2] = str(float(crs_domain_str[2]) / 1.1)
             crs_domain[3] = str(float(crs_domain_str[3]) / 1.1)
-        
+
         # create a multipatch template file based on the valid xy domain
         multipatch_tpl = "#VRML V2.0 utf8" + os.linesep + r"Shape { appearance Appearance { material Material { diffuseColor 1 0 0 } }" +     r" geometry IndexedFaceSet { coord Coordinate { point ["
         multipatch_tpl += crs_domain[0] + " " + crs_domain[1] + " -50000, " # vertex 0
@@ -379,7 +381,7 @@ class SchemaGenerator(object):
         f.close()
 
         templateFC = path + '/' + name
-        arcpy.AddMessage("templateFC: " + templateFC)
+        arcpy.AddMessage("Generating a Multipatch FC: " + templateFC)
         arcpy.ddd.Import3DFiles(in_files = template_filename,
                                 out_featureClass = templateFC,
                                 root_per_feature = "ONE_FILE_ONE_FEATURE",
