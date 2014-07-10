@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<metadata xml:lang="en"><Esri><CreaDate>20130910</CreaDate><CreaTime>10055900</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><ModDate>20140519</ModDate><ModTime>102124</ModTime><scaleRange><minScale>150000000</minScale><maxScale>5000</maxScale></scaleRange><ArcGISProfile>ItemDescription</ArcGISProfile></Esri><toolbox name="3DHeightTools" alias=""><arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath><toolsets/></toolbox><dataIdInfo><idCitation><resTitle>3DHeightTools</resTitle></idCitation><idPurp>To populate the 3D City Information model with building height and base height values.  Can also be used to determine base and building heights of non 3DCIM feature classes.  There are only three necessary components:
+-building footprints (polygon)
+-normalized digital surface model (raster) to represent the height of features
+-digital elevation model (raster) to represent the base elevation.
+
+</idPurp><idCredit>T, Hales
+J. Swain</idCredit><searchKeys><keyword>3D City Information Model</keyword><keyword>3D Analyst</keyword><keyword>Template</keyword><keyword>Local Government template.</keyword></searchKeys></dataIdInfo><distInfo><distributor><distorFormat><formatName>ArcToolbox Toolbox</formatName></distorFormat></distributor></distInfo><mdHrLv><ScopeCd value="005"></ScopeCd></mdHrLv></metadata>

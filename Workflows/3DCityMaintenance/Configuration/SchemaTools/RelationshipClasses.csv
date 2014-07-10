@@ -1,0 +1,15 @@
+BuildingHasEntrance;Building;BuildingEntrancePoint;SIMPLE;hasEntrance;toBuilding;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
+BuildingHasShell;Building;BuildingShell;SIMPLE;hasShell;represents;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
+BuildingHasShellPart;Building;BuildingShellPart;SIMPLE;hasShellPart;represents;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
+BuildingHasSpace;Building;BuildingInteriorSpace;SIMPLE;hasSpace;inBuilding;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
+BuildingHasFloor;Building;BuildingFloor;SIMPLE;hasFloor;inBuilding;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
+FloorHasSpace;BuildingFloor;BuildingInteriorSpace;SIMPLE;hasSpace;onFloor;NONE;ONE_TO_MANY;NONE;BuildingFloorFID;buildingFID
+FloorHasStructure;BuildingFloor;BuildingInteriorStructure;SIMPLE;hasStructure;onFloor;NONE;ONE_TO_MANY;NONE;BuildingFloorFID;floorFID
+SensorHasCoverage;Sensor;SensorCoverage;COMPOSITE;hasCoverage;isCovered;FORWARD;ONE_TO_MANY;NONE;SensorFID;sensorFID
+SpaceHasInstallation;BuildingInteriorSpace;InteriorInstallation;SIMPLE;hasInstallation;isIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;spaceFID
+ZoneHasRegulation;ZoningDistrict;Regulation;COMPOSITE;hasRegulation;regulates;FORWARD;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
+ZoneHasUsage;ZoningDistrict;Usage;COMPOSITE;hasUsage;isAllowedIn;FORWARD;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
+SpaceHasUsage;BuildingInteriorSpace;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;referenceFID
+ParcelHasRegulation;Parcel;Regulation;SIMPLE;hasRegulation;regulates;NONE;ONE_TO_MANY;NONE;ParcelFID;referenceFID
+ParcelHasNeigborhood;Parcel;Neighborhood;COMPOSITE;hasNeigborhood;partOf;FORWARD;ONE_TO_MANY;NONE;ParcelFID;parcelFID
+ParcelHasUsage;Parcel;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;ParcelFID;referenceFID

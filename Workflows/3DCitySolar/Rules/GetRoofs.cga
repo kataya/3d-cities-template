@@ -1,0 +1,29 @@
+/**
+ * File:    GetRoofs.cga
+ * Created: 26 Sep 2013 15:26:38 GMT
+ * Author:  Gert
+ */
+
+version "2012.1"
+
+attr GetTheRoofs = true
+
+# Panels
+GetRoofs -->
+	alignScopeToAxes()
+	comp(f){ vertical: Rest | all : Roofs}
+
+Roofs -->
+	case GetTheRoofs:
+		texture("")
+		color(1,1,0)
+		Roofs.
+	else:
+		NIL
+	
+Rest -->
+	case GetTheRoofs:
+		NIL
+	else:
+		texture("")
+		Rest.

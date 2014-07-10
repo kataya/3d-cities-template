@@ -5,25 +5,29 @@ This is an Esri ArcGIS solution template for the creation, maintenance, visualiz
 [![App](https://github.com/Esri/3d-cities-template/raw/master/3d-cities-template.png "Zoning Designer results in the Web Viewer")] (http://www.arcgis.com/home/group.html?owner=ArcGISTeam3DCities&title=ArcGIS%20for%203D%20Cities)
 
 ## Features
-* Apps for City Data Management, City Asset Editing, Zoning Validation and other processes
-* Tools for loading Local Government & CityGML 1.0 data into the ArcGIS 3D City Information Model
+
+* Workflows for City Data Management, City Asset Editing, Zoning Validation and other processes
+* Tools for loading Local Government data into the ArcGIS 3D City Information Model
+* Interoperability tools for lossless import and export from CityGML 1.0/2.0
 * Provides 3D Editing tools for buildings, trees and other objects
-* Complete workflow for 3D visualization and analysis of zoning regulations
+* Complete tools for 3D visualization and analysis of zoning regulations
 
 ## Instructions
 
-1.	To contribute: Fork and then clone the repository.  
-2.	To download: Clone or Download the .zip file.
+1.	To download: Clone or [Download the .zip file](https://github.com/Esri/3d-cities-template/archive/master.zip).
+1.  To learn: [Visit the ArcGIS Pro 3D Cities pages](http://pro.arcgis.com/en/3d-gis/3d-cities/).
+1.	To contribute: Fork and then clone the repository.
 
 ## Requirements
 
-* Esri ArcGIS 10.1 SP1 or ArcGIS 10.2 to use the CityEngine GP Tools
-* Esri CityEngine 2012.1 or Esri CityEngine 2013.1 to create Rule Packages
-* Esri ArcGIS Interoperability Extension for 10.1/10.2 or Safe FME 2012/2013
+* Esri ArcGIS 10.2.2
+* Esri CityEngine 2014.0
+* Esri ArcGIS Interoperability Extension for 10.2.2 or Safe Software FME 2014 SP1
 * Microsoft Excel or OpenOffice/LibreOffice Calc
 
 ## Resources
 
+* [ArcGIS Pro 3D Cities pages](http://pro.arcgis.com/en/3d-gis/3d-cities/)
 * [ArcGIS for 3D Cities Group](http://www.arcgis.com/home/group.html?owner=ArcGISTeam3DCities&title=ArcGIS%20for%203D%20Cities)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 * [twitter@esri](http://twitter.com/esri)
