@@ -8,7 +8,7 @@ This is an Esri ArcGIS solution template for the creation, maintenance, visualiz
 
 * Workflows for City Data Management, City Asset Editing, Zoning Validation and other processes
 * Tools for loading Local Government data into the ArcGIS 3D City Information Model
-* Interoperability tools for lossless import and export from CityGML 1.0/2.0
+* [Interoperability tools](https://github.com/Esri/3d-cities-template/tree/master/Workflows/3DCityMaintenance/CityGML%20Tools) for lossless import and export from CityGML 1.0/2.0
 * Provides 3D Editing tools for buildings, trees and other objects
 * Complete tools for 3D visualization and analysis of zoning regulations
 
