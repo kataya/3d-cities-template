@@ -61,12 +61,12 @@ This tool will verify that the Schema is correct for migrating into the 3DCIM.  
 
 In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  Open the toolset and see that it has the following ETL tools:
 
-* Import Building – imports solid CityGML 3D geometric 
-* Import Building LoD 1 and 2  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
-* Import CityFurniture -importsCityGMLdefined street 
-* Import LandCover- imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the 
-* Import LandUse -imports CityGML defined LandUse 
-* Import SolitaryVegitationObject -  imports  CityGML 
+* **Import Building** – imports solid CityGML 3D geometric 
+* **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
+* **Import CityFurniture** -imports CityGML defined street furniture 
+* **Import LandCover** - imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the 
+* **Import LandUse** -imports CityGML defined LandUse 
+* **Import SolitaryVegitationObject** -  imports  CityGML 
 
 In our example, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
@@ -88,11 +88,11 @@ The Output is now a Building Feature Class in the 3DCIM with new aggregated City
 
 In this step you will export 3DCIM features back into CityGML format using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
-* Export Building -  exports 3DCIM   Building and BuildingShell features to CityGML defined building module.
-* Export CityFurniture- exports 3DCIM StreetFurniture features to CityGML defined street furniture module. 
-* Export LandCover - exports 3DCIM LandCover features to CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, * WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas.
-* Export LandUse -exports 3DCIM Usage and ZoningDistrict features to CityGML defined LandUse areas. 
-* Export SolitaryVegetationObject - exports 3DCIM defined Trees feature to CityGML SolitaryVegetationObject.
+* **Export Building** -  exports 3DCIM   Building and BuildingShell features to CityGML defined building module.
+* **Export CityFurniture**- exports 3DCIM StreetFurniture features to CityGML defined street furniture module. 
+* **Export LandCover** - exports 3DCIM LandCover features to CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, * WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas.
+* **Export LandUse** -exports 3DCIM Usage and ZoningDistrict features to CityGML defined LandUse areas. 
+* **Export SolitaryVegetationObject** - exports 3DCIM defined Trees feature to CityGML SolitaryVegetationObject.
 
 In our example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
 
