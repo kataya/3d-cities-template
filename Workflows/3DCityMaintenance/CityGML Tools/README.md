@@ -69,7 +69,7 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 ![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png)
 * **Import LandCover** - imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the
 
-![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandCover.png)
+![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandcover.png)
 * **Import LandUse** -imports CityGML defined LandUse 
 * **Import SolitaryVegitationObject** -  imports  CityGML 
 
