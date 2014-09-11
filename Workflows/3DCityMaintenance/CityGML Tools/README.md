@@ -57,3 +57,59 @@ This tool will verify that the Schema is correct for migrating into the 3DCIM.  
 * Undefined spatial reference
 * Missing attributes
 
+## Step 3: Import CityGML files into 3DCIM
+
+In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  Open the toolset and see that it has the following ETL tools:
+
+* Import Building – imports solid CityGML 3D geometric 
+* Import Building LoD 1 and 2  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
+* Import CityFurniture -importsCityGMLdefined street 
+* Import LandCover- imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the 
+* Import LandUse -imports CityGML defined LandUse 
+* Import SolitaryVegitationObject -  imports  CityGML 
+
+In our example, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
+
+**Source CityGML File(s):** Select CityGML file(s) to process.
+
+**GML SRS Axis Order (optional):** In some cases (when the coordinate system is not defined or unknown) it might be necessary to define the axis order. 1, 2, 3 corresponds to an axis order of x, y, z.
+
+**Ingnore xsi:schemaLocation in Dataset (optional):** Choose Yes in case the CityGML file contains local schema definitions.
+
+**Destination Esri File Geodatabase:** Choose the name and location for the destination 3DCIM Geodatabase. Create a new 3DCIM Geodatabase or choose an existing one.
+
+**XML Workspace Document (optional):** In case a new 3DCIM Geodatabase should be created, choose the XML Workspace Document you find in the examples folder.
+
+**Overwrite Existing Geodatabase:** Choose Yes in case an existing 3DCIM Geodatabase should be overwritten. In this case, also enter the location path of the ML Workspace Document under XML Workspace Document.
+
+The Output is now a Building Feature Class in the 3DCIM with new aggregated CityGML attributes.
+
+## Step 4: Export 3DCIM files CityGML format
+
+In this step you will export 3DCIM features back into CityGML format using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
+
+* Export Building -  exports 3DCIM   Building and BuildingShell features to CityGML defined building module.
+* Export CityFurniture- exports 3DCIM StreetFurniture features to CityGML defined street furniture module. 
+* Export LandCover - exports 3DCIM LandCover features to CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, * WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas.
+* Export LandUse -exports 3DCIM Usage and ZoningDistrict features to CityGML defined LandUse areas. 
+* Export SolitaryVegetationObject - exports 3DCIM defined Trees feature to CityGML SolitaryVegetationObject.
+
+In our example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
+
+**Source Esri File Geodatabase:** Choose the 3CDIM Geodatabase to from where to export CityGML file(s).
+
+**CityGML Version:** Choose between CityGML Version 1.0 or 2.0. 
+
+**Export with Building Footprint (CityGML 2.0 only):** CityGML 2.0 introduced a new geometry called LoD0FootPrint (a 2.5 polygon describing the building footprint). Choose Yes in case footprints should be exported.
+
+**Destination CityGML Document:** Choose folder and name for the CityGML file. 
+
+**CityGML Name (gml:name) (optional):** Assign a CityGML CityModel name.
+
+**CityGML description (gml:description) (optional):** Enter a CityGML CityModel description.
+
+The Output is now a Building Feature Class in the in CityGML 3DCIM attributes aggregated back to CityGML attributes.
+
+###3DCIM CityGML ETL Tools Customization 
+
+Since all CityGML Import and Export Tools are based on ETL Tools it is possible to customize them. To do this, right-click on the tool and choose Edit.  Please note that an advanced knowledge of FME is required to customize the tools.
