@@ -63,15 +63,23 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 
 * **Import Building** – imports solid CityGML 3D geometric 
 ![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuilding.png)
+
 * **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
+![alt Import Building LoD1 and 2]
+(https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuildingLoD1and2.png)
+* 
 * **Import CityFurniture** -imports CityGML defined street furniture
+![alt Import CityFurniture Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png)
 
-![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png)
 * **Import LandCover** - imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the
+![alt Import LandCover Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandcover.png)
 
-![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandcover.png)
 * **Import LandUse** -imports CityGML defined LandUse 
+![alt Import LandUse Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png)
+
 * **Import SolitaryVegitationObject** -  imports  CityGML 
+![alt Import SolitaryVegitationObject Tool]
+(https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryObject.png)
 
 In our example, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
