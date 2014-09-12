@@ -77,9 +77,8 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 * **Import LandUse** -imports CityGML defined LandUse 
 ![alt Import LandUse Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png)
 
-* **Import SolitaryVegitationObject** -  imports  CityGML 
-![alt Import SolitaryVegitationObject Tool]
-(https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png)
+* **Import SolitaryVegetationObject** -  imports  CityGML 
+![alt Import SolitaryVegetationObject Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png)
 
 In our example, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
