@@ -51,7 +51,7 @@ In order for the 3CDIM CityGML toolbox to work, all CityGML files must be valida
 1. Open the Helper Tools toolset
 1. Open the Validate  CityGML files
 
-This tool will verify that the Schema is correct for migrating into the 3DCIM.  If the data is not valid, the tool will display that CityGML data is invalid.  Some common reasons for invalid data are:
+This tool will verify that the Schema is correct for migrating into the 3DCIM.  If the data is not valid the CityGML toolbox will not work.  Some common reasons for invalid data are:
 
 * Texture errors
 * Undefined spatial reference
