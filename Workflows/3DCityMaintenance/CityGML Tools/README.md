@@ -61,7 +61,9 @@ This tool will verify that the Schema is correct for migrating into the 3DCIM.  
 
 In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  Open the toolset and see that it has the following ETL tools:
 
-* **Import Building** – imports solid CityGML 3D geometric 
+* **Import Building** – imports CityGML file *Building* containing the feature types of LoD1 *Building*; LoD2 *GroundSurface*, *WallSurface*, *RoofSurface*; LoD3 *BuildingInstallation*; LoD4 *InteriorWall*, 
+*IntBuildingInstallation*, Room into 3DCIM attributes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, *BuildingInteriorSpace*.
+
 ![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuilding.png)
 
 * **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
