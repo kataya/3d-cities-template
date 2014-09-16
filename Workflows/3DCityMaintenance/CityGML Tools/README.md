@@ -61,28 +61,28 @@ This tool will verify that the Schema is correct for migrating into the 3DCIM.  
 
 In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  Open the toolset and see that it has the following ETL tools:
 
-* **Import Building** – imports CityGML file *Building* containing the feature types of LoD1 *Building*; LoD2 *GroundSurface*, *WallSurface*, *RoofSurface*; LoD3 *BuildingInstallation*; LoD4 *InteriorWall*, 
-*IntBuildingInstallation*, Room into 3DCIM attributes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, *BuildingInteriorSpace*.
-
+* **Import Building** – imports CityGML *Building* module containing the feature types of LoD1 *Building*; LoD2 *GroundSurface*, *WallSurface*, *RoofSurface*; LoD3 *BuildingInstallation*; LoD4 *InteriorWall*, 
+*IntBuildingInstallation*, *Room* into 3DCIM feature class with attributes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, *BuildingInteriorSpace*.
 ![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuilding.png)
 
-* **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM BuildingShell 
+* **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM feature class with attributes *BuildingAndBuilidingPart*, *Room*, *BuildingShell*, *BuildingInteriorStructure*, *BuildingInstallation*.
 ![alt Import Building LoD1 and 2]
 (https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuildingLoD1and2.png)
 * 
-* **Import CityFurniture** -imports CityGML defined street furniture
+* **Import CityFurniture** - imports CityGML *CityFurniture* module into 3DCIM feature class with attributes *StreetFurniture*, *SpatialLineAnno*, *SpatialVolumeAnno*.
 ![alt Import CityFurniture Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png)
 
-* **Import LandCover** - imports CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas into the
+* **Import LandCover** - imports CityGML *LandCover* module containing the feature types *WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, *WaterSurface*, *PlantCover*, *TrafficArea*, *AuxilaryTrafficArea* into the
+3DCIM feature class with attribute *LandCover*.
 ![alt Import LandCover Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandcover.png)
 
-* **Import LandUse** -imports CityGML defined LandUse 
+* **Import LandUse** -imports CityGML *LandUse* module into 3DCIM feature class with attributes *ZoningDistrict*, *Attribute Container*, *Usage*.
 ![alt Import LandUse Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png)
 
-* **Import SolitaryVegetationObject** -  imports  CityGML 
+* **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes 
 ![alt Import SolitaryVegetationObject Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png)
 
-In our example, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
+For our purposes, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
 **Source CityGML File(s):** Select CityGML file(s) to process.
 
@@ -102,12 +102,11 @@ The Output is now a Building Feature Class in the 3DCIM with new aggregated City
 
 In this step you will export 3DCIM features back into CityGML format using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
-* **Export Building** -  exports 3DCIM   Building and BuildingShell features to CityGML defined building module.
-* **Export CityFurniture**- exports 3DCIM StreetFurniture features to CityGML defined street furniture module. 
-* **Export LandCover** - exports 3DCIM LandCover features to CityGML defined AuxilaryTrafficArea, TrafficArea, PlantCover, * WaterBody, WaterGroundSurface, WaterClosureSurface and WaterSurface areas.
-* **Export LandUse** -exports 3DCIM Usage and ZoningDistrict features to CityGML defined LandUse areas. 
-* **Export SolitaryVegetationObject** - exports 3DCIM defined Trees feature to CityGML SolitaryVegetationObject.
-
+* **Export Building** -  exports 3DCIM *Building* feature class into CityGML *Building* module.
+* **Export CityFurniture**- exports 3DCIM *StreetFurniture* feature class to CityGML *CityFurniture* module. 
+* **Export LandCover** - exports 3DCIM *LandCover* feature class to the CityGML AuxilaryTrafficArea*, *TrafficArea*, *PlantCover*, * WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, and *WaterSurface* modules.
+* **Export LandUse** -exports 3DCIM *LandCover* feature class into CityGML *LandUse* module. 
+* **Export SolitaryVegetationObject** - exports 3DCIM *SolitaryVegetationObject* feature class into defined Trees feature to CityGML SolitaryVegetationObject.
 In our example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
 
 **Source Esri File Geodatabase:** Choose the 3CDIM Geodatabase to from where to export CityGML file(s).
