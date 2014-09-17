@@ -1,13 +1,13 @@
 # Import and Export City GML Data
 Interoperability between CityGML and 3DCIM platforms is essential to achieve all the functionality of the 3D Cities environment.  
 
-In this workflow, you will learn how to use the tools which will be used for 3DCIM_CityGML toolbox for interoperability between CityGML files and 3DCIM:
+In this workflow, you will learn how to use the tools which will be used for 3DCIM CityGML toolbox for interoperability between CityGML files and 3DCIM:
 * Import CityGML data into the 3DCIM environment
 * Export 3DCIM features back into CityGML data
 
 ## Here's What You Need
 
-Start by gathering the items listed below and following the steps in the directions. More detailed information is provided for each step
+Start by gathering the items listed below and following the steps in the directions. More detailed information is provided for each step:
 
 * ArcGIS Desktop 10.2.2
     * Data Interoperability Extension 10.2.2 or FME© Desktop 2014 
@@ -23,8 +23,8 @@ In this section:
 
 * Step 1: Install the 3DCIM CityGML toolbox
 * Step 2: Validate CityGML files ETL Tool
-* Step 3: Import CityGML files into 3DCIM
-* Step 4: Export 3DCIM files into CityGML format
+* Step 3: Import CityGML modules into 3DCIM
+* Step 4: Export 3DCIM files into CityGML modules
 
 ## Step 1: Install the 3DCIM CityGML toolbox
 
@@ -40,9 +40,9 @@ Next, we will add add 3DCIM CityGML toolbox to our toolboxes.
 
 After adding the 3DCIM CityGML toolbox to the ArcGIS toolboxes, open the toolbox and see that it contains three different toolsets.  
 
-* CityGML Export Toolset
-* CityGML Import Toolset
-* Helper Tools Toolset
+* **CityGML Export Toolset**
+* **CityGML Import Toolset**
+* **Helper Tools Toolset**
  
 ## Step 2: Validate CityGML files ETL Tool 
 
@@ -57,15 +57,15 @@ This tool will verify that the Schema is correct for migrating into the 3DCIM.  
 * Undefined spatial reference
 * Missing attributes
 
-## Step 3: Import CityGML files into 3DCIM
+## Step 3: Import CityGML modules into 3DCIM
 
-In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  Open the toolset and see that it has the following ETL tools:
+In this step you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
 * **Import Building** – imports CityGML *Building* module containing the feature types of LoD1 *Building*; LoD2 *GroundSurface*, *WallSurface*, *RoofSurface*; LoD3 *BuildingInstallation*; LoD4 *InteriorWall*, 
 *IntBuildingInstallation*, *Room* into 3DCIM feature class with attributes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, *BuildingInteriorSpace*.
 ![alt Import Building Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuilding.png)
 
-* **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 defined buildings into 3DCIM feature class with attributes *BuildingAndBuilidingPart*, *Room*, *BuildingShell*, *BuildingInteriorStructure*, *BuildingInstallation*.
+* **Import Building LoD 1 and 2**  -imports CityGML LoD1 and LoD2 feature types into 3DCIM feature class with attributes *BuildingAndBuilidingPart*, *Room*, *BuildingShell*, *BuildingInteriorStructure*, *BuildingInstallation*.
 ![alt Import Building LoD1 and 2]
 (https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuildingLoD1and2.png)
 * 
@@ -79,7 +79,7 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 * **Import LandUse** -imports CityGML *LandUse* module into 3DCIM feature class with attributes *ZoningDistrict*, *Attribute Container*, *Usage*.
 ![alt Import LandUse Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png)
 
-* **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes 
+* **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes *Tree*, *AttributeContainer*, SpatialVolumeAnno*.
 ![alt Import SolitaryVegetationObject Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png)
 
 For our purposes, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
@@ -98,7 +98,7 @@ For our purposes, we will use the Import Building tool.  To open, double-click t
 
 The Output is now a Building Feature Class in the 3DCIM with new aggregated CityGML attributes.
 
-## Step 4: Export 3DCIM files CityGML format
+## Step 4: Export 3DCIM files into CityGML modules
 
 In this step you will export 3DCIM features back into CityGML format using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
@@ -107,7 +107,8 @@ In this step you will export 3DCIM features back into CityGML format using the *
 * **Export LandCover** - exports 3DCIM *LandCover* feature class to the CityGML AuxilaryTrafficArea*, *TrafficArea*, *PlantCover*, * WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, and *WaterSurface* modules.
 * **Export LandUse** -exports 3DCIM *LandCover* feature class into CityGML *LandUse* module. 
 * **Export SolitaryVegetationObject** - exports 3DCIM *SolitaryVegetationObject* feature class into defined Trees feature to CityGML SolitaryVegetationObject.
-In our example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
+
+In the next example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
 
 **Source Esri File Geodatabase:** Choose the 3CDIM Geodatabase to from where to export CityGML file(s).
 
