@@ -79,7 +79,7 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 * **Import LandUse** -imports CityGML *LandUse* module into 3DCIM feature class with attributes *ZoningDistrict*, *Attribute Container*, *Usage*.
 ![alt Import LandUse Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png)
 
-* **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes *Tree*, *AttributeContainer*, SpatialVolumeAnno*.
+* **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes *Tree*, *AttributeContainer*, *SpatialVolumeAnno*.
 ![alt Import SolitaryVegetationObject Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png)
 
 For our purposes, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
@@ -106,7 +106,7 @@ In this step you will export 3DCIM features back into CityGML format using the *
 * **Export CityFurniture**- exports 3DCIM *StreetFurniture* feature class to CityGML *CityFurniture* module. 
 * **Export LandCover** - exports 3DCIM *LandCover* feature class to the CityGML AuxilaryTrafficArea*, *TrafficArea*, *PlantCover*, * WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, and *WaterSurface* modules.
 * **Export LandUse** -exports 3DCIM *LandCover* feature class into CityGML *LandUse* module. 
-* **Export SolitaryVegetationObject** - exports 3DCIM *SolitaryVegetationObject* feature class into defined Trees feature to CityGML SolitaryVegetationObject.
+* **Export SolitaryVegetationObject** - exports 3DCIM *SolitaryVegetationObject* feature class into defined Trees feature to CityGML SolitaryVegetationObject module.
 
 In the next example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
 
