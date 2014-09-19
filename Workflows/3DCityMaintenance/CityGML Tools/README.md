@@ -1,4 +1,4 @@
-# Import and Export City GML Data
+# Import and Export CityGML Data
 CityGML is widely used around the world for storing and exchanging virtual 3D city models.  CityGML is a common semantic information model for the representation of 3D urban objects that can be shared over different applications.   The targeted applications are city planning, architectural design, tourist and leisure activities, environmental simulation, mobile telecommunication, disaster management, homeland security, real estate management, vehicle and pedestrian navigation, and training simulators.   A 3D city information model (3DCIM) organizes this 3D data for these applications into three themes: the Built Environment, the Legal Environment, and the Natural Environment. With the 3DCIM, 3D city models can be brought into ArcGIS, ArcScene, and CityEngine and be used for a wide range of applications.    Therefore, Interoperability between CityGML and 3DCIM platforms is essential to achieve all the solution capabilities of the 3D Cities environment.  
 
 In this workflow, you will learn how to use the tools which will be used for interoperability between CityGML files and 3DCIM:
