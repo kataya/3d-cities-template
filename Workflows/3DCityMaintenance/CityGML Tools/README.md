@@ -78,10 +78,10 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 
 * **Import LandUse** -imports CityGML *LandUse* module into 3DCIM feature class with attributes *ZoningDistrict*, *Attribute Container*, *Usage*.
 ![alt Import LandUse Tool]
-<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png" width="80%" height="80">
+<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png" width="80%" height="80%">
 
 * **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes *Tree*, *AttributeContainer*, *SpatialVolumeAnno*.
-![alt Import SolitaryVegetationObject Tool]<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png" width="80%" height="80">
+![alt Import SolitaryVegetationObject Tool]<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png" width="80%" height="80%">
 
 For our purposes, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
