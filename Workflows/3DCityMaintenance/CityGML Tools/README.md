@@ -70,19 +70,18 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 (https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importBuildingLoD1and2.png)
 * 
 * **Import CityFurniture** - imports CityGML *CityFurniture* module into 3DCIM feature class with attributes *StreetFurniture*, *SpatialLineAnno*, *SpatialVolumeAnno*.
-![alt Import CityFurniture Tool]
-(img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png" width="80%" hieght="80%")
+
+<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png" width="80%" hieght="80%" alt="Import CityFurniture Tool">
 
 * **Import LandCover** - imports CityGML *LandCover* module containing the feature types *WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, *WaterSurface*, *PlantCover*, *TrafficArea*, *AuxilaryTrafficArea* into the 3DCIM feature class with attribute *LandCover*.
 ![alt Import LandCover Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandcover.png)
 
 * **Import LandUse** -imports CityGML *LandUse* module into 3DCIM feature class with attributes *ZoningDistrict*, *Attribute Container*, *Usage*.
-![alt Import LandUse Tool]
-(img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png" width="80%" height="80%")
+
+<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importLandUse.png" width="80%" height="80%">
 
 * **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* feature type into 3DCIM feature attributes *Tree*, *AttributeContainer*, *SpatialVolumeAnno*.
-![alt Import SolitaryVegetationObject Tool]
-(img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png" width="80%" height="80%")
+<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importSolitaryVegetationObject.png" width="80%" height="80%">
 
 For our purposes, we will use the Import Building tool.  To open, double-click the tool (or right-click and choose Open). 
 
