@@ -72,7 +72,7 @@ In this step you will import valid CityGML files into the 3DCIM environment usin
 * **Import CityFurniture** - imports CityGML *CityFurniture* module into 3DCIM feature class with attributes *StreetFurniture*, *SpatialLineAnno*, *SpatialVolumeAnno*.
 ![alt Import CityFurniture Tool](https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png)
 
-<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png" width="1000" height="600">
+<img src="https://github.com/mattmiller2014/3d-cities-template/blob/master/Workflows/3DCityMaintenance/CityGML%20Tools/images/importCityFurniture.png" size="30%">
 
 * **Import LandCover** - imports CityGML *LandCover* module containing the feature types *WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, *WaterSurface*, *PlantCover*, *TrafficArea*, *AuxilaryTrafficArea* into the
 3DCIM feature class with attribute *LandCover*.
