@@ -22,12 +22,12 @@ Start by gathering the items listed below and following the steps in the directi
 
 In this section:
 
-* Step 1: Install the **3DCIM CityGML Toolbox**
-* Step 2: Validate CityGML files ETL Tool
-* Step 3: Import CityGML modules into the 3DCIM
-* Step 4: Export 3DCIM files into CityGML modules
+* [Step 1: Install the **3DCIM CityGML Toolbox**](#step1)
+* [Step 2: Validate CityGML files ETL Tool](#step2)
+* [Step 3: Import CityGML modules into the 3DCIM](#step3)
+* [Step 4: Export 3DCIM files into CityGML modules](#step4)
 
-## Step 1: Install the 3DCIM CityGML toolbox
+## <a name="step1"></a>Step 1: Install the **3DCIM CityGML Toolbox**
 
 After you have downloaded the 3D Cities template, activate the Data Interoperability Extension.
 
@@ -45,20 +45,20 @@ Open the **3DCIM CityGML Toolbox** and you will see that it contains three diffe
 * **CityGML Import Toolset**
 * **Helper Tools Toolset**
  
-## Step 2: Validate CityGML files ETL Tool 
+## <a name="step2"></a>Step 2: Validate CityGML files ETL Tool 
 
 In order for the **3CDIM CityGML Toolbox** to work, all CityGML files must be validated before use.  To do this, you will use the **Validate CityGML** files tool.  For more information on valid CityGML schema’s Versions 1.0 and 2.0 OGC please visit [Validate CityGML Data](http://www.opengeospatial.org/standards/citygml).  To validate your CityGML files do the following:
 
 1. Open the **Helper Tools toolset**.
 1. Open the **Validate CityGML files**.
 
-This tool will verify that the Schema is correct for migrating into the 3DCIM.  If the data is not valid the **3DCIM CityGML Toolbox** will not work.  Some common reasons for invalid data are:
+This tool will verify that the schema is correct for migrating into the 3DCIM.  If the data is not valid the **3DCIM CityGML Toolbox** will not work.  Some common reasons for invalid data are:
 
 * Texture errors
 * Undefined spatial reference
 * Missing attributes
 
-## Step 3: Import CityGML modules into the 3DCIM
+## <a name="step3"></a>Step 3: Import CityGML modules into the 3DCIM
 
 In this step, you will import valid CityGML files into the 3DCIM environment using the **CityGML Import** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
@@ -110,7 +110,7 @@ Here are the other CityGML import tools in detail:
 * **Import SolitaryVegetationObject** - imports CityGML *SolitaryVegetationObject* module into the 3DCIM with feature classes *Tree*, *AttributeContainer*, and *SpatialVolumeAnnotation*.
 <img src= "images/importSolitaryVegetationObject.png">
 
-## Step 4: Export 3DCIM files into CityGML modules
+## <a name="step4"></a>Step 4: Export 3DCIM files into CityGML modules
 
 In this step, you will export 3DCIM features back into CityGML modules using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
 
@@ -126,7 +126,7 @@ In the next example, we will use the **Export Building** tool.  To open, double-
 
 **CityGML Version:** Choose between CityGML Version 1.0 or 2.0. 
 
-**Export with Building Footprint (CityGML 2.0 only):** CityGML 2.0 introduced a new geometry called LoD0FootPrint (a 2.5 polygon describing the building footprint). Choose Yes in case footprints should be exported.
+**Export with Building Footprint (CityGML 2.0 only):** CityGML 2.0 introduced a new geometry called LoD0FootPrint (a 2.5D polygon describing the building footprint). Choose Yes in case footprints should be exported.
 
 **Destination CityGML Document:** Choose the folder and name for the CityGML file. 
 
