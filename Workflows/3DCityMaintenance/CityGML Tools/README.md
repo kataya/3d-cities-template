@@ -1,5 +1,8 @@
 # Import and Export CityGML Data
-CityGML is widely used around the world for storing and exchanging virtual 3D city models.  CityGML is a common semantic information model for the representation of 3D urban objects that can be shared over different applications.   The targeted applications are city planning, architectural design, tourist and leisure activities, environmental simulation, mobile telecommunication, disaster management, homeland security, real estate management, vehicle and pedestrian navigation, and training simulators.   A 3D city information model (3DCIM) organizes this 3D data for these applications into three themes: the Built Environment, the Legal Environment, and the Natural Environment. With the 3DCIM, 3D city models can be brought into ArcGIS, ArcScene, and CityEngine and be used for a wide range of applications.    Therefore, Interoperability between CityGML and 3DCIM platforms is essential to achieve all the solution capabilities of the 3D Cities environment.  
+
+CityGML is widely used around the world for storing and exchanging virtual 3D city models.  CityGML is a common semantic information model for the representation of 3D urban objects that can be shared over different applications.   The targeted applications are city planning, architectural design, tourist and leisure activities, environmental simulation, mobile telecommunication, disaster management, homeland security, real estate management, vehicle and pedestrian navigation, and training simulators. 
+
+The ArcGIS 3D city information model (3DCIM) is an Esri information model that works very well for data management, analysis and visualisation. With the 3DCIM, 3D city models can be brought into ArcGIS and CityEngine and be used for a wide range of applications. CityGML and the 3DCIM are complementary. Therefore, Interoperability between CityGML and 3DCIM platforms is essential to achieve all the solution capabilities of the 3D Cities environment.  
 
 In this workflow, you will learn how to use the tools which will be used for interoperability between CityGML files and the 3DCIM:
 
@@ -13,7 +16,7 @@ Start by gathering the items listed below and following the steps in the directi
 * ArcGIS Desktop 10.2.2
     * Data Interoperability Extension 10.2.2 or FME© Desktop 2014 
 * City GML 1.0 or 2.0 source data
-    * For samples of CityGML data that you can use in the workflow go to [Sample CityGML    Data](http://www.citygml.org/index.php?id=1539)
+    * For samples of CityGML data that you can use in the workflow go to [Sample CityGML Data](http://www.citygml.org/index.php?id=1539)
 * 3D Cities Template
     * Download the CityGML Import and Export Toolbox at [3D Cities Template](https://github.com/Esri/3d-cities-template) and save the toolbox to a local folder on your computer.
     * Download the current XML Workspace Document from [XML Workspace Document](https://github.com/Esri/3d-cities-template/tree/master/InformationModel).
