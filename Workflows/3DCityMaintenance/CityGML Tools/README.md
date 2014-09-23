@@ -89,10 +89,9 @@ Now, we will use the **Import Building** tool as an example to illustrate how th
 **XML Workspace Document (optional):** In case a new 3DCIM Geodatabase should be created, choose the XML Workspace Document you find in the examples folder.
 
 **Overwrite Existing Geodatabase:** Choose Yes in case an existing 3DCIM Geodatabase should be overwritten. In this case, also enter the location path of the XML Workspace Document under XML Workspace Document.
+![alt Import Building tool example](images/importBuildingExample.png) 
 
 The Output is a *Building* feature class in the 3DCIM with new aggregated CityGML modules.
-
-![alt Import Building tool example](images/importBuildingExample.png) 
 
 Here are the other CityGML import tools in detail:
 
