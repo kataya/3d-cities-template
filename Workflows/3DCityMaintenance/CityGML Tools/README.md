@@ -78,8 +78,8 @@ We will next discuss each of these tools in further detail.
 *IntBuildingInstallation*, and *Room* into the 3DCIM with feature classes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, and *BuildingInteriorSpace*.
 ![alt Import Building Tool](images/importBuilding.png)
 
-### Example: Import CityGML ***Building*** module into the 3DCIM 
-Now, we will use the **Import Building** tool as an example to illustrate how the import tools work.  To open, double-click the tool (or right-click and choose Open). 
+### Example #1: Import CityGML ***Building*** module into the 3DCIM 
+Now, we will use the **Import Building** tool as an example to illustrate how the CityGML import tools work.  To open, double-click the tool (or right-click and choose Open). 
 
 **Source CityGML File(s):** Select CityGML file(s) to process.
 
@@ -94,7 +94,7 @@ Now, we will use the **Import Building** tool as an example to illustrate how th
 **Overwrite Existing Geodatabase:** Choose Yes in case an existing 3DCIM Geodatabase should be overwritten. In this case, also enter the location path of the XML Workspace Document under XML Workspace Document.
 ![alt Import Building tool example](images/importBuildingExample.png) 
 
-The Output is a *Building* feature class in the 3DCIM with new aggregated CityGML modules.
+The output is a *Building* feature class in the 3DCIM with new aggregated CityGML modules.
 
 Here are the other CityGML import tools in detail:
 
@@ -115,15 +115,20 @@ Here are the other CityGML import tools in detail:
 
 ## <a name="step4"></a>Step 4: Export 3DCIM files into CityGML modules
 
-In this step, you will export 3DCIM features back into CityGML modules using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
+In this step, you will export 3DCIM features classes back into CityGML modules using the **CityGML Export** toolset.  When you open the toolset you will see that it has the following ETL tools:
+
+* **Export Building**
+* **Export CityFurniture**
+* **Export LandCover**
+* **Export LandUse**
+* **Export SolitaryVegetationObject**
+
+We will next discuss each of these tools in further detail.
 
 * **Export Building** -  exports 3DCIM feature classes *Building*, *BuildingShell*, *BuildingShellPart*, *BuildingInteriorStructure*, *BuildingInstallation*, and *BuildingInteriorSpace* into CityGML *Building* module.
-* **Export CityFurniture**- exports 3DCIM feature classes *StreetFurniture*, *SpatialLineAnnotation*, and *SpatialVolumeAnnotation* to CityGML *CityFurniture* module. 
-* **Export LandCover** - exports 3DCIM *LandCover* feature class to the CityGML AuxiliaryTrafficArea*, *TrafficArea*, *PlantCover*, * WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, and *WaterSurface* modules.
-* **Export LandUse** -exports 3DCIM feature classes *ZoningDistrict*, *Attribute Container*, and *Usage into CityGML *LandUse* module. 
-* **Export SolitaryVegetationObject** - exports 3DCIM with feature classes *Tree*, *AttributeContainer*, and *SpatialVolumeAnnotation* into CityGML *SolitaryVegetationObject* module.
 
-In the next example, we will use the **Export Building** tool.  To open, double-click the tool (or right-click and choose Open).  
+### Example #2: Export 3DCIM feature classes into CityGML **Building** module
+Now, we will use the **Export Building** tool as an example to illustrate how the CityGML export tools work.  To open, double-click the tool (or right-click and choose Open).
 
 **Source Esri File Geodatabase:** Choose the 3CDIM Geodatabase to from where to export CityGML file(s).
 
@@ -137,7 +142,17 @@ In the next example, we will use the **Export Building** tool.  To open, double-
 
 **CityGML description (gml:description) (optional):** Enter a CityGML CityModel description.
 
-The Output is now CityGML data with 3DCIM feature classes aggregated back into CityGML modules.
+![alt Export Building tool example](images/exportBuildingExample.png)  
+
+The output is now CityGML data with 3DCIM feature classes aggregated back into CityGML modules.
+
+Here are the other CityGML export tools in detail:
+
+* **Export CityFurniture**- exports 3DCIM feature classes *StreetFurniture*, *SpatialLineAnnotation*, and *SpatialVolumeAnnotation* to CityGML *CityFurniture* module. 
+* **Export LandCover** - exports 3DCIM *LandCover* feature class to the CityGML AuxiliaryTrafficArea*, *TrafficArea*, *PlantCover*, * WaterBody*, *WaterGroundSurface*, *WaterClosureSurface*, and *WaterSurface* modules.
+* **Export LandUse** -exports 3DCIM feature classes *ZoningDistrict*, *Attribute Container*, and *Usage into CityGML *LandUse* module. 
+* **Export SolitaryVegetationObject** - exports 3DCIM with feature classes *Tree*, *AttributeContainer*, and *SpatialVolumeAnnotation* into CityGML *SolitaryVegetationObject* module.
+
 
 ###3DCIM CityGML ETL Tools Customization 
 
