@@ -31,6 +31,8 @@ Building;roofForm;TEXT;30;Roof form;NULLABLE;NON_REQUIRED;BuildingRoofForm
 Building;levelsAboveGround;SHORT;;Levels above ground;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;levelsBelowGround;SHORT;;Levels below ground;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;status;TEXT;30;Construction status;NULLABLE;NON_REQUIRED;ConstructionStatus
+Building;phase;TEXT;50;Construction phase;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Building;groupFID;TEXT;50;Reference Feature ID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingEntrancePoint;buildingFID;TEXT;50;Key of the building;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -72,12 +74,12 @@ BuildingInteriorStructure;height;DOUBLE;;Floor height;NULLABLE;NON_REQUIRED;NO_D
 BuildingInteriorStructure;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;AccessType
 BuildingInteriorStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;InteriorInstallationType
-InteriorInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-InteriorInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;BuildingInstallationType
+BuildingInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;type;TEXT;30;Street Furniture type;NULLABLE;NON_REQUIRED;StreetFurnitureType
 StreetFurniture;subtype;TEXT;50;Street Furniture Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 StreetFurniture;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -161,3 +163,28 @@ TransportNetworkSegment;accessType;TEXT;30;Access type;NULLABLE;NON_REQUIRED;Acc
 TransportNetworkSegment;pavementType;TEXT;30;Pavement type;NULLABLE;NON_REQUIRED;PavementType
 TransportNetworkSegment;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 TransportNetworkSegment;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+EngineeringStructure;type;TEXT;50;Engineering Structure Type;NON_NULLABLE;NON_REQUIRED;EngineeringStructureType
+EngineeringStructure;subtype;TEXT;50;Engineering Structure Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
+EngineeringStructure;height;DOUBLE;;Height;NULLABLE;NON_REQUIRED;NO_DOMAIN
+EngineeringStructure;length;DOUBLE;;Length;NULLABLE;NON_REQUIRED;NO_DOMAIN
+EngineeringStructure;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+EngineeringStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Development;type;TEXT;50;Development Type;NON_NULLABLE;NON_REQUIRED;DevelopmentType
+Development;subtype;TEXT;50;Development Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Development;developer;TEXT;255;Responsible Developer;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Development;requirements;TEXT;255;Requirements;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Development;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Development;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;developmentFID;TEXT;50;Development FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;architect;TEXT;255;Architect;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;cost;DOUBLE;;Cost;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;energyStandard;TEXT;255;Energy Standard;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;residentialArea;DOUBLE;;Residential Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;retailArea;DOUBLE;;Retail Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;officeArea;DOUBLE;;Office Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;industrialArea;DOUBLE;;Industrial Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;transportArea;DOUBLE;;Transport Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;publicArea;DOUBLE;;Public and Educational Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Proposal;openSpaceArea;DOUBLE;;Open Space Area;NULLABLE;NON_REQUIRED;NO_DOMAIN
+Envelope;parcelFID;TEXT;50;Parcel;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
+Envelope;type;TEXT;50;Development Type;NON_NULLABLE;NON_REQUIRED;EnvelopeType

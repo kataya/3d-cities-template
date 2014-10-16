@@ -7,7 +7,7 @@ BuildingRoofForm;Roof Form;TEXT;CODED
 BuildingUsage;Building Usage;TEXT;CODED
 BuildingType;Building Type;TEXT;CODED
 ConstructionStatus;Construction Status;TEXT;CODED
-InteriorInstallationType;Interior Installation Type;TEXT;CODED
+BuildingInstallationType;Building Installation Type;TEXT;CODED
 LandCoverType;Land Cover Type;TEXT;CODED
 ParcelType;Parcel Type;TEXT;CODED
 PlanType;Zoning or Land Use Plan Type;TEXT;CODED
@@ -36,3 +36,6 @@ SegmentNameDirection;Segment Name Direction;TEXT;CODED
 SegmentNameGeneric;Segment Name Generic;TEXT;CODED
 AdministrativeDistrictType;Administrative District Type;TEXT;CODED
 NutsCode;NUTS/LAU Code;TEXT;CODED
+EngineeringStructureType;Engineering Structure Type;TEXT;CODED
+DevelopmentType;DevelopmentType;TEXT;CODED
+EnvelopeType;EnvelopeType;TEXT;CODED
