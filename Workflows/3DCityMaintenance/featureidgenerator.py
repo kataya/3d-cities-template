@@ -44,8 +44,8 @@ class FeatureIdGenerator(object):
 
         # Set a value list for the Generation method
         generation_field.filter.type = "ValueList"
-        generation_field.filter.list = ["1.3", "1.4"]
-        generation_field.value = "1.4"
+        generation_field.filter.list = ["1.3", "1.4", "1.5"]
+        generation_field.value = "1.5"
 
         # Interval Size Field parameter
         hi_batchsize_field = arcpy.Parameter(
@@ -102,7 +102,7 @@ class FeatureIdGenerator(object):
         seqnameField = "name"
         seqcounterField = "hi"
         seqintervalField = "low"
-        if schema_version == "1.4":
+        if schema_version == "1.4" or schema_version == "1.5":
             generate_ID_table_name = "GenerateId"
             seqnameField = "SEQNAME"
             seqcounterField = "SEQCOUNTER"
@@ -119,7 +119,7 @@ class FeatureIdGenerator(object):
                 arcpy.AddField_management(generate_ID_table, seqnameField, "TEXT", None, None, 50, "Feature Class Name", "NON_NULLABLE", "REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqcounterField, "LONG", None, None, None, "Hi counter", "NON_NULLABLE", "REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqintervalField, "LONG", None, None, None, "Low counter", "NON_NULLABLE", "REQUIRED")
-            if schema_version == "1.4": # identical schema to attribute assistant
+            if schema_version == "1.4" or schema_version == "1.5": # identical schema to attribute assistant
                 arcpy.AddField_management(generate_ID_table, seqnameField, "TEXT", None, None, 50, "Sequence Name", "NON_NULLABLE", "NON_REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqcounterField, "LONG", None, None, None, "Sequence Counter", "NON_NULLABLE", "NON_REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqintervalField, "SHORT", None, None, None, "Interval Value", "NULLABLE", "NON_REQUIRED")

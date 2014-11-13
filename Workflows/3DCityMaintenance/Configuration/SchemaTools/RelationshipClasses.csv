@@ -5,13 +5,13 @@ BuildingHasSpace;Building;BuildingInteriorSpace;SIMPLE;hasSpace;inBuilding;NONE;
 BuildingHasFloor;Building;BuildingFloor;SIMPLE;hasFloor;inBuilding;NONE;ONE_TO_MANY;NONE;BuildingFID;buildingFID
 FloorHasSpace;BuildingFloor;BuildingInteriorSpace;SIMPLE;hasSpace;onFloor;NONE;ONE_TO_MANY;NONE;BuildingFloorFID;buildingFID
 FloorHasStructure;BuildingFloor;BuildingInteriorStructure;SIMPLE;hasStructure;onFloor;NONE;ONE_TO_MANY;NONE;BuildingFloorFID;floorFID
-SensorHasCoverage;Sensor;SensorCoverage;COMPOSITE;hasCoverage;isCovered;FORWARD;ONE_TO_MANY;NONE;SensorFID;sensorFID
+SensorHasCoverage;Sensor;SensorCoverage;SIMPLE;hasCoverage;isCovered;NONE;ONE_TO_MANY;NONE;SensorFID;sensorFID
 SpaceHasInstallation;BuildingInteriorSpace;InteriorInstallation;SIMPLE;hasInstallation;isIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;spaceFID
 ZoneHasRegulation;ZoningDistrict;Regulation;SIMPLE;hasRegulation;regulates;NONE;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
-ZoneHasUsage;ZoningDistrict;Usage;COMPOSITE;hasUsage;isAllowedIn;FORWARD;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
+ZoneHasUsage;ZoningDistrict;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;ZoningDistrictFID;referenceFID
 SpaceHasUsage;BuildingInteriorSpace;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;BuildingInteriorSpaceFID;referenceFID
 ParcelHasRegulation;Parcel;Regulation;SIMPLE;hasRegulation;regulates;NONE;ONE_TO_MANY;NONE;ParcelFID;referenceFID
-ParcelHasNeigborhood;Parcel;Neighborhood;COMPOSITE;hasNeigborhood;partOf;FORWARD;ONE_TO_MANY;NONE;ParcelFID;parcelFID
+ParcelHasNeigborhood;Parcel;Neighborhood;SIMPLE;hasNeigborhood;partOf;NONE;ONE_TO_MANY;NONE;ParcelFID;parcelFID
 ParcelHasUsage;Parcel;Usage;SIMPLE;hasUsage;isAllowedIn;NONE;ONE_TO_MANY;NONE;ParcelFID;referenceFID
 DevelopmentHasProposal;Development;Proposal;SIMPLE;hasProposal;proposes;NONE;ONE_TO_MANY;NONE;DevelopmentFID;developmentFID
 ProposalHasBuilding;Proposal;Building;SIMPLE;hasBuilding;partOfProposal;NONE;ONE_TO_MANY;NONE;ProposalFID;groupFID
