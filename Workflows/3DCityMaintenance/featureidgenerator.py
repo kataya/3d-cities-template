@@ -123,7 +123,7 @@ class FeatureIdGenerator(object):
                 arcpy.AddField_management(generate_ID_table, seqnameField, "TEXT", None, None, 50, "Sequence Name", "NON_NULLABLE", "NON_REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqcounterField, "LONG", None, None, None, "Sequence Counter", "NON_NULLABLE", "NON_REQUIRED")
                 arcpy.AddField_management(generate_ID_table, seqintervalField, "SHORT", None, None, None, "Interval Value", "NULLABLE", "NON_REQUIRED")
-                arcpy.AddField_management(generate_ID_table, "COMMENTS", "LONG", None, None, 255, "Comments", "NULLABLE", "NON_REQUIRED")
+                arcpy.AddField_management(generate_ID_table, "COMMENTS", "TEXT", None, None, 255, "Comments", "NULLABLE", "NON_REQUIRED")
         else:
             new_table = False
             generate_ID_table = counter_tbl_list[0]
