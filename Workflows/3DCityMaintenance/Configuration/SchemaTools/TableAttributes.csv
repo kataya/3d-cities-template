@@ -30,7 +30,7 @@ Neighborhood;connectedTo;TEXT;50;Connected to Type;NULLABLE;NON_REQUIRED;NO_DOMA
 Neighborhood;distance;DOUBLE;;Distance;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Neighborhood;parcelFID;TEXT;50;Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;referenceFID;TEXT;50;Zone or Parcel FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
-Usage;usageType;TEXT;50;Usage Type;NON_NULLABLE;NON_REQUIRED;ZoningUsageType
+Usage;usageType;TEXT;50;Usage Type;NON_NULLABLE;NON_REQUIRED;UsageType
 Usage;usagePortion;DOUBLE;;Usage Portion;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMin;DOUBLE;;Vertical extent minimum;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Usage;verticalExtentMax;DOUBLE;;Vertical extent maximum;NULLABLE;NON_REQUIRED;NO_DOMAIN

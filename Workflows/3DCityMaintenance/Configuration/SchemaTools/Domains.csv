@@ -17,7 +17,7 @@ StreetFurnitureType;Street Furniture Type;TEXT;CODED
 TreeCanopyShape;Canopy Shape Type;TEXT;CODED
 TreeGenusType;Tree Genus Type;TEXT;CODED
 TreeSpeciesType;Tree Species Type;TEXT;CODED
-ZoningUsageType;Zoning Usage Type;TEXT;CODED
+UsageType;Zoning Usage Type;TEXT;CODED
 CityFabricRelationType;City Fabric Relation Type;TEXT;CODED
 FlowDirection;Flow Direction;TEXT;CODED
 RegulationOperator;Zoning Regulation Operator;TEXT;CODED

@@ -22,7 +22,7 @@ SpatialLineAnnotation;type;TEXT;50;Annotation Type;NON_NULLABLE;NON_REQUIRED;Ann
 SpatialLineAnnotation;subtype;TEXT;50;Annotation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 SpatialLineAnnotation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
-Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;BuildingUsage
+Building;usage;TEXT;100;Usage;NULLABLE;NON_REQUIRED;UsageType
 Building;type;TEXT;50;Building Type;NULLABLE;NON_REQUIRED;BuildingType
 Building;subtype;TEXT;50;Building Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 Building;totalHeight;DOUBLE;;Total height;NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -57,7 +57,7 @@ BuildingInteriorSpace;floorArea;DOUBLE;;Floor area;NULLABLE;NON_REQUIRED;NO_DOMA
 BuildingInteriorSpace;capacity;LONG;;Capacity;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;spaceForm;TEXT;50;Space form;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;spaceFunction;TEXT;50;Space function;NULLABLE;NON_REQUIRED;NO_DOMAIN
-BuildingInteriorSpace;spaceUse;TEXT;50;Space use;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInteriorSpace;spaceUse;TEXT;50;Space use;NULLABLE;NON_REQUIRED;UsageType
 BuildingInteriorSpace;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInteriorSpace;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingFloor;buildingFID;TEXT;50;Building FID;NON_NULLABLE;NON_REQUIRED;NO_DOMAIN
@@ -77,6 +77,7 @@ BuildingInteriorStructure;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRE
 BuildingInstallation;type;TEXT;30;Installation type;NULLABLE;NON_REQUIRED;BuildingInstallationType
 BuildingInstallation;subtype;TEXT;50;Installation Subtype;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInstallation;rotation;DOUBLE;;Rotation;NULLABLE;NON_REQUIRED;NO_DOMAIN
+BuildingInstallation;buildingFID;TEXT;49;Building FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInstallation;spaceFID;TEXT;50;Interior space FID;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInstallation;beginLifespan;DATE;;Begin of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
 BuildingInstallation;endLifespan;DATE;;End of lifespan;NULLABLE;NON_REQUIRED;NO_DOMAIN
