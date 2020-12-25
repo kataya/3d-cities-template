@@ -5,6 +5,8 @@
 #
 # Author: Thorsten Reitz, ESRI R&D Lab Zurich
 # 
+# Changed getParameterInfo() datatype to ArcGIS 10.8.x by kataya 2020.12
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -25,7 +27,7 @@ class GdbComparator(object):
         ours_gdb = arcpy.Parameter(
             displayName="Workspace:",
             name="ours_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Required",
             direction="Input")
             
@@ -35,7 +37,7 @@ class GdbComparator(object):
         theirs_gdb = arcpy.Parameter(
             displayName="Workspace:",
             name="theirs_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Required",
             direction="Input")
             
@@ -45,7 +47,7 @@ class GdbComparator(object):
         out_gdb = arcpy.Parameter(
             displayName="Diff Output Workspace",
             name="out_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Required",
             direction="Output")
 

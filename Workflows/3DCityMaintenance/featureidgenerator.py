@@ -4,6 +4,8 @@
 #
 #
 # Author: Thorsten Reitz, ESRI R&D Lab Zurich
+# 
+# Changed getParameterInfo() datatype to ArcGIS 10.8.x by kataya 2020.12
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,19 +31,18 @@ class FeatureIdGenerator(object):
         in_gdb = arcpy.Parameter(
             displayName="Input Workspace",
             name="in_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Required",
             direction="Input")
-
-
+        
         # Generation Method Field parameter
         generation_field = arcpy.Parameter(
             displayName="3DCIM Schema Version",
             name="schema_version",
-            datatype="String",
+            datatype="GPString",
             parameterType="Required",
             direction="Input")
-
+        
         # Set a value list for the Generation method
         generation_field.filter.type = "ValueList"
         generation_field.filter.list = ["1.3", "1.4", "1.5"]
@@ -51,7 +52,7 @@ class FeatureIdGenerator(object):
         hi_batchsize_field = arcpy.Parameter(
             displayName="Interval size",
             name="hi_batchsize",
-            datatype="Long",
+            datatype="GPLong",
             parameterType="Required",
             direction="Input")
 
@@ -61,14 +62,14 @@ class FeatureIdGenerator(object):
         out_gdb = arcpy.Parameter(
             displayName="Output Workspace",
             name="out_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Derived",
             direction="Output")
 
         out_gdb.parameterDependencies = [in_gdb.name]
-
+        
         parameters = [in_gdb, generation_field, hi_batchsize_field, out_gdb]
-
+        
         return parameters
 
     def isLicensed(self):

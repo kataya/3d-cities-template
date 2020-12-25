@@ -4,6 +4,8 @@
 #
 #
 # Author: Thorsten Reitz, ESRI R&D Center Zurich
+# 
+# Changed getParameterInfo() datatype to ArcGIS 10.8.x by kataya 2020.12
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -73,7 +75,7 @@ class SchemaGenerator(object):
         in_gdb = arcpy.Parameter(
             displayName="Workspace:",
             name="in_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Required",
             direction="Input")
 
@@ -84,7 +86,7 @@ class SchemaGenerator(object):
         spatial_reference = arcpy.Parameter(
             displayName="Spatial Reference System:",
             name="spatial_reference",
-            datatype="Spatial Reference",
+            datatype="GPSpatialReference",
             parameterType="Required",
             direction="Input")
 
@@ -92,7 +94,7 @@ class SchemaGenerator(object):
         generate_domains = arcpy.Parameter(
             displayName="Generate Domains:",
             name="generate_domains",
-            datatype="String",
+            datatype="GPString",
             parameterType="Optional",
             direction="Input",
             multiValue=True)
@@ -111,7 +113,7 @@ class SchemaGenerator(object):
         generate_classes = arcpy.Parameter(
             displayName="Generate Feature Classes:",
             name="generate_classes",
-            datatype="String",
+            datatype="GPString",
             parameterType="Optional",
             direction="Input",
             multiValue=True)
@@ -130,7 +132,7 @@ class SchemaGenerator(object):
         generate_tables = arcpy.Parameter(
             displayName="Generate Tables:",
             name="generate_tables",
-            datatype="String",
+            datatype="GPString",
             parameterType="Optional",
             direction="Input",
             multiValue=True)
@@ -149,7 +151,7 @@ class SchemaGenerator(object):
         generate_relationships = arcpy.Parameter(
             displayName="Generate Relationship Classes:",
             name="generate_relationships",
-            datatype="String",
+            datatype="GPString",
             parameterType="Optional",
             direction="Input",
             multiValue=True)
@@ -168,7 +170,7 @@ class SchemaGenerator(object):
         out_gdb = arcpy.Parameter(
             displayName="Output Workspace",
             name="out_gdb",
-            datatype="Workspace",
+            datatype="DEWorkspace",
             parameterType="Derived",
             direction="Output")
 
